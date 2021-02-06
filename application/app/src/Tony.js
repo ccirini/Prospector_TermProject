@@ -1,5 +1,5 @@
 import bgimage from "./background-mountains.jpeg";
-import profilePicture from "./logo.svg";
+import profilePicture from "./profile_pic_Tony.jpg";
 import "./member-page.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,10 +9,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const name = "Tony";
-const city = "City";
-const title = "Title";
-const major = "Major";
+const name = "Tony Cao";
+const city = "San Jose";
+const title = "Backend Lead";
+const major = "Computer Science";
 
 const Tony = () => {
   return (
@@ -26,8 +26,9 @@ const Tony = () => {
         <Row>
           <Col>
             <Image
-              className="profile-picture"
+              className="profile-picture img-thumbnail"
               src={profilePicture}
+              responsive
               roundedCircle
             />
           </Col>
@@ -41,9 +42,16 @@ const Tony = () => {
         <hr></hr>
 
         <p className="bio">
-          bio part 1<br></br>
+          My name is Tony, I am a senior at San Francisco State University majoring 
+          in Computer Science. I am interested in Web Development and AI/Machine Learning.
+          My goal as of this moment is to explore the field of technology, learn as much as 
+          I can while discovering my interest and hopefully after graduation, I will be able to 
+          land a job working in a specialization of my interest. 
           <br></br>
-          Bio part 2 (if needed)
+          <br></br>
+          I like to ride my bike on weekends and play games like League of Legends and Valorant. 
+          Playing basketball was my first favorite hobby however due to the ongoing pandamic, I found  
+          myself playing less basketball and tuning in to more NBA and NCAA games. 
         </p>
       </Container>
 

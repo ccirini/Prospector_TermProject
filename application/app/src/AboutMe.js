@@ -3,7 +3,7 @@ import {Link } from "react-router-dom";
 import franklinPic from "./Franklin-pfp.jpg";
 import cameronPic from "./Franklin-pfp.jpg";
 import faisaPic from "./Franklin-pfp.jpg";
-import tonyPic from "./Franklin-pfp.jpg";
+import tonyPic from "./profile_pic_Tony.jpg";
 import georgePic from "./Franklin-pfp.jpg";
 
 import "bootstrap/dist/css/bootstrap.min.css";
