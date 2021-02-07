@@ -1,5 +1,5 @@
 import bgimage from "./background-mountains.jpeg";
-import profilePicture from "./logo.svg";
+import profilePicture from "./zhuojunhe.png";
 import "./member-page.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,10 +9,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const name = "George";
-const city = "City";
-const title = "Title";
-const major = "Major";
+const name = "Zhuojun He";
+const city = "San Francisco";
+const title = "Backend Support";
+const major = "Computer Science";
 
 const George = () => {
   return (
@@ -41,9 +41,11 @@ const George = () => {
         <hr></hr>
 
         <p className="bio">
-          bio part 1<br></br>
+        My name is ZhuoJun He. I am from China. I have stayed at the U.S. about 6 years. <br></br>
+        I play video game in my free time. Badminton with my friends. Also study and go to work. <br></br>
+        Thank you.
           <br></br>
-          Bio part 2 (if needed)
+          
         </p>
       </Container>
 

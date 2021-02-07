@@ -4,7 +4,7 @@ import franklinPic from "./Franklin-pfp.jpg";
 import cameronPic from "./Franklin-pfp.jpg";
 import faisaPic from "./Franklin-pfp.jpg";
 import tonyPic from "./profile_pic_Tony.jpg";
-import georgePic from "./Franklin-pfp.jpg";
+import georgePic from "./zhuojunhe.png";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "react-bootstrap/Image";
@@ -49,8 +49,8 @@ const AboutMe = ({pages}) => {
                     <Col xs={6}>
                         <Image style={ {width: "150px", height: "150px"}} src={georgePic} roundedCircle />
                         <br></br>
-                        <Link to ="/aboutme/george"><b>George He</b></Link>
-                        <p>Backend Co-Lead</p>
+                        <Link to ="/aboutme/george"><b>Zhuojun He</b></Link>
+                        <p>Backend Support</p>
                     </Col>
                 </Row>
             </Container>
