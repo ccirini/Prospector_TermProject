@@ -1,7 +1,7 @@
 import { logDOM } from "@testing-library/react";
 
 import bgimage from "./background-mountains.jpeg";
-import profilePicture from "./logo.svg";
+import profilePicture from "./Cameron-pfp.jpeg";
 import "./member-page.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,9 +12,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const name = "Cameron";
-const city = "City";
-const title = "Title";
-const major = "Major";
+const city = "San Mateo";
+const title = "Team Lead";
+const major = "";
 
 const Cameron = () => {
   return (
@@ -43,9 +43,9 @@ const Cameron = () => {
         <hr></hr>
 
         <p className="bio">
-          bio part 1<br></br>
+          I am a 5th student year CS major at SFSU. I started my CS journey in highschool, learning through online courses for fun and eventually taking all the classes my school had to offer in my Junior and Senior years.<br></br>
           <br></br>
-          Bio part 2 (if needed)
+          In my free time I enjoy working on music and cooking!
         </p>
       </Container>
 
