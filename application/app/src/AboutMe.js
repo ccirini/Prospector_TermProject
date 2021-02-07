@@ -2,7 +2,7 @@ import {Link } from "react-router-dom";
 
 import franklinPic from "./Franklin-pfp.jpg";
 import cameronPic from "./Franklin-pfp.jpg";
-import faisaPic from "./Franklin-pfp.jpg";
+import faisaPic from "./Faisa-pfp.jpg";
 import tonyPic from "./profile_pic_Tony.jpg";
 import georgePic from "./zhuojunhe.png";
 

@@ -1,5 +1,5 @@
 import bgimage from "./background-mountains.jpeg";
-import profilePicture from "./logo.svg";
+import profilePicture from "./Faisa-pfp.jpg";
 import "./member-page.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,10 +9,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const name = "Faisa";
-const city = "City";
-const title = "Title";
-const major = "Major";
+const name = "Faisa Jama";
+const city = "Oakland, Califronia";
+const title = "Github Master";
+const major = "Computer Science";
 
 const Fasia = () => {
   return (
@@ -41,9 +41,13 @@ const Fasia = () => {
         <hr></hr>
 
         <p className="bio">
-          bio part 1<br></br>
+          Entering SFSU, I planed on majoring in Mathmatics, until I took a computer class. There is no other relief than when a 
+          program is running succefully, but I am eager to find ways to make my program better. When I am free I enjoy being around my
+          family, or playing basketball. Before COVID-19, I would travel to different beaches to relax my mind.  <br></br>
           <br></br>
-          Bio part 2 (if needed)
+          My motto in life is "go with the flow". Even though I try to live stress-free, I still have goals. After completing 
+          my bachelor in computer science, I plan on continuing school until I acheive my doctoral degree. Coming from a first generation 
+          family, I was tought that knowledge is key. Teaching the ones after me would be a blessing.
         </p>
       </Container>
 
