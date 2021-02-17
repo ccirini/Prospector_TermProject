@@ -10,14 +10,12 @@
 1. Server URL or IP: 54.70.249.83
 2. SSH username: ubuntu
 3. SSH password or key: 648T02Key.pem (key in credentials folder)
-    <br> If a ssh key is used please upload the key to the credentials folder.
-4. Database URL or IP and port used.
+4. Database URL or IP and port used: 3306
     <br><strong> NOTE THIS DOES NOT MEAN YOUR DATABASE NEEDS A PUBLIC FACING PORT.</strong> But knowing the IP and port number will help with SSH tunneling into the database. The default port is more than sufficient for this class.
 5. Database username: ubuntu
 6. Database password: Csc648Team2!
 7. Database name (basically the name that contains all your tables): csc648Team2
 8. Instructions on how to use the above information.
-   <br> MySQL database is using the deault port (3306) 
 
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
