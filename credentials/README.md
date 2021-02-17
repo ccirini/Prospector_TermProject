@@ -17,7 +17,7 @@
 6. Database password: Csc648Team2!
 7. Database name (basically the name that contains all your tables): csc648Team2
 8. Instructions on how to use the above information.
-    MySQL database is using the deault port (3306) 
+   <br> MySQL database is using the deault port (3306) 
 
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
