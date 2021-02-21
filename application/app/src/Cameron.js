@@ -1,8 +1,9 @@
 import { logDOM } from "@testing-library/react";
 
-import bgimage from "./background-mountains.jpeg";
-import profilePicture from "./Cameron-pfp.jpeg";
+import bgimage from "./images/background-mountains.jpeg";
+import profilePicture from "./images/Cameron-pfp.jpeg";
 import "./member-page.css";
+import Footer from "./components/footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -24,7 +25,7 @@ const Cameron = () => {
         style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }}
       ></Jumbotron>
 
-      <Container className="container" fluid="xl">
+      <Container className="page-container" fluid="xl">
         <Row>
           <Col>
             <Image
@@ -47,13 +48,8 @@ const Cameron = () => {
           <br></br>
           In my free time I enjoy working on music and cooking!
         </p>
+        <Footer footer="footer-member"/>
       </Container>
-
-      <footer className="footer" fluid="xl">
-        <p>CSC 648 - Software Engineering Spring 2021</p>
-        <hr></hr>
-        <p>Copyright © 2021 CSC 648.02 - Team 2</p>
-      </footer>
     </div>
   );
 };

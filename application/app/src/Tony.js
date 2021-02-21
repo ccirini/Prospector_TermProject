@@ -1,6 +1,7 @@
-import bgimage from "./background-mountains.jpeg";
-import profilePicture from "./profile_pic_Tony.jpg";
+import bgimage from "./images/background-mountains.jpeg";
+import profilePicture from "./images/profile_pic_Tony.jpg";
 import "./member-page.css";
+import Footer from "./components/footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -22,7 +23,7 @@ const Tony = () => {
         style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }}
       ></Jumbotron>
 
-      <Container className="container" fluid="xl">
+      <Container className="page-container" fluid="xl">
         <Row>
           <Col>
             <Image
@@ -50,16 +51,11 @@ const Tony = () => {
           <br></br>
           <br></br>
           I like to ride my bike on weekends and play games like League of Legends and Valorant. 
-          Playing basketball was my first favorite hobby however due to the ongoing pandamic, I found  
+          Playing basketball was my first favorite hobby however due to the ongoing pandemic, I found  
           myself playing less basketball and tuning in to more NBA and NCAA games. 
         </p>
+        <Footer footer="footer-member"/>
       </Container>
-
-      <footer className="footer" fluid="xl">
-        <p>CSC 648 - Software Engineering Spring 2021</p>
-        <hr></hr>
-        <p>Copyright © 2021 CSC 648.02 - Team 2</p>
-      </footer>
     </div>
   );
 };

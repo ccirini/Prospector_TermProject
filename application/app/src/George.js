@@ -1,6 +1,7 @@
-import bgimage from "./background-mountains.jpeg";
-import profilePicture from "./zhuojunhe.png";
+import bgimage from "./images/background-mountains.jpeg";
+import profilePicture from "./images/zhuojunhe.png";
 import "./member-page.css";
+import Footer from "./components/footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -22,7 +23,7 @@ const George = () => {
         style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }}
       ></Jumbotron>
 
-      <Container className="container" fluid="xl">
+      <Container className="page-container" fluid="xl">
         <Row>
           <Col>
             <Image
@@ -47,13 +48,8 @@ const George = () => {
           <br></br>
           
         </p>
+        <Footer footer="footer-member"/>
       </Container>
-
-      <footer className="footer" fluid="xl">
-        <p>CSC 648 - Software Engineering Spring 2021</p>
-        <hr></hr>
-        <p>Copyright © 2021 CSC 648.02 - Team 2</p>
-      </footer>
     </div>
   );
 };
