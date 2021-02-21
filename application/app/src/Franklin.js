@@ -1,6 +1,8 @@
-import bgimage from "./background-mountains.jpeg";
-import profilePicture from "./Franklin-pfp.jpg";
+import bgimage from "./images/background-mountains.jpeg";
+import profilePicture from "./images/Franklin-pfp.jpg";
 import "./member-page.css";
+import Footer from "./components/footer";
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -22,7 +24,7 @@ const Franklin = () => {
         style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }}
       ></Jumbotron>
 
-      <Container className="container" fluid="xl">
+      <Container className="page-container" fluid="xl">
         <Row>
           <Col>
             <Image
@@ -49,14 +51,8 @@ const Franklin = () => {
             ability to create sustainable solutions to help create a better future. Fun Fact I’m from El Salvador 
             the smallest country in Central America. 🇸🇻
         </p>
+        <Footer footer="footer-member"/>
       </Container>
-
-      <footer className="footer" fluid="xl">
-        <p>CSC 648 - Software Engineering Spring 2021</p>
-        <hr></hr>
-        <p>Copyright © 2021 CSC 648.02 - Team 2</p>
-      </footer>
-
     </div>
   );
 };
