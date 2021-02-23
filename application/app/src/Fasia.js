@@ -42,11 +42,11 @@ const Fasia = () => {
         <hr></hr>
 
         <p className="bio">
-          Entering SFSU, I planed on majoring in Mathematics, until I took a computer class. There is no other relief than when a 
-          program is running successfully, but I am eager to find ways to make my program better. When I am free I enjoy being around my
+          Entering SFSU, I planed on majoring in Mathematics, until I took an intro to computer class. There is no other relief than when a 
+          program is running successfully, but I am also eager to find ways to make my program better. When I am free, I enjoy being around my
           family, or playing basketball. Before COVID-19, I would travel to different beaches to relax my mind.  <br></br>
           <br></br>
-          My motto in life is "go with the flow". Even though I try to live stress-free, I still have goals. After completing 
+          My motto in life is to "go with the flow". Even though I try to live stress-free, I still have goals. After completing 
           my bachelor in computer science, I plan on continuing school until I achieve my doctoral degree. Coming from a first generation 
           family, I was taught that knowledge is key. Teaching the ones after me would be a blessing.
         </p>
