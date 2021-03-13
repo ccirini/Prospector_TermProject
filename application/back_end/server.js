@@ -1,21 +1,20 @@
-const app = require('./express'); 
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
 
 const PORT = process.env.PORT || 5000; 
 
-require('dotenv').config();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
 
-// DB set up
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-    host: process.env.dbHOST,
-    user: process.env.dbUSER,
-    password: process.env.dbPASS,
-    database: process.env.dbNAME
-});
+app.get('/', (req, res) => {
+    res.status(200).json({
+        message: "Hello from server!",
+    });
+})
 
-connection.connect(err => {
-    if(err) console.log(err); 
-    else console.log("Successful connection to database")
-});
+require('./routes/JobPost.routes.js')(app);
 
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
