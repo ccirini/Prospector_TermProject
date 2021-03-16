@@ -1,7 +1,5 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AboutMe from "./AboutMe";
 import Cameron from "./Cameron";
@@ -10,12 +8,43 @@ import Franklin from "./Franklin";
 import George from "./George";
 import Tony from "./Tony";
 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+
+
+
 function App() {
+
+  const [jobs, setJobs] = React.useState([]);
+  const [search, setSearch] = React.useState('');
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/getJobPostings`)
+      .then(res => {
+          setJobs(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  })
+
+  const filteredJobs = jobs.filter( job => { 
+    return job.jobTitle.toLowerCase().includes(search.toLowerCase());
+  })
+
   return (
-    <Router>
+    <Router >
       <div className="App">
         <Navbar />
-        <div className="Content">
+        <h1>Jobs</h1>
+        <input type="text" placeholder="Search..." onChange={e => setSearch(e.target.value)}/>
+
+        <ul>
+          {filteredJobs.map(job => <div key={job.id}>{job.jobTitle}</div>)}
+        </ul>
+ 
+        {/* <div className="Content">
           <Switch>
             <Route exact path="/"><AboutMe /></Route>
             <Route exact path="/aboutme"><AboutMe /></Route>
@@ -25,8 +54,8 @@ function App() {
             <Route path="/aboutme/george"><George /></Route>
             <Route path="/aboutme/tony"><Tony /></Route>
           </Switch>
-        </div>
-      </div>
+        </div> */}
+    </div>
     </Router>
   );
 }
