@@ -1,7 +1,7 @@
 import bgimage from "./images/background-mountains.jpeg";
 import profilePicture from "./images/Franklin-pfp.jpg";
 import "./member-page.css";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 
 
 import "bootstrap/dist/css/bootstrap.min.css";

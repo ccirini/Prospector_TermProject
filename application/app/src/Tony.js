@@ -1,7 +1,7 @@
 import bgimage from "./images/background-mountains.jpeg";
 import profilePicture from "./images/profile_pic_Tony.jpg";
 import "./member-page.css";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";

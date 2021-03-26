@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 
 import franklinPic from "./images/Franklin-pfp.jpg";
 import cameronPic from "./images/Cameron-pfp.jpeg";
