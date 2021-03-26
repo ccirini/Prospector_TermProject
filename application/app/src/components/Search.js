@@ -55,7 +55,7 @@ const Search= () =>{
     }
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/getJobPostings`)
+        axios.get(`http://54.70.249.83/:5000/getJobPostings`)
             .then(res => {
                 setJobs(res.data);
             })
