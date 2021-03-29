@@ -18,5 +18,6 @@ app.get('/', (req, res) => {
 require('./routes/JobPost.routes.js')(app);
 require('./routes/SignIn.routes.js')(app);
 require('./routes/SignUp.routes')(app);
+require('./routes/Search.routes.js')(app);
 
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
