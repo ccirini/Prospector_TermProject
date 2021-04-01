@@ -1,14 +1,12 @@
 const sql = require("./db.js");
 
 // constructor
-const ProfessorAccount = (ProfessorAccount) => {
-    this.userName = ProfessorAccount.userName; 
+const ProfessorAccount = function(ProfessorAccount) {
+    this.email = ProfessorAccount.email;
     this.password = ProfessorAccount.password; 
     this.firstName = ProfessorAccount.firstName; 
     this.lastName = ProfessorAccount.lastName;
-    this.email = ProfessorAccount.email;
-    this.university = ProfessorAccount.university; 
-    this.recomandationList = ProfessorAccount.recomandationList; 
+    this.university = ProfessorAccount.university;  
 }
 
 // create new Professor account 

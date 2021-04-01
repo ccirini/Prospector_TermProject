@@ -1,14 +1,11 @@
 const sql = require("./db");
 
 // constructor
-const RecruiterAccount = (RecruiterAccount) => {
-    this.userName = RecruiterAccount.userName; 
+const RecruiterAccount = function(RecruiterAccount) {
+    this.email = RecruiterAccount.email; 
     this.password = RecruiterAccount.password; 
-    this.firstName = RecruiterAccount.firstName; 
-    this.lastName = RecruiterAccount.lastName;
     this.companyName = RecruiterAccount.companyName; 
     this.decription = RecruiterAccount.decription; 
-    this.contractInfo = RecruiterAccount.contractInfo;
     this.addressId = RecruiterAccount.addressId;
     this.websiteLink = RecruiterAccount.websiteLink; 
 }

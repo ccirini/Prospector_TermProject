@@ -1,12 +1,22 @@
 routes
 
-search       -> /search/{dropdown category}/text/{search text}
+search       -> GET /search 
+                    - default search 
 
-signin       -> /signin
+             -> GET /search/{dropdown category}/text/{search text}
 
-signup       -> /signup/professor
-             -> /signup/recruiter
-             -> /signup/student 
+signin       -> GET /signin
+                    -   DATA TO SEND BACK 
+                        { email, password }
 
-Job postings -> /createJobPost
-             -> /getJobPostings
+signup       -> POST /signup/professor
+                    -   DATA TO SEND BACK 
+                        { email, password, firstName, lastName, university }
+
+             -> POST /signup/recruiter
+                    -   DATA TO SEND BACK 
+                        { email, password, companyName, decription, addressId, websiteLink }
+
+             -> POST /signup/student 
+                    - Still working on resume uploads 
+

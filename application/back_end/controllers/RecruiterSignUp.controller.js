@@ -10,13 +10,12 @@ exports.create = (req, res) => {
 
     // Create a new recruiter account 
     const recruiter = new RecruiterAccount({
-        userName: req.body.userName,
-        password: req.body.password,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
         email: req.body.email,
-        university: req.body.university, 
-        recomandationList: [], 
+        password: req.body.password,
+        companyName: req.body.companyName,
+        decription: req.body.decription,
+        addressId: req.body.addressId,
+        websiteLink:req.body.websiteLink 
     });
 
     // Save Customer in the database

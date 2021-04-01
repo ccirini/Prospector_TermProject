@@ -10,13 +10,11 @@ exports.create = (req, res) => {
 
     // Create a new professor account 
     const professor = new ProfessorAccount({
-        userName: req.body.userName,
+        email: req.body.email,
         password: req.body.password,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        email: req.body.email,
         university: req.body.university, 
-        recomandationList: [], 
     });
 
     // Save Customer in the database
