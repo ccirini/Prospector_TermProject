@@ -10,5 +10,6 @@ module.exports = app => {
     app.post("/signUp/recruiter", RecruiterSignUp.create);
 
     // create a new student account 
+    // https://bezkoder.com/node-js-upload-image-mysql/
     app.post("/signUp/student", StudentSignUp.create);
 }
