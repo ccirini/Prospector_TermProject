@@ -3,6 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import SignUp from "./components/Signup";
+import SignUpPro from "./components/SignupPro";
+import ProHome from "./components/Prohome";
+import ViewRecommends from "./components/ViewRecommend";
+import ProAccount from "./components/Proaccount";
+import NewRecommend from "./components/Newrecommend";
 import Search from "./components/Search";
 import AboutMe from "./AboutMe";
 import Cameron from "./Cameron";
@@ -77,6 +83,12 @@ function App() {
           <Switch>
             <Route exact path="/"><Home /></Route>
             <Route path="/login"><Login /></Route>
+            <Route path="/signup"><SignUp /></Route>
+            <Route path="/signupPro"><SignUpPro /></Route>
+            <Route path="/prohome"><ProHome /></Route>
+            <Route path="/viewrecommend"><ViewRecommends /></Route>
+            <Route path="/proaccount"><ProAccount /></Route>
+            <Route path="/newrecommend">< NewRecommend/></Route>
             <Route path="/search"><Search /></Route>
             <Route exact path="/aboutme"><AboutMe /></Route>
             <Route path="/aboutme/cameron"><Cameron /></Route>
