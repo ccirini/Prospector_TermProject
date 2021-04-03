@@ -1,9 +1,6 @@
 routes
 
-search       -> GET /search 
-                    - default search 
-
-             -> GET /search/{dropdown category}/text/{search text}
+search       -> GET /search/{dropdown category}/text/{search text}
 
 signin       -> GET /signin
                     -   DATA TO SEND BACK 

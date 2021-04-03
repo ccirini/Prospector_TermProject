@@ -1,16 +1,21 @@
 import "./Home.css";
 import Button from 'react-bootstrap/Button'
+// import "./Design.css";
+
 
 const Home = () =>{
     return(
         <div className="home">
-            <h1>Text Header Title</h1>
-            <p style={{
-                width: "50%"
-            }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-            <Button href="#" variant="dark">Start Applying</Button>
+            <div style={{ width: "50%" }}>
+                <h2>Get Matched with Your Ideal Canindate!</h2>
+                <p>ProSpector narrows down the time of looking for employers while giving exposure 
+                to those who dont.</p>
+            </div>
+
+            <Button href="/signup-student" >Start Applying</Button>
             <Button href="#" variant="outline-dark">Start Hiring</Button>
+
+            
         </div>
     );
 }

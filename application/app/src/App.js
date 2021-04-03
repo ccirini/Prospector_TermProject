@@ -4,8 +4,13 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import SignupStudent from "./components/Signup-Student";
+import SignUpPro from "./components/SignupPro";
+import ProHome from "./components/Prohome";
+import ViewRecommends from "./components/ViewRecommend";
+import ProAccount from "./components/Proaccount";
+import NewRecommend from "./components/Newrecommend";
 import Search from "./components/Search";
-import Signup from "./pages/Signup";
+import Signup from "./components/Signup";
 import AboutMe from "./AboutMe";
 import Cameron from "./Cameron";
 import Fasia from "./Fasia";
@@ -14,11 +19,7 @@ import George from "./George";
 import Tony from "./Tony";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown';
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-
+import React from 'react';
 
 function App() {
 
@@ -29,10 +30,17 @@ function App() {
         <div className="Content">
           <Switch>
             <Route exact path="/"><Home /></Route>
+
             <Route path="/login"><Login /></Route>
             <Route path="/signup"><Signup /></Route>
             <Route path="/signup-student"><SignupStudent /></Route>
+            <Route path="/signupPro"><SignUpPro /></Route>
+            <Route path="/prohome"><ProHome /></Route>
+            <Route path="/viewrecommend"><ViewRecommends /></Route>
+            <Route path="/proaccount"><ProAccount /></Route>
+            <Route path="/newrecommend">< NewRecommend/></Route>
             <Route path="/search"><Search /></Route>
+
             <Route exact path="/aboutme"><AboutMe /></Route>
             <Route path="/aboutme/cameron"><Cameron /></Route>
             <Route path="/aboutme/fasia"><Fasia /></Route>
