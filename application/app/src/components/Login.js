@@ -1,8 +1,9 @@
-import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
 const Login = () =>{
+    // Get login and check if it's in db
+
     return(
         <div className="login">
             <h1>Sign In</h1>

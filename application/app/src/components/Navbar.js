@@ -1,24 +1,38 @@
-import { Link } from "react-router-dom";
+import "./Navbar.css";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import Marquee from 'react-text-marquee'
 
 const Navcontrol = () =>{
     return(
-        <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">648 Team 02</Navbar.Brand>
-            <Nav className="mr-auto">
+        <div>
+        <Marquee 
+            text="CSC 648 Team 02 - This website is for educational purposes only." 
+            // hoverToStop={true}
+            // loop={true}
+            // leading={4}
+            // trailing={0}
+            className="marquee"
+        />
+
+        <Navbar className="navbar">
+            <Navbar.Brand href="#home">ProSpector</Navbar.Brand>
+            <Nav className="ml-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/aboutme">About Us</Nav.Link>
                 <Nav.Link href="/search">Search</Nav.Link>
             </Nav>
 
-            <Form inline>
-                <Button href="/login" variant="outline-success">Login</Button>
-                <Button href="#" variant="success">Sign Up</Button>
-            </Form>
+            <div className="button-container">
+                <Button className="login-button" href="./login">Login</Button>
+            </div>
+
+            <div className="button-container">
+                <Button className="signup-button" href="./signup">Sign Up</Button>
+            </div>
         </Navbar>
+        </div>
     );
 }
 
