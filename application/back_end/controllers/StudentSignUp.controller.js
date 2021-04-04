@@ -7,16 +7,24 @@ exports.create = (req, res) => {
             message: "Content can not be empty!"
         });
     }
-
     // Create a new student account 
     const student = new StudentAccount({
-        userName: req.body.userName,
+        email: req.body.email,
         password: req.body.password,
+        studentSFSUId: req.body.studentSFSUId,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        email: req.body.email,
-        university: req.body.university, 
-        recomandationList: [], 
+        addressId: req.body.addressId,
+        ethnicity: req.body.ethnicity,
+        major: req.body.major,
+        gender: req.body.gender,
+        // default starting aggregateRating; will recompute as recommendations come in
+        aggregateRating: 0,
+        veteranStatus: req.body.veteranStatus,
+        lgbtqStatus: req.body.lgbtqStatus,
+        financialAidStatus: req.body.financialAidStatus,
+        disabilityStatus: req.body.disabilityStatus,
+        firstGeneration: req.body.firstGeneration,
     });
 
     // Save Customer in the database

@@ -6,6 +6,9 @@ module.exports = (sequelize, DataTypes) => {
       name: {
         type: DataTypes.STRING,
       },
+      userId: {
+        type: DataTypes.INTEGER,
+      },
       data: {
         type: DataTypes.BLOB("long"),
       },
