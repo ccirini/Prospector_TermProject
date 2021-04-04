@@ -44,4 +44,38 @@
 
 ::placeholder { /* Most modern browsers support this now. */
     color:#C99700 !important;
- }
+}
+
+
+ .row {
+    margin: 0px;
+    padding: 7px 35px;
+    font: 300 150% langdon;
+}
+
+.signup { 
+    border: 2px solid #C99700;
+    border-radius: 25px;
+    padding: 50px;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto; 
+}
+
+.signup-h1 { 
+    text-align: center; 
+}
+
+.signup-container { 
+    margin: 0 auto; 
+}
+
+.signup-btn {
+    display: block;
+    padding: 25px;
+    margin: 40px 30px 30px 40px; 
+    font-size: large;
+    font-weight: bolder;
+}
+
+
