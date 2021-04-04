@@ -61,7 +61,8 @@ const Search= () =>{
         if (selectedValue != "default" && searchValue == "default"){
             alert("Search bar is empty!");
         } else {
-            axios.get(`http://localhost:5000/search/${selectedValue}/text/${searchValue}`)
+            axios.get(`http://54.70.249.83:5000/search/${selectedValue}/text/${searchValue}`)
+            //axios.get(`http://localhost:5000/search/${selectedValue}/text/${searchValue}`)
             // axios.get(`http://localhost:5000/search/`)
             .then(res => {
                 setStudents(res.data);
