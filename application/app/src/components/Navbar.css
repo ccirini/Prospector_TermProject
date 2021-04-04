@@ -1,0 +1,33 @@
+.marquee {
+    background-color: #F0F0F0;
+}
+
+.navbar {
+    /* background-color: white; */
+    color: #463077 !important;
+}
+
+Nav.Link {
+    color: #463077 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #463077 !important;
+}
+
+.button-container {
+    padding: 10px;
+}
+
+.login-button {
+    background-color: #463077;
+    border: 2px solid #463077;
+    color: white;
+}
+
+.signup-button {
+    border: 2px solid #463077;
+    background-color: white;
+    color: #463077;
+}
+
