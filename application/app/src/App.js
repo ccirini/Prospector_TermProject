@@ -4,10 +4,14 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import SignupStudent from "./components/Signup-Student";
-import SignUpPro from "./components/SignupPro";
+import SignUpProfessor from "./components/Signup-Professor";
+import SignUpRecruiter from "./components/Signup-Recruiter";
 import ProHome from "./components/Prohome";
 import ViewRecommends from "./components/ViewRecommend";
-import ProAccount from "./components/Proaccount";
+import ProfessorAccount from "./components/Account-Professor";
+import RecruiterAccount from "./components/Account-Recruiter";
+import Delete from "./components/Delete";
+import EditProfessor from "./components/Edit-Professor";
 import NewRecommend from "./components/Newrecommend";
 import Search from "./components/Search";
 import Signup from "./components/Signup";
@@ -34,12 +38,17 @@ function App() {
             <Route path="/login"><Login /></Route>
             <Route path="/signup"><Signup /></Route>
             <Route path="/signup-student"><SignupStudent /></Route>
-            <Route path="/signupPro"><SignUpPro /></Route>
+            <Route path="/signup-professor"><SignUpProfessor /></Route>
+            <Route path="/signup-recruiter"><SignUpRecruiter /></Route>
             <Route path="/prohome"><ProHome /></Route>
             <Route path="/viewrecommend"><ViewRecommends /></Route>
-            <Route path="/proaccount"><ProAccount /></Route>
+            <Route path="/account-professor"><ProfessorAccount /></Route>
+            <Route path="/account-recruiter"><RecruiterAccount /></Route>
             <Route path="/newrecommend">< NewRecommend/></Route>
             <Route path="/search"><Search /></Route>
+            <Route path="/delete"><Delete /></Route>
+            <Route path="/edit-professor"><EditProfessor /></Route>
+            
 
             <Route exact path="/aboutme"><AboutMe /></Route>
             <Route path="/aboutme/cameron"><Cameron /></Route>

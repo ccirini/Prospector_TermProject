@@ -9,7 +9,7 @@ const SignUp = () =>{
             <Form>
                 <Button href="/signup-student" variant="outline-light">Student</Button>
                 <Button href="/signup-recruiter" variant="outline-light">Recruiter</Button>
-                <Button href="/signuppro" variant="outline-light">Instructor</Button>
+                <Button href="/signup-professor" variant="outline-light">Instructor</Button>
             </Form>
         </div>
     );

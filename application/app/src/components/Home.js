@@ -13,7 +13,7 @@ const Home = () =>{
             </div>
 
             <Button href="/signup-student" >Start Applying</Button>
-            <Button href="#" variant="outline-dark">Start Hiring</Button>
+            <Button href="/signup-recruiter" variant="outline-dark">Start Hiring</Button>
 
             
         </div>
