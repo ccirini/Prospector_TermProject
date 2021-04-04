@@ -1,39 +1,40 @@
+import "./Design.css"
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import "./Design.css";
-
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const SignUpRecruiter = () =>{
     return(
-        <div>
-            <h1>Sign Up As A Recruiter</h1>
-            <Form>
-            <Form.Group controlId="formGroupFirstName">
-                    <Form.Control type="fName" placeholder="First Name " />
-                </Form.Group>
+        <div className="signup-professor">
+            <Form className="signup-professor-form">
+                <h1 className="signup-professor-h1"><b>Sign Up As A Recruiter</b></h1>
+                <Row>
+                    <Col>
+                        <Form.Control type="text" placeholder="First Name" className="signup-professor-row"/>
+                    </Col>
+                    <Col>
+                        <Form.Control type="text" placeholder="Last Name" className="signup-professor-row"/>
+                    </Col>
+                </Row>
 
-                <Form.Group controlId="formGroupLastName">
-                    <Form.Control type="lName" placeholder="Last Name" />
-                </Form.Group>  
+                <Row>
+                    <Form.Control type="uniName" placeholder="Company Name" className="signup-professor-row"/>
+                </Row>
                 
-                <Form.Group controlId="formGroupCompanyName">
-                    <Form.Control type="uniName" placeholder="Company Name" />
-                </Form.Group>
-                
-                <Form.Group controlId="formGroupEmail">
-                  <Form.Control type="email" placeholder="Email" />
-                </Form.Group>
+                <Row>
+                  <Form.Control type="email" placeholder="Email" className="signup-professor-row"/>
+                </Row>
 
-                <Form.Group controlId="formGroupPassword">
-                    <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
+                <Row>
+                    <Form.Control type="password" placeholder="Password" className="signup-professor-row"/>
+                </Row>
                 
-                 {/* double check about verifying password */}
-                <Form.Group controlId="formGroupPassword">
-                    <Form.Control type="lname" placeholder="Verify-Password" />
-                </Form.Group>
-                <Button href="#" class="btn-primary">Sign Up</Button>
+                <Row>
+                    <Form.Control type="lname" placeholder="Verify-Password" className="signup-professor-row"/>
+                </Row>
+                <Button href="#" className="signup-professor-btn">Sign Up</Button>
             </Form>
         </div>
     );

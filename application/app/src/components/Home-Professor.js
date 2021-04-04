@@ -5,20 +5,20 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 
 
-const ProHome = () =>{
+const HomeProfessor = () =>{
     return(
-        <div className="prohome">
+        <div className="home-professor">
             <h1>Recommend Students!</h1>
-            <InputGroup className="mb-3">
+            <InputGroup className="home-professor-input">
                 <FormControl aria-describedby="basic-addon1" placeholder="Search Student ID"
                 className="search"/>
-                <Button type="submit">Search</Button>
+                <Button type="submit" className="home-professor-btn">Search</Button>
             </InputGroup>
             <Form>
-                <Button href="/viewrecommend" variant="outline-dark">View Recommedations</Button>
+                <Button href="/viewrecommend" variant="outline-dark" className="home-professor-btn">View Recommedations</Button>
             </Form>
         </div>
     );
 }
 
-export default ProHome;
+export default HomeProfessor;
