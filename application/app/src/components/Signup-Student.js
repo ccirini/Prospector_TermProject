@@ -1,3 +1,4 @@
+import "./Signup-Student.css"
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
@@ -7,56 +8,29 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import React, {useState, useEffect} from 'react';
 import Select from 'react-select';
 
+import gender from "./categories/gender.json";
+import lgbtq from "./categories/lgbtq.json";
+import ethnicity from "./categories/ethnicity.json";
+import veteran from "./categories/veteran.json";
+import disability from "./categories/disability.json";
+import firstgen from "./categories/firstgen.json";
+import fasfa from "./categories/fasfa.json";
+
 const SignupStudent = () =>{
 
-    const gender = [
-        {
-            value: "default",
-            label: "--"
-        },
-        {
-            value: "male",
-            label: "male"
-        },
-        {
-            value: "female",
-            label: "female"
-        },
-        {
-            value: "nonbinary",
-            label: "nonbinary"
-        },
-        {
-            value: "decline to state",
-            label: "decline to state"
-        },
-        {
-            value: "other",
-            label: "other"
-        }
-    ];
-
-    const lgbtq = [
-        {
-            value: "default",
-            label: "--"
-        },
-        {
-            value: "yes",
-            label: "yes"
-        },
-        {
-            value: "no",
-            label: "no"
-        },
-        {
-            value: "prefer not to say",
-            label: "prefer not to say"
-        }
-    ];
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [studentId, setStudentId] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const [genderValue, setGenderValue] = useState('default');
     const [lgbtqValue, setLgbtqValue] = useState('default');
+    const [ethnicityValue, setEthnicityValue] = useState('default');
+    const [veteranValue, setVeteranValue] = useState('default');
+    const [disabilityValue, setDisabilityValue] = useState('default');
+    const [firstgenValue, setFirstgenValue] = useState('default');
+    const [fasfaValue, setFasfaValue] = useState('default');
 
     const handleChangeGender = e => {
         setGenderValue(e.value);
@@ -66,29 +40,53 @@ const SignupStudent = () =>{
         setLgbtqValue(e.value);
     }
 
+    const handleChangeEthnicity = e => {
+        setEthnicityValue(e.value);
+    }
+
+    const handleChangeVeteran = e => {
+        setVeteranValue(e.value);
+    }
+
+    const handleChangeDisability= e => {
+        setDisabilityValue(e.value);
+    }
+
+    const handleChangeFirstgen= e => {
+        setFirstgenValue(e.value);
+    }
+
+    const handleChangeFasfa = e => {
+        setFasfaValue(e.value);
+    }
+
     return(
         <div className="signup-student">
-            <h1>Sign Up</h1>
-            <Form>
-                <Row>
+            <Form className="signup-student-form">
+            <h1 className="signup-student-h1"><b>Sign Up</b></h1>
+                <Row className="row">
                     <Col>
-                        <Form.Control type="text" placeholder="Enter First Name" />
+                        <Form.Control type="text" placeholder="Enter First Name" 
+                        onChange={e => setFirstName(e.target.value)} />
                     </Col>
                     <Col>
-                        <Form.Control type="text" placeholder="Enter Last Name" />
-                    </Col>
-                </Row>
-
-                <Row>
-                    <Col>
-                        <Form.Control type="text" placeholder="Enter student id" />
+                        <Form.Control type="text" placeholder="Enter Last Name" 
+                        onChange={e => setLastName(e.target.value)}/>
                     </Col>
                 </Row>
 
-                <Row>
+                <Row className="row">
+                    <Col>
+                        <Form.Control type="number" placeholder="Enter student id" 
+                        onChange={e => setStudentId(e.target.value)}/>
+                    </Col>
+                </Row>
+
+                <Row className="row">
                     <Col>
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control type="email" placeholder="Enter email" 
+                            onChange={e => setEmail(e.target.value)}/>
                             {/* <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                             </Form.Text> */}
@@ -97,18 +95,19 @@ const SignupStudent = () =>{
                     </Col>
                 </Row>
 
-                <Row>
+                <Row className="row">
                     <Col>
-                        <Form.Control type="password" placeholder="Enter password" />
+                        <Form.Control type="password" placeholder="Enter password" 
+                        onChange={e => setPassword(e.target.value)}/>
                     </Col>
                 </Row>
 
-                <h2>Equal Employment Opportunity (EEO)</h2>
-                <p>This section is intended to help companies comply with federal law and
+                <h2 className="eeo-h2"><p>Equal Employment Opportunity (EEO)</p></h2>
+                <p className="eeo-paragraph">This section is intended to help companies comply with federal law and
                     strengthen diversity recruiting efforts. Please select ‘prefer not to say’
                     in the (dropdown menu) if you do not wish to answer these questions. </p>
 
-                <Row>
+                <Row className="row">
                     <Col>
                         <Form.Label>Gender</Form.Label>
                         <Select
@@ -137,6 +136,86 @@ const SignupStudent = () =>{
                     </Col>
                 </Row>
 
+                <Row className="row">
+                    <Col>
+                        <Form.Label>Ethnicity (select best fit)</Form.Label>
+                        <Select
+                                placeholder="--"
+                                options={ethnicity} // set list of the data
+                                onChange={handleChangeEthnicity} // assign onChange function
+                                value={ethnicity.find(obj => obj.value === ethnicityValue)} // set selected value
+                                as={InputGroup.Prepend}
+                                variant="outline-secondary"
+                                id="input-group-dropdown1"
+                                className="dropdown"
+                            />
+                    </Col>
+                    <Col>
+                        <Form.Label>Veteran</Form.Label>
+                        <Select
+                                placeholder="--"
+                                options={veteran} // set list of the data
+                                onChange={handleChangeVeteran} // assign onChange function
+                                value={veteran.find(obj => obj.value === veteranValue)} // set selected value
+                                as={InputGroup.Prepend}
+                                variant="outline-secondary"
+                                id="input-group-dropdown1"
+                                className="dropdown"
+                            />
+                    </Col>
+                </Row>
+
+                <Row className="row">
+                    <Col>
+                        <Form.Label>Disability</Form.Label>
+                        <Select
+                                placeholder="--"
+                                options={disability} // set list of the data
+                                onChange={handleChangeDisability} // assign onChange function
+                                value={disability.find(obj => obj.value === disabilityValue)} // set selected value
+                                as={InputGroup.Prepend}
+                                variant="outline-secondary"
+                                id="input-group-dropdown1"
+                                className="dropdown"
+                            />
+                    </Col>
+                    <Col>
+                        <Form.Label>Are you a first generation college student?</Form.Label>
+                        <Select
+                                placeholder="--"
+                                options={firstgen} // set list of the data
+                                onChange={handleChangeFirstgen} // assign onChange function
+                                value={firstgen.find(obj => obj.value === firstgenValue)} // set selected value
+                                as={InputGroup.Prepend}
+                                variant="outline-secondary"
+                                id="input-group-dropdown1"
+                                className="dropdown"
+                            />
+                    </Col>
+                </Row>
+
+                <Row className="row">
+                    <Col>
+                        <Form.Label>Received Financial Aid?</Form.Label>
+                        <Select
+                                placeholder="--"
+                                options={fasfa} // set list of the data
+                                onChange={handleChangeFasfa} // assign onChange function
+                                value={fasfa.find(obj => obj.value === fasfaValue)} // set selected value
+                                as={InputGroup.Prepend}
+                                variant="outline-secondary"
+                                id="input-group-dropdown1"
+                                className="dropdown"
+                            />
+                    </Col>
+                    <Col>
+                        <Form.File id="formcheck-api-regular">
+                            <Form.File.Label>Upload Resume</Form.File.Label>
+                            <Form.File.Input />
+                        </Form.File>
+                    </Col>
+                </Row>
+
                 {/* <Form.Group controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group> */}
@@ -145,6 +224,8 @@ const SignupStudent = () =>{
                     Submit
                 </Button>
             </Form>
+
+            {firstName}
         </div>
     );
 }

@@ -6,44 +6,44 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
 
-const ProAccount = () =>{
+const ProfessorAccount = () =>{
     return(
         <div className="viewRecommends">
             <h1>Instructor Account</h1>
                 <Container>
                     <Row>
-                        <Col>Name:</Col>
+                        <Col>Name: John Doe</Col>
                     </Row>
 
                     {/* is this stored int the db */}
                     <Row>
-                        <Col>University Role:</Col>
+                        <Col>University Role: Professor</Col>
                     </Row>
 
                     <Row>
-                        <Col>University Name:</Col>
+                        <Col>University Name: Example University</Col>
                     </Row>
 
                     <Row>
-                        <Col>Location:</Col>
+                        <Col>Location: city</Col>
                     </Row>
 
                     <Row>
-                        <Col>Email:</Col>
+                        <Col>Email: johndoe@example.edu</Col>
                     </Row>
 
                     <Row>
-                        <Col>Password:</Col>
+                        <Col>Password: ••••••••••••••</Col>
                     </Row>
                 </Container>
 
                 <Form>
-                    <Button href="#" variant="outline-dark">Edit</Button>
-                    <Button href="/" variant="outline-dark">Delete</Button>
+                    <Button href="/edit-professor" variant="outline-dark">Edit</Button>
+                    <Button href="/delete" variant="outline-dark">Delete</Button>
                     <Button href="/viewrecommend" variant="outline-dark">View Recommedations</Button>
             </Form>
         </div>
     );
 }
 
-export default ProAccount;
+export default ProfessorAccount;

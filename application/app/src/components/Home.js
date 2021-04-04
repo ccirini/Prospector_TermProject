@@ -1,6 +1,8 @@
 import "./Home.css";
+import "./Design.css";
 import Button from 'react-bootstrap/Button'
-// import "./Design.css";
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 
 const Home = () =>{
@@ -12,10 +14,16 @@ const Home = () =>{
                 to those who dont.</p>
             </div>
 
-            <Button href="/signup-student" >Start Applying</Button>
-            <Button href="#" variant="outline-dark">Start Hiring</Button>
-
-            
+            <Container>
+                <Row>
+                    <div className="button-container">
+                        <Button href="/signup-student" className="btn-primary">Start Applying</Button>
+                    </div>
+                    <div className="button-container">
+                        <Button href="/signup-recruiter" className="btn-outline-light ">Start Hiring</Button>
+                    </div>
+                </Row>
+            </Container>
         </div>
     );
 }

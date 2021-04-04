@@ -1,8 +1,7 @@
-import bgimage from "./images/background-mountains.jpeg";
-import profilePicture from "./images/Franklin-pfp.jpg";
+import bgimage from "../../images/background-mountains.jpeg";
+import profilePicture from "../../images/zhuojunhe.png";
 import "./member-page.css";
-import Footer from "./components/Footer";
-
+import Footer from "../../components/Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -11,12 +10,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const name = "Franklin Arevalo";
-const city = "San Francisco, CA";
-const title = "Frontend Lead";
+const name = "Zhuojun He";
+const city = "San Francisco";
+const title = "Backend Support";
 const major = "Computer Science";
 
-const Franklin = () => {
+const George = () => {
   return (
     <div>
       <Jumbotron
@@ -43,13 +42,11 @@ const Franklin = () => {
         <hr></hr>
 
         <p className="bio">
-            I am a fourth-year student, when I am not typing away behind a computer I enjoy hiking, playing soccer, 
-            and investing. I consider myself someone that is open-minded, caring, and a food enthusiast. 
-            <br></br><br></br>
-            I initially got hooked into CS after taking a coding workshop, I always enjoyed problem solving and 
-            knew this would be a great field for me. As a computer science major, I hope to eventually utilize my 
-            ability to create sustainable solutions to help create a better future. Fun Fact I’m from El Salvador 
-            the smallest country in Central America. 🇸🇻
+        My name is ZhuoJun He. I am from China. I have stayed at the U.S. about 6 years. <br></br>
+        I play video game in my free time. Badminton with my friends. Also study and go to work. <br></br>
+        Thank you.
+          <br></br>
+          
         </p>
         <Footer footer="footer-member"/>
       </Container>
@@ -57,4 +54,4 @@ const Franklin = () => {
   );
 };
 
-export default Franklin;
+export default George;
