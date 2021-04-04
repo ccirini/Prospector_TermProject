@@ -32,11 +32,10 @@ const SignUpProfessor = () =>{
                     <Form.Control type="password" placeholder="Password" className="signup-professor-row"/>
                 </Row>
                 
-                 {/* double check about verifying password */}
-                 <Row>
+                <Row>
                     <Form.Control type="lname" placeholder="Verify-Password" className="signup-professor-row"/>
                 </Row>
-                <Button href="/prohome" className="signup-professor-btn">Sign Up</Button>
+                <Button href="/home-professor" className="signup-professor-btn">Sign Up</Button>
             </Form>
         </div>
     );
