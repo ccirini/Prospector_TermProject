@@ -1,5 +1,4 @@
 import "./Navbar.css";
-// import "./Design.css";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button'
@@ -9,7 +8,7 @@ const Navcontrol = () =>{
     return(
         <div>
         <Marquee 
-            text="CSC 648 Team 02 - This website is for educational purposes only." 
+            text="SFSU Software Engineering Project CSC 648-848, Spring 2021" 
             // hoverToStop={true}
             // loop={true}
             // leading={4}

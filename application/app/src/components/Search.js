@@ -61,7 +61,8 @@ const Search= () =>{
         if (selectedValue != "default" && searchValue == "default"){
             alert("Search bar is empty!");
         } else {
-            axios.get(`http://localhost:5000/search/${selectedValue}/text/${searchValue}`)
+            axios.get(`http://54.70.249.83:5000/search/${selectedValue}/text/${searchValue}`)
+            //axios.get(`http://localhost:5000/search/${selectedValue}/text/${searchValue}`)
             // axios.get(`http://localhost:5000/search/`)
             .then(res => {
                 setStudents(res.data);
@@ -91,13 +92,13 @@ const Search= () =>{
                             className="dropdown"
                         />
                     </Col>
-
+                    
                     <Col>
                         {/* Search bar */}
                         <FormControl aria-describedby="basic-addon1" placeholder="Search..."
                         className="search-bar" onChange={e => setSearchValue(e.target.value)}/>
                     </Col>
-
+                    <Col><Button type="submit" onClick={console.log('save')}>Get Notified</Button></Col>
                     <Col><Button type="submit" onClick={handleClick}>Search</Button></Col>
                 </Row>
             </Container>

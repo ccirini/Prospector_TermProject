@@ -4,10 +4,10 @@ import Form from 'react-bootstrap/Form'
 import "./Design.css";
 
 
-const SignUpPro = () =>{
+const EditProfessor = () =>{
     return(
-        <div className="signuppro">
-            <h1>Sign Up For Instructors</h1>
+        <div className="editprofessor">
+            <h1>Edit Account</h1>
             <Form>
             {/* double check about controlid */}
             <Form.Group controlId="formGroupFirstName">
@@ -34,10 +34,10 @@ const SignUpPro = () =>{
                 <Form.Group controlId="formGroupPassword">
                     <Form.Control type="lname" placeholder="Verify-Password" />
                 </Form.Group>
-                <Button href="/prohome" class="btn-primary">Sign Up</Button>
+                <Button href="/account-professor" class="btn-primary">Update</Button>
             </Form>
         </div>
     );
 }
 
-export default SignUpPro;
+export default EditProfessor;

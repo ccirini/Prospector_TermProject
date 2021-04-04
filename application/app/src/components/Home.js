@@ -20,7 +20,7 @@ const Home = () =>{
                         <Button href="/signup-student" className="btn-primary">Start Applying</Button>
                     </div>
                     <div className="button-container">
-                        <Button href="#" className="btn-outline-light ">Start Hiring</Button>
+                        <Button href="/signup-recruiter" className="btn-outline-light ">Start Hiring</Button>
                     </div>
                 </Row>
             </Container>
