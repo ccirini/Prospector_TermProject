@@ -98,8 +98,8 @@ const Search= () =>{
                         <FormControl aria-describedby="basic-addon1" placeholder="Search..."
                         className="search-bar" onChange={e => setSearchValue(e.target.value)}/>
                     </Col>
-                    <Col style={{ padding-left: 0 }}><Button type="submit" onClick={console.log('save')}>Get Notified</Button></Col>
-                    <Col style={{ padding-left: 0}}><Button type="submit" onClick={handleClick}>Search</Button></Col>
+                    <Col><Button type="submit" onClick={console.log('save')}>Get Notified</Button></Col>
+                    <Col><Button type="submit" onClick={handleClick}>Search</Button></Col>
                 </Row>
             </Container>
 
