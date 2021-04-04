@@ -19,6 +19,12 @@ const StudentAccount = function(StudentAccount) {
     this.firstGeneration = StudentAccount.firstGeneration; 
 }
 
+// cross check student info with recruiter saved search table 
+// if something matches
+// send email to both student and recrutier 
+
+// Nodemailer module 
+
 // create new Student account 
 StudentAccount.create = (newStudentAccount, result) => {
     sql.query("INSERT INTO student SET ?", newStudentAccount, (err, res) => {
