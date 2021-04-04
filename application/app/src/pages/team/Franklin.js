@@ -1,9 +1,8 @@
-import { logDOM } from "@testing-library/react";
-
-import bgimage from "./images/background-mountains.jpeg";
-import profilePicture from "./images/Cameron-pfp.jpeg";
+import bgimage from "../../images/background-mountains.jpeg";
+import profilePicture from "../../images/Franklin-pfp.jpg";
 import "./member-page.css";
-import Footer from "./components/Footer";
+import Footer from "../../components/Footer";
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -12,12 +11,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const name = "Cameron";
-const city = "San Mateo";
-const title = "Team Lead";
-const major = "";
+const name = "Franklin Arevalo";
+const city = "San Francisco, CA";
+const title = "Frontend Lead";
+const major = "Computer Science";
 
-const Cameron = () => {
+const Franklin = () => {
   return (
     <div>
       <Jumbotron
@@ -44,9 +43,13 @@ const Cameron = () => {
         <hr></hr>
 
         <p className="bio">
-          I am a 5th student year CS major at SFSU. I started my CS journey in highschool, learning through online courses for fun and eventually taking all the classes my school had to offer in my Junior and Senior years.<br></br>
-          <br></br>
-          In my free time I enjoy working on music and cooking!
+            I am a fourth-year student, when I am not typing away behind a computer I enjoy hiking, playing soccer, 
+            and investing. I consider myself someone that is open-minded, caring, and a food enthusiast. 
+            <br></br><br></br>
+            I initially got hooked into CS after taking a coding workshop, I always enjoyed problem solving and 
+            knew this would be a great field for me. As a computer science major, I hope to eventually utilize my 
+            ability to create sustainable solutions to help create a better future. Fun Fact I’m from El Salvador 
+            the smallest country in Central America. 🇸🇻
         </p>
         <Footer footer="footer-member"/>
       </Container>
@@ -54,4 +57,4 @@ const Cameron = () => {
   );
 };
 
-export default Cameron;
+export default Franklin;

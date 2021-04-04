@@ -15,19 +15,25 @@ Nav.Link {
     color: #463077 !important;
 }
 
-.button-container {
-    padding: 10px;
+.navbar.navbar-light.bg-light{
+    background-color: #FFFF!important;
+ }
+
+.text-color {
+    color: #463077 !important;
 }
 
-.login-button {
-    background-color: #463077;
-    border: 2px solid #463077;
-    color: white;
-}
-
-.signup-button {
-    border: 2px solid #463077;
-    background-color: white;
+Navbar {
     color: #463077;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
 }
 
+.navbar-brand {
+    color: #463077 !important;
+    font-size: 45px;
+}

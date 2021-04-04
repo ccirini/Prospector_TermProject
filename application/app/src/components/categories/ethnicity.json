@@ -1,0 +1,26 @@
+[
+    {
+        "value": "default",
+        "label": "--"
+    },
+    {
+        "value": "black",
+        "label": "black"
+    },
+    {
+        "value": "white",
+        "label": "white"
+    },
+    {
+        "value": "Hispanic/Latino",
+        "label": "Hispanic/Latino"
+    },
+    {
+        "value": "Other",
+        "label": "Other"
+    },
+    {
+        "value": "Prefer not to say",
+        "label": "Prefer not to say"
+    }
+]

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 
-import franklinPic from "./images/Franklin-pfp.jpg";
-import cameronPic from "./images/Cameron-pfp.jpeg";
-import faisaPic from "./images/Faisa-pfp.jpg";
-import tonyPic from "./images/profile_pic_Tony.jpg";
-import georgePic from "./images/zhuojunhe.png";
+import franklinPic from "../images/Franklin-pfp.jpg";
+import cameronPic from "../images/Cameron-pfp.jpeg";
+import faisaPic from "../images/Faisa-pfp.jpg";
+import tonyPic from "../images/profile_pic_Tony.jpg";
+import georgePic from "../images/zhuojunhe.png";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "react-bootstrap/Image";

@@ -11,12 +11,12 @@ import ProAccount from "./components/Proaccount";
 import NewRecommend from "./components/Newrecommend";
 import Search from "./components/Search";
 import Signup from "./components/Signup";
-import AboutMe from "./AboutMe";
-import Cameron from "./Cameron";
-import Fasia from "./Fasia";
-import Franklin from "./Franklin";
-import George from "./George";
-import Tony from "./Tony";
+import AboutMe from "./pages/AboutMe";
+import Cameron from "./pages/team/Cameron";
+import Fasia from "./pages/team/Fasia";
+import Franklin from "./pages/team/Franklin";
+import George from "./pages/team/George";
+import Tony from "./pages/team/Tony";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
