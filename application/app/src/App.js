@@ -17,8 +17,11 @@ import StudentAccount from "./pages/student/Account-Student";
 import ProfessorAccount from "./pages/professor/Account-Professor";
 import RecruiterAccount from "./pages/recruiter/Account-Recruiter";
 
-import ViewRecommends from "./pages/professor/ViewRecommend";
 import EditProfessor from "./pages/professor/Edit-Professor";
+import EditStudent from "./pages/student/Edit-Student";
+import EditRecruiter from "./pages/recruiter/Edit-Recruiter";
+
+import ViewRecommends from "./pages/professor/ViewRecommend";
 import NewRecommend from "./pages/professor/Newrecommend";
 import Delete from "./components/Delete";
 
@@ -56,7 +59,10 @@ function App() {
             <Route path="/newrecommend">< NewRecommend/></Route>
             <Route path="/home-recruiter"><HomeRecruiter /></Route>
             <Route path="/delete"><Delete /></Route>
+            <Route path="/edit-student"><EditStudent /></Route>
             <Route path="/edit-professor"><EditProfessor /></Route>
+            <Route path="/edit-recruiter"><EditRecruiter /></Route>
+            <Route path="/delete"><Delete /></Route>
             
             <Route exact path="/aboutme"><AboutMe /></Route>
             <Route path="/aboutme/cameron"><Cameron /></Route>

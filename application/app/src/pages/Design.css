@@ -165,3 +165,18 @@
     font-size: large;
     font-weight: bolder;
 }
+
+.edit-row{
+    
+    margin: 0px 100px 0px 0px;
+    padding: 7px 10px;
+}
+
+.edit-professor-btn{
+    color:#ffff;
+    background-color:#463077;
+    border-color:#463077; 
+    margin-left: 400px;
+    font-size: large;
+    font-weight: bolder;
+}
