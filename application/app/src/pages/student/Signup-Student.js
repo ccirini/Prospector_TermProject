@@ -17,8 +17,8 @@ import disability from "../../components/categories/disability.json";
 import firstgen from "../../components/categories/firstgen.json";
 import fasfa from "../../components/categories/fasfa.json";
 
-// const API_BASE = 'http://54.70.249.83:5000'
-const API_BASE = 'http://localhost:5000'
+const API_BASE = 'http://54.70.249.83:5000'
+// const API_BASE = 'http://localhost:5000'
 
 const SignupStudent = () =>{
 
@@ -87,7 +87,7 @@ const SignupStudent = () =>{
         <div className="signup-student">
             <Form className="signup-student-form">
             <h1 className="signup-student-h1"><b>Sign Up</b></h1>
-                <Row className="row">
+                <Row className="signup-student-row">
                     <Col>
                         <Form.Control type="text" placeholder="Enter First Name" 
                         onChange={e => setFirstName(e.target.value)} />
@@ -98,21 +98,21 @@ const SignupStudent = () =>{
                     </Col>
                 </Row>
 
-                <Row className="row">
+                <Row className="signup-student-row">
                     <Col>
                         <Form.Control type="number" placeholder="Enter student id" 
                         onChange={e => setStudentId(e.target.value)}/>
                     </Col>
                 </Row>
 
-                <Row className="row">
+                <Row className="signup-student-row">
                     <Col>
                         <Form.Control type="text" placeholder="Enter major" 
                         onChange={e => setMajor(e.target.value)}/>
                     </Col>
                 </Row>
 
-                <Row className="row">
+                <Row className="signup-student-row">
                     <Col>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Control type="email" placeholder="Enter email" 
@@ -125,7 +125,7 @@ const SignupStudent = () =>{
                     </Col>
                 </Row>
 
-                <Row className="row">
+                <Row className="signup-student-row">
                     <Col>
                         <Form.Control type="password" placeholder="Enter password" 
                         onChange={e => setPassword(e.target.value)}/>
@@ -137,7 +137,7 @@ const SignupStudent = () =>{
                     strengthen diversity recruiting efforts. Please select ‘prefer not to say’
                     in the (dropdown menu) if you do not wish to answer these questions. </p>
 
-                <Row className="row">
+                <Row className="signup-student-row">
                     <Col>
                         <Form.Label>Gender</Form.Label>
                         <Select
@@ -166,7 +166,7 @@ const SignupStudent = () =>{
                     </Col>
                 </Row>
 
-                <Row className="row">
+                <Row className="signup-student-row">
                     <Col>
                         <Form.Label>Ethnicity (select best fit)</Form.Label>
                         <Select
@@ -195,7 +195,7 @@ const SignupStudent = () =>{
                     </Col>
                 </Row>
 
-                <Row className="row">
+                <Row className="signup-student-row">
                     <Col>
                         <Form.Label>Disability</Form.Label>
                         <Select
@@ -224,7 +224,7 @@ const SignupStudent = () =>{
                     </Col>
                 </Row>
 
-                <Row className="row">
+                <Row className="signup-student-row">
                     <Col>
                         <Form.Label>Received Financial Aid?</Form.Label>
                         <Select
@@ -250,7 +250,7 @@ const SignupStudent = () =>{
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group> */}
 
-                <Button href="/home-student" variant="primary" type="submit" onSubmit={handleClick}>
+                <Button href="/home-student" variant="primary"  className="signup-student-btn" type="submit" onSubmit={handleClick}>
                     Submit
                 </Button>
             </Form>

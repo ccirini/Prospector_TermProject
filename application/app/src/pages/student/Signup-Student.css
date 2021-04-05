@@ -1,6 +1,10 @@
 .signup-student {
-    padding-left: 20px;
-    padding-right: 20px;
+    border: 2px solid #463077;
+    border-radius: 25px;
+    padding: 50px;
+    width: 600px;
+    height: 1200px;
+    margin: 0 auto; 
 }
 
 .signup-student-h1 {
@@ -13,6 +17,7 @@
 
 .eeo-h2 {
     color: #463077;
+    margin-top: 70px;
 }
 
 .eeo-paragraph {
@@ -20,6 +25,16 @@
     padding-right: 10%;
 }
 
-.row {
+.signup-student-row {
+    margin: 0px;
+    padding: 7px 35px;
+    font: 700 70% sans-serif;
+}
 
+.signup-student-btn {
+    color:#ffff;
+    background-color:#463077;
+    border-color:#463077;
+    margin-top: 15px;
+    font-weight: bolder;
 }
