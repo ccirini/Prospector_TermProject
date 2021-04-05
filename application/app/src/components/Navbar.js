@@ -1,8 +1,8 @@
 import "./Navbar.css";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import Button from 'react-bootstrap/Button'
 import Marquee from 'react-text-marquee'
+import Button from 'react-bootstrap/Button'
 
 const Navcontrol = () =>{
     return(
@@ -21,7 +21,7 @@ const Navcontrol = () =>{
             <Nav className="ml-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/aboutme">About Us</Nav.Link>
-                <Nav.Link href="/search">Search</Nav.Link>
+                <Nav.Link href="/home-recruiter">Search</Nav.Link>
             </Nav>
 
             <div className="button-container">

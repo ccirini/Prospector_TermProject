@@ -1,4 +1,4 @@
-import "./Search.css";
+import "./Home-Recruiter.css";
 import React, {useState, useEffect} from 'react';
 import InputGroup from 'react-bootstrap/InputGroup'
 import Container from 'react-bootstrap/Container'
@@ -8,8 +8,26 @@ import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
 import Select from 'react-select';
 import axios from 'axios';
+// import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer'
+import { Document, Page } from 'react-pdf'
 
-const Search= () =>{
+const MyDoc = () => (
+  <Document>
+    <Page>
+      // My document data
+    </Page>
+  </Document>
+)
+
+
+const HomeRecruiter = () =>{
+    // const [numPages, setNumPages] = useState(null);
+    // const [pageNumber, setPageNumber] = useState(1);
+
+    // function onDocumentLoadSuccess({ numPages }) {
+    //     setNumPages(numPages);
+    // }
+
     const data = [
         {
             value: "default",
@@ -17,27 +35,31 @@ const Search= () =>{
         },
         {
             value: "major",
-            label: "major"
+            label: "Major"
         },
         {
             value: "gender",
-            label: "gender"
+            label: "Gender"
         },
         {
             value: "ethnicity",
-            label: "ethnicity"
+            label: "Ethnicity"
         },
         {
-            value: "veteran",
-            label: "veteran"
+            value: "veteranStatus",
+            label: "Veteran"
         },
         {
-            value: "option5",
-            label: "option5"
+            value: "disabilityStatus",
+            label: "Disability"
         },
         {
-            value: "option6",
-            label: "option6"
+            value: "financialAidStatus",
+            label: "Financial Aid"
+        },
+        {
+            value: "firstGeneration",
+            label: "First Generation"
         }
     ];
 
@@ -61,9 +83,8 @@ const Search= () =>{
         if (selectedValue != "default" && searchValue == "default"){
             alert("Search bar is empty!");
         } else {
-            axios.get(`http://54.70.249.83:5000/search/${selectedValue}/text/${searchValue}`)
-            //axios.get(`http://localhost:5000/search/${selectedValue}/text/${searchValue}`)
-            // axios.get(`http://localhost:5000/search/`)
+            // axios.get(`http://54.70.249.83:5000/search/${selectedValue}/text/${searchValue}`)
+            axios.get(`http://localhost:5000/search/${selectedValue}/text/${searchValue}`)
             .then(res => {
                 setStudents(res.data);
             })
@@ -103,16 +124,31 @@ const Search= () =>{
                 </Row>
             </Container>
 
+            {/* 
+            test values to show print
             <h1>{selectedValue}</h1>
-            <h1>{searchValue}</h1>
+            <h1>{searchValue}</h1> */}
 
             {active && <div style={{ marginTop: 20, lineHeight: '25px' }}>
-                <ul>
-                    {students.map(student => <div key={student.userId}>{student.firstName} {student.lastName} {student.major}</div>)}
-                </ul>
+                {students.map(student => 
+                <Container key={student.userId} className="outter-result-container">
+                    <Container className="result-container">
+                        <Row className="row-1">
+                            <p clasName="student-name"><b>{student.firstName} {student.lastName} </b></p>
+                        </Row>
+                        <Row className="row-1">
+                            <p className="learn-text">Learn more about this student</p>
+                        </Row>
+                        <Row className="row-2">
+                            <Col><p className="student-major"><b>Major -</b> {student.major}</p></Col>
+                            <Col><Button href="./pdf">Download Resume</Button></Col>
+                        </Row>
+                    </Container>
+                </Container>)}
             </div>}
+
             </div>
     );
 }
 
-export default Search;
+export default HomeRecruiter;
