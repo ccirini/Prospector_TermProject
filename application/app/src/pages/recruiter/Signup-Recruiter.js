@@ -33,7 +33,7 @@ const SignUpRecruiter = () =>{
                 <Row>
                     <Form.Control type="lname" placeholder="Verify-Password" className="signup-professor-row"/>
                 </Row>
-                <Button href="#" className="signup-professor-btn">Sign Up</Button>
+                <Button href="/home-recruiter" className="signup-professor-btn">Sign Up</Button>
             </Form>
         </div>
     );
