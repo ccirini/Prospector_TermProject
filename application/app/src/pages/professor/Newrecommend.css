@@ -1,0 +1,48 @@
+.newRecommend-form{
+    margin: 10px 10px 10px 10px;
+    color: #463077;
+    font-size: medium;
+    font-weight: bold; 
+}
+
+.newRecommend-h1{
+    color: #463077;
+    margin: auto;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+}
+
+.newRecommend-container{
+    border: 2px solid #C99700;
+    border-radius: 25px;
+    padding: 50px;
+    width: 1100px;
+    height: 880px;
+    margin: 10px 0px 40px 150px;
+}
+
+.newRecommend-rating{
+    font-size: xx-large;
+}
+
+.newRecommend-font{
+    margin-inline-start: 0pt;
+    padding: 0px 690px 0px 0px;
+    font-size: 20px;
+    font-weight: 400;
+
+}
+
+.newRecommend-btn{
+    color:#ffff;
+    background-color:#463077;
+    border-color:#463077;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 20px 10px 20px; 
+    font-size: large;
+    font-weight: bolder;
+}
+.newRecommend-rating-font{
+    font-size: 20px;
+    font-weight: 400;
+}
