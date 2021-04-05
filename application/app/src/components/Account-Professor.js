@@ -1,3 +1,4 @@
+import "./Design.css"
 import {Link} from "react-router-dom";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -8,40 +9,38 @@ import Form from 'react-bootstrap/Form'
 
 const ProfessorAccount = () =>{
     return(
-        <div className="viewRecommends">
-            <h1>Instructor Account</h1>
-                <Container>
-                    <Row>
+        <div className="account">
+            <h1 className="account-h1">Instructor Account</h1>
+                <Container className="account-container">
+                    <Row className="account-row">
                         <Col>Name: John Doe</Col>
                     </Row>
 
-                    {/* is this stored int the db */}
-                    <Row>
+                    <Row className="account-row">
                         <Col>University Role: Professor</Col>
                     </Row>
 
-                    <Row>
+                    <Row className="account-row">
                         <Col>University Name: Example University</Col>
                     </Row>
 
-                    <Row>
+                    <Row className="account-row">
                         <Col>Location: city</Col>
                     </Row>
 
-                    <Row>
+                    <Row className="account-row">
                         <Col>Email: johndoe@example.edu</Col>
                     </Row>
 
-                    <Row>
+                    <Row className="account-row">
                         <Col>Password: ••••••••••••••</Col>
                     </Row>
+            
+                    <Button href="/edit-professor" variant="outline-dark" className="account-edit-delete">Edit</Button>
+                    <Button href="/delete" variant="outline-dark" className="account-edit-delete">Delete</Button>
+                    
+                    <Button href="/viewrecommend" variant="outline-dark" className="account-professor-btn">View Recommedations</Button>
                 </Container>
-
-                <Form>
-                    <Button href="/edit-professor" variant="outline-dark">Edit</Button>
-                    <Button href="/delete" variant="outline-dark">Delete</Button>
-                    <Button href="/viewrecommend" variant="outline-dark">View Recommedations</Button>
-            </Form>
         </div>
     );
 }

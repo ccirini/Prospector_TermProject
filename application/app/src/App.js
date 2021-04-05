@@ -6,8 +6,10 @@ import Login from "./components/Login";
 import SignupStudent from "./components/Signup-Student";
 import SignUpProfessor from "./components/Signup-Professor";
 import SignUpRecruiter from "./components/Signup-Recruiter";
+import HomeStudent from "./components/Home-Student";
 import HomeProfessor from "./components/Home-Professor";
 import ViewRecommends from "./components/ViewRecommend";
+import StudentAccount from "./components/Account-Student";
 import ProfessorAccount from "./components/Account-Professor";
 import RecruiterAccount from "./components/Account-Recruiter";
 import Delete from "./components/Delete";
@@ -40,8 +42,10 @@ function App() {
             <Route path="/signup-student"><SignupStudent /></Route>
             <Route path="/signup-professor"><SignUpProfessor /></Route>
             <Route path="/signup-recruiter"><SignUpRecruiter /></Route>
+            <Route path="/home-student"><HomeStudent /></Route>
             <Route path="/home-professor"><HomeProfessor /></Route>
             <Route path="/viewrecommend"><ViewRecommends /></Route>
+            <Route path="/account-student"><StudentAccount/></Route>
             <Route path="/account-professor"><ProfessorAccount /></Route>
             <Route path="/account-recruiter"><RecruiterAccount /></Route>
             <Route path="/newrecommend">< NewRecommend/></Route>
