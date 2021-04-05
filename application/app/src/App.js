@@ -13,7 +13,9 @@ import StudentAccount from "./components/Account-Student";
 import ProfessorAccount from "./components/Account-Professor";
 import RecruiterAccount from "./components/Account-Recruiter";
 import Delete from "./components/Delete";
+import EditStudent from "./components/Edit-Student";
 import EditProfessor from "./components/Edit-Professor";
+import EditRecruiter from "./components/Edit-Recruiter";
 import NewRecommend from "./components/Newrecommend";
 import Search from "./components/Search";
 import Signup from "./components/Signup";
@@ -50,8 +52,10 @@ function App() {
             <Route path="/account-recruiter"><RecruiterAccount /></Route>
             <Route path="/newrecommend">< NewRecommend/></Route>
             <Route path="/search"><Search /></Route>
-            <Route path="/delete"><Delete /></Route>
+            <Route path="/edit-student"><EditStudent/></Route>
             <Route path="/edit-professor"><EditProfessor /></Route>
+            <Route path="/edit-recruiter"><EditRecruiter /></Route>
+            <Route path="/delete"><Delete /></Route>
             
 
             <Route exact path="/aboutme"><AboutMe /></Route>

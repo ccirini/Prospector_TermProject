@@ -29,14 +29,14 @@ const RecruiterAccount = () =>{
                     </Row>
 
                     <Row className="account-row">
-                        <Col>Email: johndoe@example.edu</Col>
+                        <Col>Email: johndoe@example.com</Col>
                     </Row>
 
                     <Row className="account-row">
                         <Col>Password: ••••••••••••••</Col>
                     </Row>
 
-                    <Button href="/edit" variant="outline-dark"  className="account-edit-delete">Edit</Button>
+                    <Button href="/edit-recruiter" variant="outline-dark"  className="account-edit-delete">Edit</Button>
                     <Button href="/delete" variant="outline-dark" className="account-edit-delete">Delete</Button>
                     
                     <Button href="/search" variant="outline-dark" className="account-student-btn">Create Post</Button>

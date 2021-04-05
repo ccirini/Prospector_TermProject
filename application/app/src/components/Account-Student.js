@@ -36,7 +36,7 @@ const StudentAccount = () =>{
                     <Col>Password: ••••••••••••••</Col>
                 </Row>
 
-                <Button href="/edit" variant="outline-dark" className="account-edit-delete">Edit</Button>
+                <Button href="/edit-student" variant="outline-dark" className="account-edit-delete">Edit</Button>
                 <Button href="/delete" variant="outline-dark" className="account-edit-delete">Delete</Button>
 
                 <Button href="#" variant="outline-dark" className="account-student-btn">Upload Resume</Button>
