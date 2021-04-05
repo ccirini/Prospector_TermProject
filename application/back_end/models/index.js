@@ -4,8 +4,6 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.dbNAME, dbConfig.dbUSER, dbConfig.dbPASS, {
   host: dbConfig.dbHOST,
   dialect: dbConfig.dialect,
-  operatorsAliases: false,
-
   pool: {
     max: dbConfig.pool.max,
     min: dbConfig.pool.min,
