@@ -1,20 +1,30 @@
-/* Search Page stylying */
+.page-title {
+    text-align: left;
+}
+
 .outter-result-container {
     padding: 20px;
+    width: 75%;
 }
 
 .result-container {
     border: 1px solid #C99700; 
     border-radius: 10px;
-    /* margin: 0; */
+    padding: 10px;
+    margin: 0;
+}
+
+.row-1 {
+    text-align: left;
+    font-size: 38px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .row-2 {
-    background: #F1F0F0;
-    border-radius: 0px 0px 10px 10px;
-    border: 1px solid #C99700;
+    border-top: 2px solid #F1F0F0;
     margin: 0;
-    box-sizing: border-box;
+    left: 0;
     text-align: left;
 }
 
@@ -29,4 +39,5 @@
 
 .student-major {
     color: #463077;
+    font-size: 16px;
 }

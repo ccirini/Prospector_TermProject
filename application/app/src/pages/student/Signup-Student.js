@@ -5,17 +5,17 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import InputGroup from 'react-bootstrap/InputGroup'
 
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 
-import gender from "./categories/gender.json";
-import lgbtq from "./categories/lgbtq.json";
-import ethnicity from "./categories/ethnicity.json";
-import veteran from "./categories/veteran.json";
-import disability from "./categories/disability.json";
-import firstgen from "./categories/firstgen.json";
-import fasfa from "./categories/fasfa.json";
+import gender from "../../components/categories/gender.json";
+import lgbtq from "../../components/categories/lgbtq.json";
+import ethnicity from "../../components/categories/ethnicity.json";
+import veteran from "../../components/categories/veteran.json";
+import disability from "../../components/categories/disability.json";
+import firstgen from "../../components/categories/firstgen.json";
+import fasfa from "../../components/categories/fasfa.json";
 
 // const API_BASE = 'http://54.70.249.83:5000'
 const API_BASE = 'http://localhost:5000'
@@ -250,7 +250,7 @@ const SignupStudent = () =>{
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group> */}
 
-                <Button href="home-recruiter" variant="primary" type="submit" onSubmit={handleClick}>
+                <Button href="/home-student" variant="primary" type="submit" onSubmit={handleClick}>
                     Submit
                 </Button>
             </Form>

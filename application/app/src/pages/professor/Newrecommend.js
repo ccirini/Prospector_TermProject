@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
@@ -7,7 +6,7 @@ import Col from 'react-bootstrap/Col'
 import React, { useState } from 'react'
 import ReactRating from 'react-rate-thing'
 
-import "./Design.css";
+import "../Design.css";
 
 const NewRecommend = () =>{
     const [rate, selectRate] = useState(0);

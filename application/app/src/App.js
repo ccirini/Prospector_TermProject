@@ -1,22 +1,27 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Login from "./components/Login";
-import SignupStudent from "./components/Signup-Student";
-import SignUpProfessor from "./components/Signup-Professor";
-import SignUpRecruiter from "./components/Signup-Recruiter";
-import HomeStudent from "./components/Home-Student";
-import HomeProfessor from "./components/Home-Professor";
-import ViewRecommends from "./components/ViewRecommend";
-import StudentAccount from "./components/Account-Student";
-import ProfessorAccount from "./components/Account-Professor";
-import RecruiterAccount from "./components/Account-Recruiter";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+
+import SignupStudent from "./pages/student/Signup-Student";
+import SignUpProfessor from "./pages/professor/Signup-Professor";
+import SignUpRecruiter from "./pages/recruiter/Signup-Recruiter";
+
+import HomeStudent from "./pages/student/Home-Student";
+import HomeProfessor from "./pages/professor/Home-Professor";
+import HomeRecruiter from "./pages/recruiter/Home-Recruiter";
+
+import StudentAccount from "./pages/student/Account-Student";
+import ProfessorAccount from "./pages/professor/Account-Professor";
+import RecruiterAccount from "./pages/recruiter/Account-Recruiter";
+
+import ViewRecommends from "./pages/professor/ViewRecommend";
+import EditProfessor from "./pages/professor/Edit-Professor";
+import NewRecommend from "./pages/professor/Newrecommend";
 import Delete from "./components/Delete";
-import EditProfessor from "./components/Edit-Professor";
-import NewRecommend from "./components/Newrecommend";
-import HomeRecruiter from "./components/Home-Recruiter";
-import Signup from "./components/Signup";
+
 import AboutMe from "./pages/AboutMe";
 import Cameron from "./pages/team/Cameron";
 import Fasia from "./pages/team/Fasia";

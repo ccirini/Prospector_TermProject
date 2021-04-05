@@ -1,6 +1,4 @@
-import "./Design.css"
-import {Link} from "react-router-dom";
-
+import "../Design.css"
 
 const HomeStudent = () =>{
     return(

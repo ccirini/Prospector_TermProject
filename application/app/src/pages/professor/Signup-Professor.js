@@ -1,15 +1,15 @@
-import "./Design.css"
-import {Link} from "react-router-dom";
+import "../Design.css"
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-const SignUpRecruiter = () =>{
+
+const SignUpProfessor = () =>{
     return(
         <div className="signup-professor">
             <Form className="signup-professor-form">
-                <h1 className="signup-professor-h1"><b>Sign Up As A Recruiter</b></h1>
+                <h1 className="signup-professor-h1"><b>Sign Up As An Instructor</b></h1>
                 <Row>
                     <Col>
                         <Form.Control type="text" placeholder="First Name" className="signup-professor-row"/>
@@ -20,7 +20,7 @@ const SignUpRecruiter = () =>{
                 </Row>
 
                 <Row>
-                    <Form.Control type="uniName" placeholder="Company Name" className="signup-professor-row"/>
+                    <Form.Control type="uniName" placeholder="University Name" className="signup-professor-row"/>
                 </Row>
                 
                 <Row>
@@ -34,10 +34,10 @@ const SignUpRecruiter = () =>{
                 <Row>
                     <Form.Control type="lname" placeholder="Verify-Password" className="signup-professor-row"/>
                 </Row>
-                <Button href="#" className="signup-professor-btn">Sign Up</Button>
+                <Button href="/home-professor" className="signup-professor-btn">Sign Up</Button>
             </Form>
         </div>
     );
 }
 
-export default SignUpRecruiter;
+export default SignUpProfessor;

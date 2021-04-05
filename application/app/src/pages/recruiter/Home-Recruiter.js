@@ -1,32 +1,21 @@
 import "./Home-Recruiter.css";
-import React, {useState, useEffect} from 'react';
+import "../Design.css";
+import React, { useState } from 'react'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
-import Select from 'react-select';
-import axios from 'axios';
+import Select from 'react-select'
+import axios from 'axios'
 // import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer'
 import { Document, Page } from 'react-pdf'
 
-const MyDoc = () => (
-  <Document>
-    <Page>
-      // My document data
-    </Page>
-  </Document>
-)
-
+// const API_BASE = 'http://54.70.249.83:5000'
+const API_BASE = 'http://localhost:5000'
 
 const HomeRecruiter = () =>{
-    // const [numPages, setNumPages] = useState(null);
-    // const [pageNumber, setPageNumber] = useState(1);
-
-    // function onDocumentLoadSuccess({ numPages }) {
-    //     setNumPages(numPages);
-    // }
 
     const data = [
         {
@@ -83,8 +72,7 @@ const HomeRecruiter = () =>{
         if (selectedValue != "default" && searchValue == "default"){
             alert("Search bar is empty!");
         } else {
-            // axios.get(`http://54.70.249.83:5000/search/${selectedValue}/text/${searchValue}`)
-            axios.get(`http://localhost:5000/search/${selectedValue}/text/${searchValue}`)
+            axios.get(`${API_BASE}/search/${selectedValue}/text/${searchValue}`)
             .then(res => {
                 setStudents(res.data);
             })
@@ -94,12 +82,10 @@ const HomeRecruiter = () =>{
         }
     }
 
-
-
     return (
         <div className="search">
-            <h1>Matches</h1>
             <Container>
+                <h1 className="page-title">Search</h1>
                 <Row>
                     <Col>
                         <Select
@@ -119,8 +105,14 @@ const HomeRecruiter = () =>{
                         <FormControl aria-describedby="basic-addon1" placeholder="Search..."
                         className="search-bar" onChange={e => setSearchValue(e.target.value)}/>
                     </Col>
-                    <Col><Button type="submit" onClick={console.log('save')}>Get Notified</Button></Col>
-                    <Col><Button type="submit" onClick={handleClick}>Search</Button></Col>
+
+                    <div className="button-container">
+                    <   Button type="submit" onClick={console.log('save')}>Get Notified</Button>
+                    </div>
+
+                    <div className="button-container">
+                        <Button type="submit" className="btn-outline-light" onClick={handleClick}>Search</Button>
+                    </div>
                 </Row>
             </Container>
 
@@ -133,16 +125,14 @@ const HomeRecruiter = () =>{
                 {students.map(student => 
                 <Container key={student.userId} className="outter-result-container">
                     <Container className="result-container">
-                        <Row className="row-1">
+                        <div className="row-1">
                             <p clasName="student-name"><b>{student.firstName} {student.lastName} </b></p>
-                        </Row>
-                        <Row className="row-1">
                             <p className="learn-text">Learn more about this student</p>
-                        </Row>
-                        <Row className="row-2">
-                            <Col><p className="student-major"><b>Major -</b> {student.major}</p></Col>
-                            <Col><Button href="./pdf">Download Resume</Button></Col>
-                        </Row>
+                        </div>
+                        <div className="row-2">
+                            <p className="student-major"><b>Major -</b> {student.major}</p>
+                            <Button href="./pdf">Download Resume</Button>
+                        </div>
                     </Container>
                 </Container>)}
             </div>}
