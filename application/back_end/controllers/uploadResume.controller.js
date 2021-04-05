@@ -3,9 +3,9 @@ const fs = require("fs");
 const db = require("../models");
 const Image = db.images;
 
-const uploadFiles = async (req, res) => {
+const uploadFiles = (req, res) => {
   try {
-    console.log(req.file);
+    // console.log(req.file);
 
     if (req.file == undefined) {
       return res.send(`You must select a file.`);
@@ -27,7 +27,7 @@ const uploadFiles = async (req, res) => {
       return res.send(`File has been uploaded.`);
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.send(`Error when trying upload images: ${error}`);
   }
 };

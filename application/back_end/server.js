@@ -21,10 +21,10 @@ global.__basedir = __dirname;
 
 app.use(express.urlencoded({ extended: true }));
 
-db.sequelize.sync();
-// db.sequelize.sync({ force: true }).then(() => {
-//   console.log("Drop and re-sync db.");
-// });
+// db.sequelize.sync();
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and re-sync db.");
+});
 
 require('./routes/SignIn.routes.js')(app);
 require('./routes/SignUp.routes')(app);
