@@ -7,6 +7,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 
 import React, {useState, useEffect} from 'react';
 import Select from 'react-select';
+import axios from 'axios';
 
 import gender from "./categories/gender.json";
 import lgbtq from "./categories/lgbtq.json";
@@ -16,13 +17,18 @@ import disability from "./categories/disability.json";
 import firstgen from "./categories/firstgen.json";
 import fasfa from "./categories/fasfa.json";
 
+// const API_BASE = 'http://54.70.249.83:5000'
+const API_BASE = 'http://localhost:5000'
+
 const SignupStudent = () =>{
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [studentId, setStudentId] = useState('');
+    const [major, setMajor] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [resume, setResume] = useState('');
 
     const [genderValue, setGenderValue] = useState('default');
     const [lgbtqValue, setLgbtqValue] = useState('default');
@@ -32,32 +38,49 @@ const SignupStudent = () =>{
     const [firstgenValue, setFirstgenValue] = useState('default');
     const [fasfaValue, setFasfaValue] = useState('default');
 
-    const handleChangeGender = e => {
-        setGenderValue(e.value);
+    const handleChangeGender = e => { setGenderValue(e.value); }
+    const handleChangeLgbtq = e => { setLgbtqValue(e.value); }
+    const handleChangeEthnicity = e => { setEthnicityValue(e.value); }
+    const handleChangeVeteran = e => { setVeteranValue(e.value); }
+    const handleChangeDisability= e => { setDisabilityValue(e.value); }
+    const handleChangeFirstgen= e => { setFirstgenValue(e.value); }
+    const handleChangeFasfa = e => { setFasfaValue(e.value); }
+
+    function handleUpload(e) {
+        setResume(e.value);
+
+        axios.post(`${API_BASE}/upload`, {
+            studentSFSUId: {studentId}, 
+            data: {resume}
+        })
+        .then(function (response) {
+            console.log(response);
+        })
     }
 
-    const handleChangeLgbtq = e => {
-        setLgbtqValue(e.value);
-    }
+    function handleClick(e) {
+        // e.preventDefault();
+        console.log('The button was clicked.');
 
-    const handleChangeEthnicity = e => {
-        setEthnicityValue(e.value);
-    }
-
-    const handleChangeVeteran = e => {
-        setVeteranValue(e.value);
-    }
-
-    const handleChangeDisability= e => {
-        setDisabilityValue(e.value);
-    }
-
-    const handleChangeFirstgen= e => {
-        setFirstgenValue(e.value);
-    }
-
-    const handleChangeFasfa = e => {
-        setFasfaValue(e.value);
+        axios.post(`${API_BASE}/signup/student`, {
+            email: {email}, 
+            password: {password}, 
+            studentSFSUId: {studentId}, 
+            firstName: {firstName}, 
+            lastName: {lastName}, 
+            addressId: null,
+            ethnicity: {ethnicity}, 
+            major: {major}, 
+            gender: {gender}, 
+            veteranStatus: {veteranValue}, 
+            lgbtqStatus: {lgbtqValue}, 
+            financialAidStatus: {fasfaValue}, 
+            disabilityStatus: {disabilityValue}, 
+            firstGeneration: {firstgenValue} 
+        })
+        .then(function (response) {
+            console.log(response);
+        })
     }
 
     return(
@@ -79,6 +102,13 @@ const SignupStudent = () =>{
                     <Col>
                         <Form.Control type="number" placeholder="Enter student id" 
                         onChange={e => setStudentId(e.target.value)}/>
+                    </Col>
+                </Row>
+
+                <Row className="row">
+                    <Col>
+                        <Form.Control type="text" placeholder="Enter major" 
+                        onChange={e => setMajor(e.target.value)}/>
                     </Col>
                 </Row>
 
@@ -211,7 +241,7 @@ const SignupStudent = () =>{
                     <Col>
                         <Form.File id="formcheck-api-regular">
                             <Form.File.Label>Upload Resume</Form.File.Label>
-                            <Form.File.Input />
+                            <Form.File.Input onClick={handleUpload}/>
                         </Form.File>
                     </Col>
                 </Row>
@@ -220,12 +250,10 @@ const SignupStudent = () =>{
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group> */}
 
-                <Button variant="primary" type="submit">
+                <Button href="home-recruiter" variant="primary" type="submit" onSubmit={handleClick}>
                     Submit
                 </Button>
             </Form>
-
-            {firstName}
         </div>
     );
 }

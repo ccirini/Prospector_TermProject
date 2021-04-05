@@ -18,7 +18,7 @@ ProfessorAccount.create = (newProfessorAccount, result) => {
             return;
         }
 
-        console.log("created Student account: ", { id: res.insertId, ...newProfessorAccount });
+        console.log("created Professor account: ", { id: res.insertId, ...newProfessorAccount });
         result(null, { id: res.insertId, ...newProfessorAccount });
     });
 };

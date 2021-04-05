@@ -124,21 +124,28 @@ const HomeRecruiter = () =>{
                 </Row>
             </Container>
 
+            {/* 
+            test values to show print
             <h1>{selectedValue}</h1>
-            <h1>{searchValue}</h1>
+            <h1>{searchValue}</h1> */}
 
             {active && <div style={{ marginTop: 20, lineHeight: '25px' }}>
-                <ul>
-                    {students.map(student => 
-                    <div key={student.userId}>
-                        {student.firstName} 
-                        {student.lastName} 
-                        {student.major} 
-                    </div>)}
-                </ul>
+                {students.map(student => 
+                <Container key={student.userId} className="outter-result-container">
+                    <Container className="result-container">
+                        <Row className="row-1">
+                            <p clasName="student-name"><b>{student.firstName} {student.lastName} </b></p>
+                        </Row>
+                        <Row className="row-1">
+                            <p className="learn-text">Learn more about this student</p>
+                        </Row>
+                        <Row className="row-2">
+                            <Col><p className="student-major"><b>Major -</b> {student.major}</p></Col>
+                            <Col><Button href="./pdf">Download Resume</Button></Col>
+                        </Row>
+                    </Container>
+                </Container>)}
             </div>}
-
-            <Button href="./pdf" >Download Resume</Button>
 
             </div>
     );

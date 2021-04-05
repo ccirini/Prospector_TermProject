@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form'
 const UserNavbar = () =>{
     return(
         <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="/prohome">ProSpector</Navbar.Brand>
+            <Navbar.Brand href="/home-professor">ProSpector</Navbar.Brand>
             <Nav className="mr-auto">
                 <Nav.Link href="/aboutme">About Us</Nav.Link>
             </Nav>

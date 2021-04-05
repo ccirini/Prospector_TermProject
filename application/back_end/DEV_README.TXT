@@ -4,16 +4,31 @@ search       -> GET /search/{dropdown category}/text/{search text}
 
 signin       -> GET /signin
                     -   DATA TO SEND BACK 
-                        { email, password }
+                        type: JSON { email, password }
 
 signup       -> POST /signup/professor
                     -   DATA TO SEND BACK 
-                        { email, password, firstName, lastName, university }
+                        type: JSON { email, password, firstName, lastName, university }
 
              -> POST /signup/recruiter
                     -   DATA TO SEND BACK 
-                        { email, password, companyName, decription, addressId, websiteLink }
+                        type: JSON { email, password, companyName, decription, addressId, websiteLink }
 
              -> POST /signup/student 
-                    - Still working on resume uploads 
+                    -   DATA TO SEND BACK 
+                        type: JSON { email, password, studentSFSUId, firstName, lastName, addressId,
+                            ethnicity, major, gender, veteranStatus, lgbtqStatus, financialAidStatus, 
+                            disabilityStatus, firstGeneration
+                        }
+             
+resume       -> POST /upload (resume upload)
+                    -   DATA TO SEND BACK 
+                        type: form-data { resume file, userId }
 
+             -> POST /update/resume (resume update)
+                    - DATA TO SEND BACK
+                        type: form-data { resume file, userId }
+                        
+             -> GET /resume 
+                    -   DATA TO SEND BACK 
+                        type: JSON { userId }

@@ -6,7 +6,7 @@ import Login from "./components/Login";
 import SignupStudent from "./components/Signup-Student";
 import SignUpProfessor from "./components/Signup-Professor";
 import SignUpRecruiter from "./components/Signup-Recruiter";
-import ProHome from "./components/Prohome";
+import HomeProfessor from "./components/Home-Professor";
 import ViewRecommends from "./components/ViewRecommend";
 import ProfessorAccount from "./components/Account-Professor";
 import RecruiterAccount from "./components/Account-Recruiter";
@@ -40,7 +40,7 @@ function App() {
             <Route path="/signup-student"><SignupStudent /></Route>
             <Route path="/signup-professor"><SignUpProfessor /></Route>
             <Route path="/signup-recruiter"><SignUpRecruiter /></Route>
-            <Route path="/prohome"><ProHome /></Route>
+            <Route path="/home-professor"><HomeProfessor /></Route>
             <Route path="/viewrecommend"><ViewRecommends /></Route>
             <Route path="/account-professor"><ProfessorAccount /></Route>
             <Route path="/account-recruiter"><RecruiterAccount /></Route>

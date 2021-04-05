@@ -1,21 +1,29 @@
 const sql = require("./db");
 
 // constructor
-// TODO: need to finalize data members 
-const StudentAccount = (StudentAccount) => {
-    this.userName = StudentAccount.userName; 
+const StudentAccount = function(StudentAccount) {
+    this.email = StudentAccount.email; 
     this.password = StudentAccount.password; 
     this.studentSFSUId = StudentAccount.studentSFSUId; 
     this.firstName = StudentAccount.firstName; 
     this.lastName = StudentAccount.lastName;
     this.addressId = StudentAccount.addressId;
-    this.email = StudentAccount.email;
-    this.resume = StudentAccount.resume; 
     this.ethnicity = StudentAccount.ethnicity;
     this.major = StudentAccount.major; 
     this.gender = StudentAccount.gender; 
-    this.aggregateRating = 5; // default starting aggregateRating; will recompute as recommendations come in
+    this.aggregateRating = StudentAccount.aggregateRating; 
+    this.veteranStatus = StudentAccount.veteranStatus;
+    this.lgbtqStatus = StudentAccount.lgbtqStatus;
+    this.financialAidStatus = StudentAccount.financialAidStatus;
+    this.disabilityStatus = StudentAccount.disabilityStatus;
+    this.firstGeneration = StudentAccount.firstGeneration; 
 }
+
+// cross check student info with recruiter saved search table 
+// if something matches
+// send email to both student and recrutier 
+
+// Nodemailer module 
 
 // create new Student account 
 StudentAccount.create = (newStudentAccount, result) => {

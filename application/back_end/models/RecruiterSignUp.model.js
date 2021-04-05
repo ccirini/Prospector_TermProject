@@ -19,7 +19,7 @@ RecruiterAccount.create = (newRecruiterAccount, result) => {
             return;
         }
 
-        console.log("created Student account: ", { id: res.insertId, ...newRecruiterAccount });
+        console.log("created Recruiter account: ", { id: res.insertId, ...newRecruiterAccount });
         result(null, { id: res.insertId, ...newRecruiterAccount });
     });
 };
