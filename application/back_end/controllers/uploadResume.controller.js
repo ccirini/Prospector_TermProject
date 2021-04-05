@@ -22,7 +22,7 @@ const uploadFiles = async (req, res) => {
       fs.writeFileSync(
         __basedir + "/resources/static/assets/tmp/" + image.name,
         image.data
-      );
+      );  
 
       return res.send(`File has been uploaded.`);
     });
