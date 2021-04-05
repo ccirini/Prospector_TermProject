@@ -29,6 +29,8 @@ resume       -> POST /upload (resume upload)
                     - DATA TO SEND BACK
                         type: form-data { resume file, userId }
                         
-             -> GET /resume 
-                    -   DATA TO SEND BACK 
-                        type: JSON { userId }
+             -> GET /resume?userId={userId}
+                    - - how to find userId for testing purposes - -
+                        - use csc649Team2 server B
+                        - 'SELECT userId FROM images'
+

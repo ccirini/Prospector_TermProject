@@ -1,3 +1,4 @@
+// SERVER DB CREDENTIALS 
 module.exports = {
     dbHOST: "localhost",
     dbNAME: "csc648Team2",
@@ -12,6 +13,7 @@ module.exports = {
     }
 }
 
+// // FRONT_END DB CREDENTIALS 
 // module.exports = {
 //     dbHOST: "localhost",
 //     dbNAME: "csc648Team2",
@@ -26,6 +28,7 @@ module.exports = {
 //     }
 // }
 
+// // BACK_END DB CREDENTIALS 
 // module.exports = {
 //     dbHOST: "localhost",
 //     dbNAME: "csc648Team2",
