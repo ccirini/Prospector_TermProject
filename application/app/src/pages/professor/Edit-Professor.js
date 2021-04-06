@@ -36,7 +36,7 @@ const EditProfessor = () =>{
                     <Form.Control type="password" placeholder="New Password" className="edit-row"/>
                 </Row>
 
-                <Button href="/account-recruiter" className="edit-professor-btn">Update</Button>
+                <Button href="/account-professor" className="edit-professor-btn">Update</Button>
             </Form>
         </div>
     );
