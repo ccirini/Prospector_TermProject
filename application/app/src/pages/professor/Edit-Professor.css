@@ -1,0 +1,30 @@
+.account-h1{
+    text-align: left;
+    padding-top: 15px;
+    margin: 0px 0px 10px 75px;  
+}
+
+.account-container{
+    border: 2px solid #FFDE59;
+    border-radius: 25px;
+    padding: 10px 0px 0px 0px;
+    width: 700px;
+    height: 500px;
+    margin: 0px 0px 0px 60px; 
+    text-align: left;
+}
+
+.edit-row{
+    
+    margin: 0px 100px 0px 0px;
+    padding: 7px 10px;
+}
+
+.edit-professor-btn{
+    color:#ffff;
+    background-color:#463077;
+    border-color:#463077; 
+    margin-left: 400px;
+    font-size: large;
+    font-weight: bolder;
+}
