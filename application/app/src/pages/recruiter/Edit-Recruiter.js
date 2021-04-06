@@ -1,4 +1,4 @@
-import "../Design.css"
+import "./Edit-Recruiter.css"
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
