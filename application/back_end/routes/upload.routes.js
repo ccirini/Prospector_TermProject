@@ -20,12 +20,22 @@ module.exports = app => {
                 })
             }
             else {
-                console.log(data.filter(account => {
-                    return account.userId == userId 
-                }));
-                res.status(200).send(data.filter(account => {
-                    return account.userId == userId 
-                })); 
+                // /Users/tonycao/Desktop/CSC648/csc648-02-sp21-team02/application/back_end/resources/static/assets/uploads/resumeTest.pdf
+                let resume = data.filter(account => { return account.userId == userId })
+                let resumePath = __basedir + "/resources/static/assets/uploads/" + resume[0].name;
+                console.log(resumePath)
+                // console.log(resume[0].name);
+                res.status(200).sendFile(resumePath, { 
+                    headers: { 
+                        'Content-Type': 'application/pdf' 
+                    }}, (err) => {
+                        if(err) {
+                            console.log("error: ", err);
+                        }
+                        else { 
+                            console.log("Sent:", resumePath);
+                        }
+                }) 
             }
         })        
     })
