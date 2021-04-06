@@ -9,11 +9,10 @@ import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
 import Select from 'react-select'
 import axios from 'axios'
-// import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer'
-import { Document, Page } from 'react-pdf'
 
-// const API_BASE = 'http://54.70.249.83:5000'
-const API_BASE = 'http://localhost:5000'
+
+const API_BASE = 'http://54.70.249.83:5000'
+// const API_BASE = 'http://localhost:5000'
 
 const HomeRecruiter = () =>{
 
@@ -131,7 +130,7 @@ const HomeRecruiter = () =>{
                         </div>
                         <div className="row-2">
                             <p className="student-major"><b>Major -</b> {student.major}</p>
-                            <Button href="./pdf">Download Resume</Button>
+                            <Button href="#">Download Resume</Button>
                         </div>
                     </Container>
                 </Container>)}
