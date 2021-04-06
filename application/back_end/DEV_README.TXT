@@ -31,6 +31,6 @@ resume       -> POST /upload (resume upload)
                         
              -> GET /resume?userId={userId}
                     - - how to find userId for testing purposes - -
-                        - use csc649Team2 server B
+                        - use csc649Team2 server DB
                         - 'SELECT userId FROM images'
 
