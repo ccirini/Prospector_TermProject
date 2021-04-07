@@ -1,0 +1,9 @@
+.home {
+    background-image: url('../images/banner-img.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    padding: 100px;
+    text-align: left;
+    background-size: auto;
+    height: 100%;
+}

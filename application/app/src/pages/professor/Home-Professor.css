@@ -1,0 +1,67 @@
+.home-professor{
+
+}
+
+.home-professor-h1{
+    margin: 10px 900px 10px 0px;
+    font-weight: bold;
+}
+
+.home-professor-input{
+    margin: 10px 50px 10px 10px;
+    padding: 0px 110px 0px 30px
+}
+
+.home-professor-search{
+    margin: 10px 10px 10px 20px;
+}
+
+.home-professor-btn1{
+    color:#463077;
+    background-color:#FFFF;
+    border-color:#C99700;
+    margin: 10px 10px 10px 10px; 
+    font-size: large;
+    font-weight: bolder;
+}
+
+.home-professor-btn2{
+    color:#ffff;
+    background-color:#463077;
+    border-color:#463077;
+    margin: 10px 10px 10px 10px; 
+    font-size: large;
+    font-weight: bolder;
+    
+}
+
+.home-professor-container{
+    border: 2px solid #FFDE59;
+    border-radius: 15px;
+    padding: 10px 0px 0px 0px;
+    width: 800px;
+    height: 200px;
+    margin: 10px 0px 15px 100px; 
+    text-align: left;  
+}
+
+.home-professor-h2{
+    color: #463077;
+    margin: 15px 0px 15px 15px;
+    font-weight: bold;
+}
+
+.home-professor-link{
+    color: red;
+    margin-left: 40px;
+}
+
+.home-professor-btn3{
+    color:#463077;
+    background-color:#FFDE59;
+    border-color:#FFDE59;
+    margin: 0px 0px 0px 400px; 
+    font-size: large;
+    font-weight: bolder;
+}
+

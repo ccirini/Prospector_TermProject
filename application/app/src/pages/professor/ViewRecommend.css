@@ -1,0 +1,28 @@
+.viewRecommends-h1 {
+    text-align: left;
+    margin-left: 25px;
+}
+
+.viewRecommends-btn {
+    color: #463077;
+    background-color:#FFDE59;
+    border-color:#463077;
+    margin: 0px 00px 0px 900px;
+    font-weight: bolder;
+}
+
+.viewRecommends-form {
+    text-align: left;
+    margin: 20px 50px 20px 50px;
+    border-bottom: 2px solid lightgray;
+
+}
+
+.viewRecommends-col {
+    font-size: medium;
+    margin-top: 10px;
+
+}
+.viewRecommends-edit-btn{
+    color: red;
+}

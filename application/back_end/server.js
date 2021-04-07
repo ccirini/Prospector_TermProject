@@ -1,0 +1,34 @@
+const express = require('express');
+const cors = require('cors');
+
+const db = require('./models/index');
+
+const app = express();
+
+const PORT = process.env.PORT || 5000; 
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
+
+app.get('/', (req, res) => {
+    res.status(200).json({
+        message: "Hello from server!",
+    });
+})
+
+global.__basedir = __dirname;
+
+app.use(express.urlencoded({ extended: true }));
+
+db.sequelize.sync();
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+// });
+
+require('./routes/SignIn.routes.js')(app);
+require('./routes/SignUp.routes')(app);
+require('./routes/Search.routes.js')(app);
+require('./routes/upload.routes.js')(app);
+
+app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));

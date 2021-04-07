@@ -1,0 +1,13 @@
+.login-container {
+    margin: 0;
+}
+
+.login-h1 {
+    text-align: left;
+    color: #463077;
+}
+
+.left-side-login {
+    background-color: #463077;
+    height: 80vh;
+}
