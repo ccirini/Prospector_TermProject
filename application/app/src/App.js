@@ -32,6 +32,8 @@ import Franklin from "./pages/team/Franklin";
 import George from "./pages/team/George";
 import Tony from "./pages/team/Tony";
 
+import Pdf from "./pages/recruiter/Pdf";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
 
@@ -69,6 +71,8 @@ function App() {
             <Route path="/aboutme/franklin"><Franklin /></Route>
             <Route path="/aboutme/george"><George /></Route>
             <Route path="/aboutme/tony"><Tony /></Route>
+
+            <Route exact path="/pdf"><Pdf /></Route>
           </Switch>
         </div>
     </div>

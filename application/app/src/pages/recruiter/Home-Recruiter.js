@@ -55,6 +55,8 @@ const HomeRecruiter = () =>{
     const [searchValue, setSearchValue] = useState('default');
     const [active, setActive] = useState(false);
     const [students, setStudents] = React.useState([]);
+    const [stuId, setStuId] = useState(912345670);
+    const [pdfLink, setPdfLink] = useState('./john-doe.pdf');
 
     // handle onChange event of the dropdown
     const handleChange = e => {
@@ -130,7 +132,10 @@ const HomeRecruiter = () =>{
                         </div>
                         <div className="row-2">
                             <p className="student-major"><b>Major -</b> {student.major}</p>
-                            <Button href="#">Download Resume</Button>
+                            {/* <Button href="./pdf">Download Resume</Button> */}
+                            <Button href="./pdf">Download Resume</Button> 
+                            
+                            {/* <a href={pdfLink} download><Button>Download Resume</Button></a> */}
                         </div>
                     </Container>
                 </Container>)}
