@@ -32,7 +32,6 @@ import Franklin from "./pages/team/Franklin";
 import George from "./pages/team/George";
 import Tony from "./pages/team/Tony";
 
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
 
