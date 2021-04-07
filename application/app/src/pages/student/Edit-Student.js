@@ -1,4 +1,4 @@
-import "../Design.css"
+import "./Edit-Student.css"
 import {Link} from "react-router-dom";
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
@@ -36,7 +36,7 @@ const EditStudent = () =>{
                 <Row className="edit-row">
                     <Form.Control type="lname" placeholder="New Password" className="edit-row"/>
                 </Row>
-                <Button href="/account-recruiter" className="edit-professor-btn">Update</Button>
+                <Button href="/account-student" className="edit-professor-btn">Update</Button>
             </Form>
         </div>
     );

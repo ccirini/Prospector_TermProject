@@ -7,7 +7,7 @@ const Delete = () =>{
             <h1>Are You Sure?</h1>
             <Form>
                 <Button href="/" variant="outline-light">Yes</Button>
-                <Button href="/prohome" variant="outline-light">No</Button>
+                <Button href="/" variant="outline-light">No</Button>
             </Form>
         </div>
     );
