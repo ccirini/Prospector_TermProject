@@ -20,7 +20,7 @@ const HomeProfessor = () =>{
             <Container className="home-professor-container">
                 <h2 className="home-professor-h2">Student Name</h2>
                 <Link to="#" className="home-professor-link">View Student Portal</Link>
-                    <Button href="/newrecommend" variant="outline-dark" className="home-professor-btn3">Recommed</Button>
+                    <Button href="/newrecommend" variant="outline-dark" className="home-professor-btn3">Recommend</Button>
             </Container>
         </div>
     );
