@@ -17,7 +17,7 @@ const Navcontrol = () =>{
         />
 
         <Navbar className="navbar">
-            <Navbar.Brand href="#home">ProSpector</Navbar.Brand>
+            <Navbar.Brand href="/">ProSpector</Navbar.Brand>
             <Nav className="ml-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/aboutme">About Us</Nav.Link>

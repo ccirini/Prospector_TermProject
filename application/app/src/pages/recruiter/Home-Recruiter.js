@@ -1,5 +1,6 @@
 import "./Home-Recruiter.css";
 import "../Design.css";
+import Pdf from "./Pdf"
 import React, { useState } from 'react'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Container from 'react-bootstrap/Container'
@@ -128,12 +129,13 @@ const HomeRecruiter = () =>{
                     <Container className="result-container">
                         <div className="row-1">
                             <p clasName="student-name"><b>{student.firstName} {student.lastName} </b></p>
-                            <p className="learn-text">Learn more about this student</p>
+                            <p className="learn-text"><a href="/home-student">Learn more about this student</a></p>
                         </div>
                         <div className="row-2">
                             <p className="student-major"><b>Major -</b> {student.major}</p>
                             {/* <Button href="./pdf">Download Resume</Button> */}
-                            <Button href="./pdf">Download Resume</Button> 
+                            {/* <Button href="./pdf">Download Resume</Button>  */}
+                            <Pdf />
                             
                             {/* <a href={pdfLink} download><Button>Download Resume</Button></a> */}
                         </div>

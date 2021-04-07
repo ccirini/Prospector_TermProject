@@ -1,8 +1,9 @@
 import axios from 'axios'
 import "./Pdf.css"
 import React, { useState, useEffect } from 'react'
-import Viewer, { Worker } from '@phuocng/react-pdf-viewer';
-import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
+// import Viewer, { Worker } from '@phuocng/react-pdf-viewer';
+// import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
+import Button from 'react-bootstrap/Button'
 
 const API_BASE = 'http://54.70.249.83:5000'
 
@@ -27,7 +28,6 @@ const Pdf = () => {
 
     return(
         <div>
-            <h2>Image</h2>
             {/* <img src={`${objectURL}`} /> */}
             {/* <a href={`data: application/pdf; base64,${resume}`}>Download pdf</a> */}
 
@@ -35,12 +35,14 @@ const Pdf = () => {
                 Presss me: <a href={`data: application/pdf; base64,${resume}`}>Download PDF</a>
             </iframe> */}
 
+            <a href={`data: application/pdf; base64,${resume}`} download><Button>Download Resume</Button></a>
 
-            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js">
+
+            {/* <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js">
                 <div style={{ height: '750px' }}>
                     <Viewer fileUrl={`data: image/jpeg; base64,${resume}`} />
                 </div>
-            </Worker>
+            </Worker> */}
         </div>
     );
 }
