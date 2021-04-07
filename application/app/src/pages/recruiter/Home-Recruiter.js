@@ -1,7 +1,6 @@
 import "./Home-Recruiter.css";
 import "../Design.css";
-import Pdf from "./Pdf"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -59,6 +58,8 @@ const HomeRecruiter = () =>{
     const [stuId, setStuId] = useState(912345670);
     const [pdfLink, setPdfLink] = useState('./john-doe.pdf');
 
+    // const [resume, setResume] = useState('');
+
     // handle onChange event of the dropdown
     const handleChange = e => {
         setSelectedValue(e.value);
@@ -83,6 +84,21 @@ const HomeRecruiter = () =>{
             })
         }
     }
+
+    // useEffect(() => {
+    //     axios.get(`${API_BASE}/resume?userId=2`)
+    //     .then(res => {
+    //         const buffer = res.data[0].data;
+    //         const b64 = new Buffer(buffer).toString('base64');
+    //         setResume(b64);
+    //         console.log(resume);
+    //         const mimeType = 'application/pdf';
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //     })
+    // }, []);
+
 
     return (
         <div className="search">
@@ -133,11 +149,7 @@ const HomeRecruiter = () =>{
                         </div>
                         <div className="row-2">
                             <p className="student-major"><b>Major -</b> {student.major}</p>
-                            {/* <Button href="./pdf">Download Resume</Button> */}
-                            {/* <Button href="./pdf">Download Resume</Button>  */}
-                            <Pdf />
-                            
-                            {/* <a href={pdfLink} download><Button>Download Resume</Button></a> */}
+                            <Button href={`${API_BASE}/resume?userId=2`}>Download Resume</Button>
                         </div>
                     </Container>
                 </Container>)}
