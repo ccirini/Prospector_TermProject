@@ -6,12 +6,13 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
+import Image from 'react-bootstrap/Image'
 import FormControl from 'react-bootstrap/FormControl'
 import Select from 'react-select'
 import axios from 'axios'
 
-
-const API_BASE = 'http://54.70.249.83:5000'
+import API_BASE from '../config'
+// const API_BASE = 'http://54.70.249.83:5000'
 // const API_BASE = 'http://localhost:5000'
 
 const HomeRecruiter = () =>{
