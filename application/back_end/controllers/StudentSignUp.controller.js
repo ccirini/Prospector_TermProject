@@ -1,4 +1,8 @@
+const bcrypt = require('bcrypt');
 const StudentAccount = require('../models/StudentSignUp.model');
+
+const saltRounds = 10; // hash password salt 
+const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
 exports.create = (req, res) => {
     // Validate request
@@ -7,33 +11,41 @@ exports.create = (req, res) => {
             message: "Content can not be empty!"
         });
     }
-    // Create a new student account 
-    const student = new StudentAccount({
-        email: req.body.email,
-        password: req.body.password,
-        studentSFSUId: req.body.studentSFSUId,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        addressId: req.body.addressId,
-        ethnicity: req.body.ethnicity,
-        major: req.body.major,
-        gender: req.body.gender,
-        // default starting aggregateRating; will recompute as recommendations come in
-        aggregateRating: 0,
-        veteranStatus: req.body.veteranStatus,
-        lgbtqStatus: req.body.lgbtqStatus,
-        financialAidStatus: req.body.financialAidStatus,
-        disabilityStatus: req.body.disabilityStatus,
-        firstGeneration: req.body.firstGeneration,
-    });
 
-    // Save Customer in the database
-    StudentAccount.create(student, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message:
-                    err.message || "Some error occurred while creating a new account."
+    let { email, password, studentSFSUId, firstName, lastName, addressId, ethnicity, major, 
+        gender, veteranStatus, lgbtqStatus, financialAidStatus, disabilityStatus, firstGeneration } = req.body;
+
+    // default starting aggregateRating; will recompute as recommendations come in
+    let aggregateRating = 0;
+
+    // validate email format 
+    if(emailRegexp.test(email)) {
+        // encrypt original password
+        bcrypt.hash(password, saltRounds, (err, hash) => {
+            if(err) {
+                console.log("error: ", err);
+                res.status(500).send({
+                    message: 
+                        err.message || "Some error occured while encrypting password."
+                })
+            }
+            password = hash;
+            console.log("hashed: ", password)
+
+            // Create a new student account 
+            const student = new StudentAccount({ email, password, studentSFSUId, firstName, lastName, addressId, 
+                ethnicity, major, gender, aggregateRating, veteranStatus, lgbtqStatus, financialAidStatus, 
+                disabilityStatus, firstGeneration });
+
+            // Save Customer in the database
+            StudentAccount.create(student, (err, data) => {
+                if (err)
+                    res.status(500).send({
+                        message:
+                            err.message || "Some error occurred while creating a new account."
+                    });
+                else res.send(data);
             });
-        else res.send(data);
-    });
+        });
+    }
 }
