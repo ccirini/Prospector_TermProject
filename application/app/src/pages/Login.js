@@ -1,5 +1,8 @@
 import "./Login.css"
-import React, {useState} from 'react';
+import React, {useState} from 'react'
+import axios from 'axios'
+import API_BASE from './config'
+
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -10,6 +13,47 @@ const Login = () =>{
     // Get login and check if it's in db
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [member, setMember] = useState('');
+    const [url, setUrl] = useState('');
+
+    function handleClick(e) {
+        // e.preventDefault();
+        console.log('The button was clicked.');
+
+        setMember('professor')
+
+        axios({
+            method: 'get',
+            url: `${API_BASE}/signin`,
+            data: {
+                email: email,
+                password: password,
+            }
+        })
+        .catch(function (error) {
+            // handle error
+            setUrl('/signup');
+            console.log(error);
+            alert("Incorrect username or password!");
+        })
+        .then(function (response) {
+            console.log(response);
+        });
+
+        switch (member){
+            case 'professor':
+                setUrl('/home-professor');
+                break;
+            case 'student':
+                setUrl('/home-student');
+                break;
+            case 'recruiter':
+                setUrl('/home-recruiter');
+                break;
+            default:
+                setUrl('/signup');
+        }
+    }
 
     return(
         <div className="login">
@@ -27,7 +71,7 @@ const Login = () =>{
                             <Form.Control type="password" placeholder="Password" 
                             onChange={e => setPassword(e.target.value)}/>
                         </Form.Group>
-                        <Button href="#" variant="outline-dark">Login</Button>
+                        <Button href={`${url}`} variant="outline-dark" onSubmit={handleClick}>Login</Button>
                     </Form>
                     </Col>
                 </Row>

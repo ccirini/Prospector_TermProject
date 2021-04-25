@@ -55,13 +55,35 @@
     font-weight: bolder;
     
 }
+.account-student-btn{
+    color:#463077;
+    background-color:#FFDE59;
+    border-color:#C99700;
+    margin: 10px 10px 10px 10px; 
+    font-size: large;
+    font-weight: bolder;
 
-.home-student-container{
-    border: 2px solid #FFDE59;
-    border-radius: 15px;
-    padding: 10px 0px 0px 0px;
-    width: 800px;
-    height: 200px;
-    margin: 10px 0px 15px 60px; 
-    text-align: left;  
+}
+
+.account-professor-btn{
+    color:#ffff;
+    background-color:#463077;
+    border-color:#463077;
+    margin: 10px 10px 10px 10px; 
+    font-size: large;
+    font-weight: bolder;
+}
+
+.home-student-row{
+    border-top: 2px solid #FFDE59;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: lightgray;
+    padding-bottom: 9px;
+}
+
+.viewRecommends-h1 {
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 20px;
 }

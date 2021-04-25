@@ -6,9 +6,13 @@ import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+<<<<<<< HEAD
 
 // const API_BASE = 'http://54.70.249.83:5000'
 const API_BASE = 'http://localhost:5000'
+=======
+import API_BASE from "../config"
+>>>>>>> 66e413fc9a1cd1c4637b875d448df3fe851c2bf2
 
 const SignUpProfessor = () =>{
 
@@ -19,20 +23,28 @@ const SignUpProfessor = () =>{
     const [password, setPassword] = useState('');
     const [Vpassword, setVPassword] = useState('');
 
-    function handleClick(e) {
+    const handleClick = () => {
         // e.preventDefault();
         console.log('The button was clicked.');
 
-        axios.post(`${API_BASE}/signup/professor`, {
-            email: {email}, 
-            password: {password}, 
-            firstName: {firstName}, 
-            lastName: {lastName}, 
-            university: {university},
+        axios({
+            method: 'post',
+            url: `${API_BASE}/signup/professor`,
+            data: {
+                email: email,
+                password: password,
+                firstName: firstName,
+                lastName: lastName,
+                university: university
+            }
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
         })
         .then(function (response) {
             console.log(response);
-        })
+        });
     }
 
     return(
@@ -69,7 +81,11 @@ const SignUpProfessor = () =>{
                     <Form.Control type="password" placeholder="Verify-Password" className="signup-professor-row"
                     onChange={e => setVPassword(e.target.value)}/>
                 </Row>
+<<<<<<< HEAD
                 <Button href="/home-professor" className="signup-professor-btn" type="submit" onClick={handleClick}>Sign Up</Button>
+=======
+                <Button href="/signin" className="signup-professor-btn" type="submit" onClick={handleClick}>Sign Up</Button>
+>>>>>>> 66e413fc9a1cd1c4637b875d448df3fe851c2bf2
             </Form>
         </div>
     );
