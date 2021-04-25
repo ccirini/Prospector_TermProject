@@ -7,8 +7,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 
-const API_BASE = 'http://54.70.249.83:5000'
-// const API_BASE = 'http://localhost:5000'
+// const API_BASE = 'http://54.70.249.83:5000'
+const API_BASE = 'http://localhost:5000'
 
 const SignUpProfessor = () =>{
 
@@ -69,7 +69,7 @@ const SignUpProfessor = () =>{
                     <Form.Control type="password" placeholder="Verify-Password" className="signup-professor-row"
                     onChange={e => setVPassword(e.target.value)}/>
                 </Row>
-                <Button href="/home-professor" className="signup-professor-btn" type="submit" onSubmit={handleClick}>Sign Up</Button>
+                <Button href="/home-professor" className="signup-professor-btn" type="submit" onClick={handleClick}>Sign Up</Button>
             </Form>
         </div>
     );

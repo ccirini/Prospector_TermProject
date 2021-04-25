@@ -17,8 +17,8 @@ import disability from "../../components/categories/disability.json";
 import firstgen from "../../components/categories/firstgen.json";
 import fasfa from "../../components/categories/fasfa.json";
 
-const API_BASE = 'http://54.70.249.83:5000'
-// const API_BASE = 'http://localhost:5000'
+// const API_BASE = 'http://54.70.249.83:5000'
+const API_BASE = 'http://localhost:5000'
 
 const SignupStudent = () =>{
 
