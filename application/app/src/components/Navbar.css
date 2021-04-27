@@ -3,8 +3,8 @@
 }
 
 .navbar {
-    /* background-color: white; */
     color: #463077 !important;
+    background-color: white;
 }
 
 Nav.Link {

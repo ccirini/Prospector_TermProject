@@ -1,42 +1,157 @@
 import "./Signup-Recruiter.css"
+import { Redirect } from 'react-router-dom'
+import { useState } from 'react'
+import axios from 'axios'
+import HomeNavbar from "../../components/HomeNavbar";
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-const SignUpRecruiter = () =>{
-    return(
-        <div className="signup-professor">
-            <Form className="signup-professor-form">
-                <h1 className="signup-professor-h1"><b>Sign Up As A Recruiter</b></h1>
-                <Row>
-                    <Col>
-                        <Form.Control type="text" placeholder="First Name" className="signup-professor-row"/>
-                    </Col>
-                    <Col>
-                        <Form.Control type="text" placeholder="Last Name" className="signup-professor-row"/>
-                    </Col>
-                </Row>
+import API_BASE from "../config/config"
 
-                <Row>
-                    <Form.Control type="uniName" placeholder="Company Name" className="signup-professor-row"/>
-                </Row>
-                
-                <Row>
-                  <Form.Control type="email" placeholder="Email" className="signup-professor-row"/>
-                </Row>
+const SignUpRecruiter = () => {
 
-                <Row>
-                    <Form.Control type="password" placeholder="Password" className="signup-professor-row"/>
-                </Row>
-                
-                <Row>
-                    <Form.Control type="lname" placeholder="Verify-Password" className="signup-professor-row"/>
-                </Row>
-                <Button href="/home-recruiter" className="signup-professor-btn">Sign Up</Button>
-            </Form>
-        </div>
-    );
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
+	const [company, setCompany] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [Vpassword, setVPassword] = useState('');
+
+	const [passwordText, setPasswordText] = useState('');
+	const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+		// event.preventDefault();
+
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+		if (password != Vpassword) {
+      event.preventDefault();
+      event.stopPropagation();
+			setPasswordText("Passwords do not match");
+    } else {
+			setPasswordText('');
+		}
+
+    setValidated(true);
+
+		if (validated){
+			axios({
+				method: 'post',
+				url: `${API_BASE}/signup/recruiter`,
+				data: {
+					email: email,
+					password: password,
+					company: company,
+					firstName: firstName,
+					lastName: lastName
+				}
+			})
+				.catch(function (error) {
+					// handle error
+					console.log(error);
+				})
+				.then(function (response) {
+					console.log(response);
+					return  (<Redirect to="/login" />)
+				})
+		}
+  };
+
+	return (
+		<div className="signup-recruiter-container">
+			<HomeNavbar />
+
+			<div className="signup-recruiter">
+				<Form noValidate validated={validated} onSubmit={handleSubmit}>
+					<h1 className="signup-recruiter-h1"><b>Sign Up As A Recruiter</b></h1>
+
+					<Form.Row>
+						<Form.Group as={Col} md="6" controlId="validationCustom01">
+							<Form.Control
+								required
+								type="text"
+								placeholder="First name"
+								onChange={e => setFirstName(e.target.value)}
+								className="signup-recruiter-row"
+							/>
+						</Form.Group>
+
+						<Form.Group as={Col} md="6" controlId="validationCustom02">
+							<Form.Control
+								required
+								type="text"
+								placeholder="Last name"
+								onChange={e => setLastName(e.target.value)}
+								className="signup-recruiter-row"
+							/>
+						</Form.Group>
+					</Form.Row>
+
+					<Form.Row>
+						<Form.Group as={Col} md="12" controlId="validationCustom03">
+							<Form.Control
+								required
+								type="text"
+								placeholder="Company"
+								onChange={e => setCompany(e.target.value)}
+								className="signup-recruiter-row"
+							/>
+							<Form.Control.Feedback type="invalid">
+								Please enter company name.
+          		</Form.Control.Feedback>
+						</Form.Group>
+					</Form.Row>
+
+					<Form.Row>
+						<Form.Group as={Col} md="12" controlId="validationCustom04">
+							<Form.Control
+								required
+								type="email"
+								placeholder="Email"
+								onChange={e => setEmail(e.target.value)}
+								className="signup-recruiter-row"
+							/>
+							<Form.Control.Feedback type="invalid">
+								Please input a valid email.
+          		</Form.Control.Feedback>
+						</Form.Group>
+					</Form.Row>
+
+					<Form.Row>
+						<Form.Group as={Col} md="6" controlId="validationCustom05">
+							<Form.Control
+								required
+								type="password"
+								placeholder="Password"
+								onChange={e => setPassword(e.target.value)}
+								className="signup-recruiter-row"
+							/>
+							<p className="passwordText">{passwordText}</p>
+						</Form.Group>
+
+						<Form.Group as={Col} md="6" controlId="validationCustom06">
+							<Form.Control
+								required
+								type="password"
+								placeholder="Confirmation Password"
+								onChange={e => setVPassword(e.target.value)}
+								className="signup-recruiter-row"
+							/>
+							<p className="passwordText">{passwordText}</p>
+						</Form.Group>
+					</Form.Row>
+
+					<Button className="signup-recruiter-btn" type="submit">Submit form</Button>
+				</Form>
+			</div>
+		</div>
+	);
 }
 
 export default SignUpRecruiter;

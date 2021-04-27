@@ -4,6 +4,7 @@ import bgimage from "../../images/background-mountains.jpeg";
 import profilePicture from "../../images/Cameron-pfp.jpeg";
 import "./member-page.css";
 import Footer from "../../components/Footer";
+import HomeNavbar from "../../components/HomeNavbar";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -20,6 +21,8 @@ const major = "";
 const Cameron = () => {
   return (
     <div>
+      <HomeNavbar />
+
       <Jumbotron
         className="background"
         style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }}

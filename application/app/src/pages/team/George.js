@@ -2,6 +2,7 @@ import bgimage from "../../images/background-mountains.jpeg";
 import profilePicture from "../../images/zhuojunhe.png";
 import "./member-page.css";
 import Footer from "../../components/Footer";
+import HomeNavbar from "../../components/HomeNavbar";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -18,6 +19,8 @@ const major = "Computer Science";
 const George = () => {
   return (
     <div>
+      <HomeNavbar />
+      
       <Jumbotron
         className="background"
         style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }}

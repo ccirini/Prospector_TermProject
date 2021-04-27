@@ -1,9 +1,8 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Home from "./pages/home/Home";
+import Login from "./pages/home/Login";
+import Signup from "./pages/home/Signup";
 
 import SignupStudent from "./pages/student/Signup-Student";
 import SignUpProfessor from "./pages/professor/Signup-Professor";
@@ -26,7 +25,7 @@ import NewRecommend from "./pages/professor/Newrecommend";
 import MatchesRecruiter from "./pages/recruiter/Matches-Recruiter";
 import Delete from "./components/Delete";
 
-import AboutMe from "./pages/AboutMe";
+import AboutMe from "./pages/team/AboutMe";
 import Cameron from "./pages/team/Cameron";
 import Fasia from "./pages/team/Fasia";
 import Franklin from "./pages/team/Franklin";
@@ -40,7 +39,7 @@ function App() {
   return (
     <Router >
       <div className="App">
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="Content">
           <Switch>
             <Route exact path="/"><Home /></Route>
