@@ -36,3 +36,41 @@
 	font-size: 80%;
 	margin-top: .25rem;
 }
+
+@media only screen and (max-width: 600px) {
+	.signup-professor {
+		width: 97%; 
+	}
+	
+	.signup-professor-form {
+		padding: 10px 0px 10px 0px;
+        width: 97%;
+        height: 100%;
+        margin: 0px 5px 0px 5px;
+	}
+	
+	.signup-professor-h1 {
+		width: 100%;
+        font-size: 120%;
+        margin: 0px 0px 10px 0px;
+	}
+	
+	.signup-professor-row {
+		width: 100%;
+        font-size: 90%;
+	}
+	
+	.signup-professor-btn {
+		margin: 20px 10px 10px 10px; 
+        font-size: large;
+        font-weight: bolder;
+        width: 90%;
+        height: 40px;
+	}
+	
+	.passwordText {
+		color: #dc3545;
+		font-size: 80%;
+		margin-top: .25rem;
+	} 
+}
