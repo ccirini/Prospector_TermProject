@@ -5,7 +5,7 @@ const RecruiterAccount = function(RecruiterAccount) {
     this.email = RecruiterAccount.email; 
     this.password = RecruiterAccount.password; 
     this.companyName = RecruiterAccount.companyName; 
-    this.decription = RecruiterAccount.decription; 
+    this.description = RecruiterAccount.description; 
     this.addressId = RecruiterAccount.addressId;
     this.websiteLink = RecruiterAccount.websiteLink; 
 }
