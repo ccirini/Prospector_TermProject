@@ -1,6 +1,3 @@
-.home-professor{
-
-}
 
 .home-professor-h1{
     margin: 10px 900px 10px 0px;
@@ -9,7 +6,7 @@
 
 .home-professor-input{
     margin: 10px 50px 10px 10px;
-    padding: 0px 110px 0px 30px
+    padding: 0px 110px 0px 30px;
 }
 
 .home-professor-search{
@@ -65,3 +62,66 @@
     font-weight: bolder;
 }
 
+@media only screen and (max-width: 600px) {
+    .home-professor{
+        width: 100%;
+    }
+    
+    .home-professor-h1{
+        width: 100%;
+        font-size: 130%;
+        margin: 0px 0px 10px 25px;
+    }
+    
+    .home-professor-input{
+        margin: 0px 2px 0px 2px;
+        padding: 0px 10px 0px 10px;
+    }
+    
+    .home-professor-search{
+        margin: 10px 10px 10px 10px;
+        width: 100% !important;
+    }
+    
+    .home-professor-btn1{
+        width: 1130px;
+        margin: 10px 10px 10px 10px; 
+        font-size: medium;
+    }
+    
+    .home-professor-btn2{
+        margin: 10px 10px 10px 10px; 
+        padding-left: 7px;
+        font-size: medium;
+        font-weight: bolder;
+        width: 1130px;
+        
+    }
+    
+    .home-professor-container{
+        padding: 10px 0px 10px 0px;
+        width: 97%;
+        height: 100%;
+        margin: 0px 5px 0px 5px; 
+    }
+    
+    .home-professor-h2{
+        width: 100%;
+		font-size: 130%;
+    }
+    
+    .home-professor-link{
+        color: red;
+        margin-left: 40px;
+    }
+    
+    .home-professor-btn3{
+        margin: 10px 10px 10px 70px; 
+        padding-left: 7px;
+        font-size: x-small;
+        font-weight: bolder;
+        width: 80px;
+        height: 30px;
+    }
+    
+}
