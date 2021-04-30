@@ -70,7 +70,7 @@
     .home-professor-h1{
         width: 100%;
         font-size: 130%;
-        margin: 0px 0px 10px 25px;
+        margin: 10px 0px 10px 10px;
     }
     
     .home-professor-input{
@@ -87,6 +87,7 @@
         width: 1130px;
         margin: 10px 10px 10px 10px; 
         font-size: medium;
+        padding: 0.3em;
     }
     
     .home-professor-btn2{
