@@ -19,7 +19,7 @@ const HomeNavbar = () => {
 
 			<Navbar className="navbar">
 				<Navbar.Brand href="/">ProSpector</Navbar.Brand>
-				<Nav className="ml-auto">
+				<Nav className="home-ml-auto">
 					<Nav.Link href="/">Home</Nav.Link>
 					<Nav.Link href="/home-student">Student</Nav.Link>
 					<Nav.Link href="/home-professor">Professor</Nav.Link>
@@ -27,11 +27,11 @@ const HomeNavbar = () => {
 					<Nav.Link href="/aboutme">About Us</Nav.Link>
 				</Nav>
 
-				<div className="button-container">
+				<div className="nav-button-container">
 					<Button className="btn-primary" href="./login">Login</Button>
 				</div>
 
-				<div className="button-container">
+				<div className="nav-button-container">
 					<Button className="btn-outline-dark" href="./signup">Sign Up</Button>
 				</div>
 			</Navbar>

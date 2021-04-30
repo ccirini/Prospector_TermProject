@@ -26,11 +26,11 @@ const RecruiterNavbar = (props) => {
 					<Nav.Link href="/matches-recruiter">Matches</Nav.Link>
 				</Nav>
 
-				<div className="button-container">
+				<div className="nav-button-container">
 					<Button className="btn-primary" href="/account-recruiter">Account</Button>
 				</div>
 
-				<div className="button-container">
+				<div className="nav-button-container">
 					<Button className="btn-primary" href="/">Sign Out</Button>
 				</div>
 			</Navbar>

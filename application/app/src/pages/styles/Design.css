@@ -52,3 +52,18 @@
     padding: 7px 35px;
     font: 300 150% sans-serif;
 }
+
+@media only screen and (max-width: 600px) {
+    .button-container {
+        padding: 1px;
+        margin: 1px 1px 1px 1px;
+    }
+
+    .btn-primary{
+        font-size: 0.8em;
+        font-weight: bolder;
+        width: 50px;
+        height: auto;
+        padding: 0.5em;
+    }
+}

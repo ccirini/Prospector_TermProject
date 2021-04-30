@@ -25,11 +25,11 @@ const StudentNavbar = (props) => {
 					<Nav.Link href="/aboutme">About Us</Nav.Link>
 				</Nav>
 
-				<div className="button-container">
+				<div className="nav-button-container">
 					<Button className="btn-primary" href="/account-student">Account</Button>
 				</div>
 
-				<div className="button-container">
+				<div className="nav-button-container">
 					<Button className="btn-primary" href="/">Sign Out</Button>
 				</div>
 			</Navbar>
