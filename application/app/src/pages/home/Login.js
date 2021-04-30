@@ -63,11 +63,11 @@ const Login = () => {
 			<HomeNavbar />
 
 			<Container className="login-container">
-				<Row>
+				<Row className="login-row">
 					<Col className="left-side-login"></Col>
 					<Col className="right-side-login">
 						<h1 className="login-h1"><b>Sign In</b></h1>
-						<Form>
+						<Form className="login-form">
 							<Form.Group controlId="formGroupEmail">
 								<Form.Control type="email" placeholder="Email"
 									onChange={e => setEmail(e.target.value)} />
