@@ -10,7 +10,9 @@
 Nav.Link {
     color: #463077 !important;
 }
-
+.home-ml-auto{
+    padding: 0.5rem 0.5rem 0.5rem 38rem;
+}
 .navbar-light .navbar-nav .nav-link {
     color: #463077 !important;
 }
