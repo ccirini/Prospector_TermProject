@@ -6,15 +6,15 @@ signin       -> GET /signin
                     -   DATA TO SEND BACK 
                         type: JSON { email, password }
 
-signup       -> POST /signup/professor
+signup       -> POST /signUp/professor
                     -   DATA TO SEND BACK 
                         type: JSON { email, password, firstName, lastName, university }
 
-             -> POST /signup/recruiter
+             -> POST /signUp/recruiter
                     -   DATA TO SEND BACK 
                         type: JSON { email, password, companyName, decription, addressId, websiteLink }
 
-             -> POST /signup/student 
+             -> POST /signUp/student 
                     -   DATA TO SEND BACK 
                         type: JSON { email, password, studentSFSUId, firstName, lastName, addressId,
                             ethnicity, major, gender, veteranStatus, lgbtqStatus, financialAidStatus, 
