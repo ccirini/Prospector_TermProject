@@ -55,25 +55,24 @@ const SignupStudent = () => {
 		setResume(e.value);
 
 		axios.post(`${API_BASE}/upload`, {
-			studentSFSUId: { studentId },
+			userId: { studentId },
 			data: { resume }
 		})
 			.then(function (response) {
 				console.log(response);
+				console.log("hello from then");
 			})
 	}
 
 	const handleSubmit = (event) => {
 		const form = event.currentTarget;
-		// event.preventDefault();
+		event.preventDefault();
 
 		if (form.checkValidity() === false) {
-			event.preventDefault();
 			event.stopPropagation();
 		}
 
 		if (password != Vpassword) {
-			event.preventDefault();
 			event.stopPropagation();
 			setPasswordText("Passwords do not match");
 		} else {
@@ -82,37 +81,30 @@ const SignupStudent = () => {
 
 		setValidated(true);
 
-		if (validated) {
-			axios({
-				method: 'post',
-				url: `${API_BASE}/signup/student`,
-				data: {
-					email: { email },
-					password: { password },
-					studentSFSUId: { studentId },
-					firstName: { firstName },
-					lastName: { lastName },
-					addressId: null,
-					ethnicity: { ethnicity },
-					major: { major },
-					gender: { gender },
-					veteranStatus: { veteranValue },
-					lgbtqStatus: { lgbtqValue },
-					financialAidStatus: { fasfaValue },
-					disabilityStatus: { disabilityValue },
-					firstGeneration: { firstgenValue }
-				}
+		axios.post(`${API_BASE}/signup/student`, {
+			email: { email },
+			password: { password },
+			studentSFSUId: { studentId },
+			firstName: { firstName },
+			lastName: { lastName },
+			addressId: null,
+			ethnicity: { ethnicity },
+			major: { major },
+			gender: { gender },
+			veteranStatus: { veteranValue },
+			lgbtqStatus: { lgbtqValue },
+			financialAidStatus: { fasfaValue },
+			disabilityStatus: { disabilityValue },
+			firstGeneration: { firstgenValue }
+		})
+			.then(response => {
+				console.log(response)
+				window.location = '/login'
 			})
-				.catch(function (error) {
-					// handle error
-					console.log(error);
-				})
-				.then(function (response) {
-					console.log(response);
-					return (<Redirect to="/login" />)
-				})
-		}
-	};
+			.catch(error => {
+				console.log(error)
+			});
+};
 
 	return (
 		<div>
@@ -212,7 +204,7 @@ const SignupStudent = () => {
 
 					<Row className="signup-student-row-eeo">
 						<Col>
-							<Form.Label>Gender</Form.Label>
+							<Form.Label className="form-label">Gender</Form.Label>
 							<Select
 								placeholder="--"
 								options={gender} // set list of the data
@@ -225,7 +217,7 @@ const SignupStudent = () => {
 							/>
 						</Col>
 						<Col>
-							<Form.Label>LGBTQ</Form.Label>
+							<Form.Label className="form-label">LGBTQ</Form.Label>
 							<Select
 								placeholder="--"
 								options={lgbtq} // set list of the data
@@ -241,7 +233,7 @@ const SignupStudent = () => {
 
 					<Row className="signup-student-row-eeo">
 						<Col>
-							<Form.Label>Ethnicity (select best fit)</Form.Label>
+							<Form.Label className="form-label">Ethnicity (select best fit)</Form.Label>
 							<Select
 								placeholder="--"
 								options={ethnicity} // set list of the data
@@ -254,7 +246,7 @@ const SignupStudent = () => {
 							/>
 						</Col>
 						<Col>
-							<Form.Label>Veteran</Form.Label>
+							<Form.Label className="form-label">Veteran</Form.Label>
 							<Select
 								placeholder="--"
 								options={veteran} // set list of the data
@@ -270,7 +262,7 @@ const SignupStudent = () => {
 
 					<Row className="signup-student-row-eeo">
 						<Col>
-							<Form.Label>Disability</Form.Label>
+							<Form.Label className="form-label">Disability</Form.Label>
 							<Select
 								placeholder="--"
 								options={disability} // set list of the data
@@ -282,24 +274,9 @@ const SignupStudent = () => {
 								className="dropdown"
 							/>
 						</Col>
-						<Col>
-							<Form.Label>Are you a first generation college student?</Form.Label>
-							<Select
-								placeholder="--"
-								options={firstgen} // set list of the data
-								onChange={handleChangeFirstgen} // assign onChange function
-								value={firstgen.find(obj => obj.value === firstgenValue)} // set selected value
-								as={InputGroup.Prepend}
-								variant="outline-secondary"
-								id="input-group-dropdown1"
-								className="dropdown"
-							/>
-						</Col>
-					</Row>
 
-					<Row className="signup-student-row-eeo">
 						<Col>
-							<Form.Label>Received Financial Aid?</Form.Label>
+							<Form.Label className="form-label">Received Financial Aid?</Form.Label>
 							<Select
 								placeholder="--"
 								options={fasfa} // set list of the data
@@ -311,15 +288,32 @@ const SignupStudent = () => {
 								className="dropdown"
 							/>
 						</Col>
+					</Row>
+
+					<Row className="signup-student-row-eeo">
+						<Col>
+							<Form.Label className="form-label">Are you a first generation college student?</Form.Label>
+							<Select
+								placeholder="--"
+								options={firstgen} // set list of the data
+								onChange={handleChangeFirstgen} // assign onChange function
+								value={firstgen.find(obj => obj.value === firstgenValue)} // set selected value
+								as={InputGroup.Prepend}
+								variant="outline-secondary"
+								id="input-group-dropdown1"
+								className="dropdown"
+							/>
+						</Col>
+
 						<Col>
 							<Form.File id="formcheck-api-regular">
-								<Form.File.Label>Upload Resume</Form.File.Label>
-								<Form.File.Input onClick={handleUpload} />
+								<Form.File.Label className="form-label">Upload Resume</Form.File.Label>
+								<Form.File.Input className="form-label" />
 							</Form.File>
 						</Col>
 					</Row>
 
-					<Button className="signup-student-btn" type="submit">Submit</Button>
+					<Button className="signup-student-btn" type="submit" onClick={handleUpload}>Submit</Button>
 				</Form>
 			</div >
 		</div >

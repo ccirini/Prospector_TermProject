@@ -21,9 +21,17 @@ const Login = () => {
 	const handleClick = (e) => {
 		e.preventDefault();
 		console.log('The button was clicked.');
+		console.log(email);
+		console.log(password);
 
-		axios.get(`${API_BASE}/signin`,{ email: 'bill73@example.com', password: 'csc648' })
-			.then(response => console.log(response))
+		axios.get(`${API_BASE}/signin`, {
+			email: email,
+			password: password,
+		})
+			.then(response => 
+				// console.log(response)
+				console.log("hello from then")
+			)
 			.catch(error => console.log(error))
 	}
 

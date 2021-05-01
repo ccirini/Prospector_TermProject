@@ -39,17 +39,6 @@ const HomeRecruiter = () => {
 			// if dropdown is selected and search is empty
 			alert("Search bar is empty!");
 		} else {
-			// axios({
-			// 	method: 'get',
-			// 	url: `${API_BASE}/search/${selectedValue}/text/${searchValue}`,
-			// })
-			// 	.then(res => {
-			// 		setStudents(res.data);
-			// 	})
-			// 	.catch(err => {
-			// 		console.log(err);
-			// 	});
-
 			axios.get(`${API_BASE}/search/${selectedValue}/text/${searchValue}`)
 				.then(response => {
 					setStudents(response.data)
@@ -58,6 +47,8 @@ const HomeRecruiter = () => {
 				.catch(error => {
 					console.log(error)
 				});
+
+			console.log(students);
 		}
 	}
 

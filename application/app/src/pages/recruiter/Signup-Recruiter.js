@@ -21,47 +21,38 @@ const SignUpRecruiter = () => {
 	const [passwordText, setPasswordText] = useState('');
 	const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-		// event.preventDefault();
+	const handleSubmit = (event) => {
+		const form = event.currentTarget;
+		event.preventDefault();
 
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+		if (form.checkValidity() === false) {
+			event.stopPropagation();
+		}
 
 		if (password != Vpassword) {
-      event.preventDefault();
-      event.stopPropagation();
+			event.stopPropagation();
 			setPasswordText("Passwords do not match");
-    } else {
+		} else {
 			setPasswordText('');
 		}
 
-    setValidated(true);
+		setValidated(true);
 
-		if (validated){
-			axios({
-				method: 'post',
-				url: `${API_BASE}/signup/recruiter`,
-				data: {
-					email: email,
-					password: password,
-					company: company,
-					firstName: firstName,
-					lastName: lastName
-				}
+		axios.post(`${API_BASE}/signup/recruiter`, {
+			email: email,
+			password: password,
+			company: company,
+			firstName: firstName,
+			lastName: lastName
+		})
+			.then(response => {
+				console.log(response)
+				window.location = '/login'
 			})
-				.catch(function (error) {
-					// handle error
-					console.log(error);
-				})
-				.then(function (response) {
-					console.log(response);
-					return  (<Redirect to="/login" />)
-				})
-		}
-  };
+			.catch(error => {
+				console.log(error)
+			});
+};
 
 	return (
 		<div className="signup-recruiter-container">
