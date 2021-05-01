@@ -10,16 +10,18 @@
 Nav.Link {
     color: #463077 !important;
 }
-.home-ml-auto{
+
+.home-ml-auto {
     padding: 0.5rem 0.5rem 0.5rem 38rem;
 }
+
 .navbar-light .navbar-nav .nav-link {
     color: #463077 !important;
 }
 
-.navbar.navbar-light.bg-light{
+.navbar.navbar-light.bg-light {
     background-color: #FFFF!important;
- }
+}
 
 .text-color {
     color: #463077 !important;
@@ -34,9 +36,11 @@ Navbar {
     justify-content: center;
     font-size: calc(10px + 2vmin);
 }
-.nav-button-container{
-        padding: 5px;
+
+.nav-button-container {
+    padding: 5px;
 }
+
 .navbar-brand {
     color: #463077 !important;
     font-size: 45px;
@@ -47,34 +51,27 @@ Navbar {
         width: 100%;
         font-size: x-small;
     }
-
-    .navbar{
-        height: 50px; 
+    .navbar {
+        height: 50px;
         padding: 0px 0px 0px 4px;
-    }  
-
-    .navbar-brand {  
+    }
+    .navbar-brand {
         font-size: medium;
     }
-
-    .ml-auto{
+    .ml-auto {
         font-size: 0.5em;
         padding: 0.3rem;
         margin-bottom: 1em;
     }
-
-    .home-ml-auto{
+    .home-ml-auto {
         font-size: 0.35em;
         padding: 0.3rem;
         margin-bottom: 1em;
     }
-
     .navbar-light .navbar-nav .nav-link {
         padding: 0.2rem
     }
-
-
-    .nav-button-container{
+    .nav-button-container {
         font-size: 0.5em;
         font-weight: bolder;
         width: 15%;

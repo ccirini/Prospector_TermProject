@@ -16,46 +16,15 @@ const Login = () => {
 	const [password, setPassword] = useState('');
 	const [member, setMember] = useState('');
 	const [url, setUrl] = useState('');
+	const [user, setUser] = React.useState([]);
 
-	function handleClick(e) {
-		// e.preventDefault();
+	const handleClick = (e) => {
+		e.preventDefault();
 		console.log('The button was clicked.');
 
-		if (email == 'test@mail.com' && password == 'pass123'){
-			setMember('professor');
-		} else {
-			alert("Incorrect username or password!");
-		}
-
-		// axios({
-		// 	method: 'get',
-		// 	url: `${API_BASE}/signin`,
-		// 	data: {
-		// 		email: email,
-		// 		password: password,
-		// 	}
-		// })
-		// 	.catch(function (error) {
-		// 		// handle error
-		// 		setUrl('/login');
-		// 		console.log(error);
-		// 		alert("Incorrect username or password!");
-		// 	})
-		// 	.then(function (response) {
-		// 		console.log(response);
-		// 	});
-
-		switch (member) {
-			case 'professor':
-				setUrl('/home-professor');
-				break;
-			case 'student':
-				setUrl('/home-student');
-				break;
-			case 'recruiter':
-				setUrl('/home-recruiter');
-				break;
-		}
+		axios.get(`${API_BASE}/signin`,{ email: 'bill73@example.com', password: 'csc648' })
+			.then(response => console.log(response))
+			.catch(error => console.log(error))
 	}
 
 	return (
@@ -67,22 +36,26 @@ const Login = () => {
 					<Col className="left-side-login"></Col>
 					<Col className="right-side-login">
 						<h1 className="login-h1"><b>Sign In</b></h1>
+						
 						<Form className="login-form">
 							<Form.Group controlId="formGroupEmail">
 								<Form.Control type="email" placeholder="Email"
 									onChange={e => setEmail(e.target.value)} />
 							</Form.Group>
+
 							<Form.Group controlId="formGroupPassword">
 								<Form.Control type="password" placeholder="Password"
 									onChange={e => setPassword(e.target.value)} />
 							</Form.Group>
-							<Button href={`${url}`} variant="outline-dark" onClick={handleClick}>Login</Button>
+
+							<Button variant="outline-dark" onClick={handleClick}>Login</Button>
+							
+							<br />
+							{email} <br />
+							{password}
 						</Form>
 					</Col>
 				</Row>
-
-				{email}
-				{password}
 			</Container>
 		</div>
 	);
