@@ -8,7 +8,7 @@ function getUserMatch(data, email) {
 module.exports = app => {
     // sign in 
     app.get("/signin", (req, res) => {
-        const { email, password } = req.query;
+        const { email, password } = req.params;
 
         const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 

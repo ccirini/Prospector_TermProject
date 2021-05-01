@@ -9,7 +9,7 @@ module.exports = app => {
     app.post("/upload", upload.single("resume"), uploadController.uploadFiles);
 
     app.get("/resume", (req, res) => {
-        const { userId } = req.params;
+        const { userId } = req.query;
 
         sql.query("SELECT * FROM images", (err, data) => {
             if (err) {
