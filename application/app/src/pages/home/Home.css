@@ -5,7 +5,7 @@
 
 .home-banner {
     height: 70vh;
-    margin: 1px 0px 1px 490px;
+    float: right;
 }
 
 .home-h2 {
