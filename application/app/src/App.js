@@ -25,12 +25,14 @@ import NewRecommend from "./pages/professor/Newrecommend";
 import MatchesRecruiter from "./pages/recruiter/Matches-Recruiter";
 import Delete from "./components/Delete";
 
-import AboutMe from "./pages/team/AboutMe";
+// import AboutMe from "./pages/team/AboutMe";
 import Cameron from "./pages/team/Cameron";
-import Fasia from "./pages/team/Fasia";
+// import Fasia from "./pages/team/Fasia";
+import Faisa from "./pages/team/Faisa";
 import Franklin from "./pages/team/Franklin";
 import George from "./pages/team/George";
 import Tony from "./pages/team/Tony";
+import Team from "./pages/team/Team";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
@@ -64,12 +66,12 @@ function App() {
             <Route path="/edit-recruiter"><EditRecruiter /></Route>
             <Route path="/delete"><Delete /></Route>
             
-            <Route exact path="/aboutme"><AboutMe /></Route>
-            <Route path="/aboutme/cameron"><Cameron /></Route>
-            <Route path="/aboutme/fasia"><Fasia /></Route>
-            <Route path="/aboutme/franklin"><Franklin /></Route>
-            <Route path="/aboutme/george"><George /></Route>
-            <Route path="/aboutme/tony"><Tony /></Route>
+            <Route path="/team/cameron"><Cameron /></Route>
+            <Route path="/team/faisa"><Faisa /></Route>
+            <Route path="/team/franklin"><Franklin /></Route>
+            <Route path="/team/george"><George /></Route>
+            <Route path="/team/tony"><Tony /></Route>
+            <Route exact path="/team"><Team /></Route>
           </Switch>
         </div>
     </div>

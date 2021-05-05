@@ -22,7 +22,7 @@ const RecruiterNavbar = (props) => {
 				<Navbar.Brand href="/">ProSpector</Navbar.Brand>
 				<Nav className="ml-auto">
 					<Nav.Link href="/home-recruiter">Home</Nav.Link>
-					<Nav.Link href="/aboutme">About Us</Nav.Link>
+					{/* <Nav.Link href="/aboutme">About Us</Nav.Link> */}
 					<Nav.Link href="/matches-recruiter">Matches</Nav.Link>
 				</Nav>
 
