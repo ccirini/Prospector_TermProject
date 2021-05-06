@@ -1,16 +1,26 @@
-
 .home-professor-h1{
-    margin: 10px 900px 10px 0px;
+    margin: 10px 0px;
     font-weight: bold;
 }
 
+.home-professor-row{
+    margin: 0px;
+    padding: 7px 35px;
+    font: 300 150% sans-serif;
+}
+
 .home-professor-input{
-    margin: 10px 50px 10px 10px;
-    padding: 0px 110px 0px 30px;
+    margin: 10px;
+    padding: 0px 10px;
+}
+
+.home-professor-col{
+    max-width: 700px;;
 }
 
 .home-professor-search{
-    margin: 10px 10px 10px 20px;
+    margin: 10px 0px 10px 10px;
+    width: 600px;
 }
 
 .home-professor-btn1{
@@ -29,10 +39,11 @@
     margin: 10px 10px 10px 10px; 
     font-size: large;
     font-weight: bolder;
+
     
 }
 
-.home-professor-container{
+/* .home-professor-container{
     border: 2px solid #FFDE59;
     border-radius: 15px;
     padding: 10px 0px 0px 0px;
@@ -47,11 +58,7 @@
     margin: 15px 0px 15px 15px;
     font-weight: bold;
 }
-
-.home-professor-link{
-    color: red;
-    margin-left: 40px;
-}
+*/
 
 .home-professor-btn3{
     color:#463077;
@@ -66,40 +73,45 @@
     .home-professor{
         width: 100%;
     }
-    
     .home-professor-h1{
-        width: 100%;
         font-size: 130%;
-        margin: 10px 0px 10px 10px;
     }
     
+    .home-professor-row{
+        padding: 0px !important;
+    }
+
     .home-professor-input{
         margin: 0px 2px 0px 2px;
         padding: 0px 10px 0px 10px;
     }
     
+    .home-professor-col{
+        max-width: 100%;
+    }
+    
     .home-professor-search{
-        margin: 10px 10px 10px 10px;
-        width: 100% !important;
+        margin: 10px 0px;
+        width: 100%;
     }
     
     .home-professor-btn1{
-        width: 1130px;
-        margin: 10px 10px 10px 10px; 
-        font-size: medium;
-        padding: 0.3em;
+        width: 280px !important;
+        margin: 2px 10px !important; 
+        font-size: small !important;
+        padding: 0.3em !important;
     }
     
     .home-professor-btn2{
-        margin: 10px 10px 10px 10px; 
+        margin: 2px 10px; 
         padding-left: 7px;
-        font-size: medium;
+        font-size: small;
         font-weight: bolder;
-        width: 1130px;
+        width: 280px;
         
     }
     
-    .home-professor-container{
+    /* .home-professor-container{
         padding: 10px 0px 10px 0px;
         width: 97%;
         height: 100%;
@@ -110,12 +122,8 @@
         width: 100%;
 		font-size: 130%;
     }
-    
-    .home-professor-link{
-        color: red;
-        margin-left: 40px;
-    }
-    
+    */
+
     .home-professor-btn3{
         margin: 10px 10px 10px 70px; 
         padding-left: 7px;
