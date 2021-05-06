@@ -24,13 +24,13 @@ const Login = () => {
 		console.log(email);
 		console.log(password);
 
-		axios.get(`${API_BASE}/signin`, {
+		axios.post(`${API_BASE}/signin`, {
 			email: email,
 			password: password,
 		})
 			.then(response => 
-				// console.log(response)
-				console.log("hello from then")
+				console.log(response)
+				// console.log("hello from then")
 			)
 			.catch(error => console.log(error))
 	}

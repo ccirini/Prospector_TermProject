@@ -20,6 +20,10 @@ exports.create = (req, res) => {
 
     // validate email format 
     if(emailRegexp.test(email)) {
+        // cross check with recruiter_savedSearch 
+        // if this student matches any saved searches 
+        // send email notification 
+        
         // encrypt original password
         bcrypt.hash(password, saltRounds, (err, hash) => {
             if(err) {
