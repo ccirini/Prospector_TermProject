@@ -1,6 +1,6 @@
 # csc648 Repository
 ## ProSpector
-# SFSU Software Engineering Project CSC 648-848, Spring 2021
+### SFSU Software Engineering Project CSC 648-848, Spring 2021
 
 
 | Student Name          |        Student Email        | GitHub Username |
