@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer";
 import HomeNavbar from "../../components/HomeNavbar";
 
 import franklinPic from "../../images/Franklin-pfp.jpg";
@@ -8,12 +7,11 @@ import faisaPic from "../../images/Faisa-pfp.jpg";
 import tonyPic from "../../images/profile_pic_Tony.jpg";
 import georgePic from "../../images/zhuojunhe.png";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
 
 const team = [
   {
@@ -23,7 +21,7 @@ const team = [
     city: "San Mateo",
     major: "Major",
     image: cameronPic,
-    link: "/aboutme/cameron",
+    link: "/team/cameron",
   },
   {
     id: 2,
@@ -32,7 +30,7 @@ const team = [
     city: "Oakland",
     major: "Computer Science",
     image: faisaPic,
-    link: "/aboutme/fasia",
+    link: "/team/fasia",
   },
   {
     id: 3,
@@ -41,7 +39,7 @@ const team = [
     city: "San Francisco",
     major: "Computer Science",
     image: franklinPic,
-    link: "/aboutme/franklin",
+    link: "/team/franklin",
   },
   {
     id: 4,
@@ -50,7 +48,7 @@ const team = [
     city: "San Jose",
     major: "Computer Science",
     image: tonyPic,
-    link: "/aboutme/tony",
+    link: "/team/tony",
   },
   {
     id: 5,
@@ -59,11 +57,11 @@ const team = [
     city: "San Francisco",
     major: "Computer Science",
     image: georgePic,
-    link: "/aboutme/george",
+    link: "/team/george",
   },
 ];
 
-const AboutMe = ({ pages }) => {
+const Team = () => {
   return (
     <div>
       <HomeNavbar />
@@ -94,9 +92,8 @@ const AboutMe = ({ pages }) => {
           })}
         </Row>
       </Container>
-      <Footer footer="footer"/>
     </div>
   );
-};
+}
 
-export default AboutMe;
+export default Team;

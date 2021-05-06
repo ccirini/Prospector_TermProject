@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import HomeNavbar from "../../components/HomeNavbar";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
@@ -20,6 +21,14 @@ const George = () => {
   return (
     <div>
       <HomeNavbar />
+
+      <Breadcrumb>
+        <Breadcrumb.Item href="/team/cameron">Cameron</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/faisa">Faisa</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/franklin">Franklin</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/george">George</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/tony">Tony</Breadcrumb.Item>
+      </Breadcrumb>
       
       <Jumbotron
         className="background"
@@ -51,7 +60,6 @@ const George = () => {
           <br></br>
           
         </p>
-        <Footer footer="footer-member"/>
       </Container>
     </div>
   );

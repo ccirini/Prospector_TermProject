@@ -1,10 +1,10 @@
 import bgimage from "../../images/background-mountains.jpeg";
 import profilePicture from "../../images/Franklin-pfp.jpg";
 import "./member-page.css";
-import Footer from "../../components/Footer";
 import HomeNavbar from "../../components/HomeNavbar";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
@@ -20,6 +20,14 @@ const Franklin = () => {
   return (
     <div>
       <HomeNavbar />
+
+      <Breadcrumb>
+        <Breadcrumb.Item href="/team/cameron">Cameron</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/faisa">Faisa</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/franklin">Franklin</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/george">George</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/tony">Tony</Breadcrumb.Item>
+      </Breadcrumb>
 
       <Jumbotron
         className="background"
@@ -53,7 +61,6 @@ const Franklin = () => {
             ability to create sustainable solutions to help create a better future. Fun Fact I’m from El Salvador
             the smallest country in Central America. 🇸🇻
         </p>
-        <Footer footer="footer-member" />
       </Container>
     </div>
   );

@@ -22,7 +22,7 @@ const StudentNavbar = (props) => {
 				<Navbar.Brand href="/">ProSpector</Navbar.Brand>
 				<Nav className="ml-auto">
 					<Nav.Link href="/home-student">Home</Nav.Link>
-					<Nav.Link href="/aboutme">About Us</Nav.Link>
+					{/* <Nav.Link href="/aboutme">About Us</Nav.Link> */}
 				</Nav>
 
 				<div className="nav-button-container">
