@@ -1,6 +1,9 @@
 routes
 
 search              -> GET /search/{dropdown category}/text/{search text}
+                    -> POST /searchstudent
+                        -   DATA TO SEND BACK 
+                            type: JSON { studentSFSUId }
 
 signin              -> POST /signin
                         -   DATA TO SEND BACK 
