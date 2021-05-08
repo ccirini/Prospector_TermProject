@@ -1,15 +1,95 @@
+const sql = require("../models/db.js");
+const nodemailer = require('nodemailer');
 const bcrypt = require('bcrypt');
 const StudentAccount = require('../models/StudentSignUp.model');
 
 const saltRounds = 10; // hash password salt 
 const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
-function checkMatch(student) { 
-    console.log("from function:", student.email);
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'caotrung6@gmail.com',
+      pass: '@bdl4life'
+    }
+});
 
-        // cross check with recruiter_savedSearch 
-        // if this student matches any saved searches 
-        // send email notification 
+function checkMatch(student) { 
+    // console.log("from function:", student.email);
+
+    // cross check with recruiter_savedSearch 
+    sql.query(`SELECT * 
+                FROM recruiter_savedSearch 
+                WHERE textContent='%${student.major}%' 
+                OR textContent='%${student.ethnicity}%'
+                OR textContent='%${student.gender}%'
+                OR (dropDownOption='veteranStatus' AND textContent='${student.veteranStatus}')
+                OR (dropDownOption='lgbtqStatus' AND textContent='${student.lgbtqStatus}')
+                OR (dropDownOption='financialAidStatus' AND textContent='${student.financialAidStatus}')   
+                OR (dropDownOption='firstGeneration' AND textContent='${student.firstGeneration}')
+                OR (dropDownOption='disabilityStatus' AND textContent='${student.disabilityStatus}')
+                `, (err, data) => {
+                    if(err) {
+                        console.log("error: ", err);
+                        res.status(500).send({
+                            message: 
+                                err.message || "Some error occured while trying to find a match."
+                        })
+                    }
+                    // console.log(data);
+                    // get IDs of recruiter who saved the searchs
+                    let recruiterIds = [];
+                    data.forEach(e => recruiterIds.push(e.recruiterUserId)); 
+                    // if this student matches any saved searches 
+                    // send email notification to recruiter and student
+                    sql.query(`SELECT * FROM recruiter WHERE userId IN (${recruiterIds})`, (err, data) => {
+                                    if(err) {
+                                        console.log("error: ", err);
+                                        res.status(500).send({
+                                            message: 
+                                                err.message || "Some error occured while trying to find a match."
+                                        })
+                                    }
+                                    // console.log(data);
+                                    // get emails of recruiters 
+                                    let recruiterEmails = []; 
+                                    data.forEach(e => recruiterEmails.push(e.email)); 
+                                    let mailList = recruiterEmails.join();
+
+                                    let mailOptions = {
+                                        from: 'trung2598@yahoo.com',
+                                        to: mailList,
+                                        subject: 'You\'ve got a match!',
+                                        text: 'Congratulations! we found a candidate that matches with your saved search!'
+                                    };
+
+                                    transporter.sendMail(mailOptions, (error, info) => {
+                                        if (error) {
+                                          console.log(error);
+                                        } else {
+                                          console.log('Email sent to recruiter: ' + info.response);
+                                        }
+                                    });
+                        
+                                })
+                    
+                    // send email to student
+                    let mailOptions = {
+                        from: 'trung2598@yahoo.com',
+                        to: student.email,
+                        subject: 'You\'ve got a match!',
+                        text: 'Congratulations! you have matched with a company!'
+                    };
+
+                    transporter.sendMail(mailOptions, (error, info) => {
+                        if (error) {
+                            console.log(error);
+                        } else {
+                          console.log('Email sent to student: ' + info.response);
+                        }
+                    });
+                    
+                })
         
 }
 
@@ -47,7 +127,7 @@ exports.create = (req, res) => {
                 ethnicity, major, gender, aggregateRating, veteranStatus, lgbtqStatus, financialAidStatus, 
                 disabilityStatus, firstGeneration });
 
-            // Save Customer in the database
+            // Save student in the database
             StudentAccount.create(student, (err, data) => {
                 if (err)
                     res.status(500).send({

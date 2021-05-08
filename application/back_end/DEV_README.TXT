@@ -41,3 +41,7 @@ recommendation      -> POST /addrec
                         -   DATA TO SEND BACK 
                             type: JSON { studentSFSUId, professorId, rating, recommendationText }
 
+save searches       -> /savesearch/option/{dropdown category}/text/{text}
+                        -   DATA TO SEND BACK 
+                            type: JSON { recruiterId }
+
