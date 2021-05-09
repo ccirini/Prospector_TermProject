@@ -1,6 +1,7 @@
 .home-student-h1{
-    margin: 10px 1200px 10px 0px;
+    margin-left: 50px;
     font-weight: bold;
+    text-align: left;
 }
 
 .home-student-container{
@@ -8,7 +9,7 @@
     border-radius: 15px;
     padding: 10px 0px 0px 0px;
     width: 800px;
-    height: 100px;
+    height: 100%;
     margin: 10px 0px 15px 60px; 
     text-align: left;  
 }
@@ -18,7 +19,6 @@
     margin: 15px 0px 15px 15px;
     font-weight: bold;
 }
-
 
 .home-student-row{
     border-top: 2px solid #FFDE59;
@@ -52,16 +52,6 @@
     
 }
 
-.home-student-container{
-    border: 2px solid #FFDE59;
-    border-radius: 15px;
-    padding: 10px 0px 0px 0px;
-    width: 800px;
-    height: 200px;
-    margin: 10px 0px 15px 60px; 
-    text-align: left;  
-}
-
 @media only screen and (max-width: 600px) {
     .home-student{
         width: 100%;
@@ -75,9 +65,8 @@
     }
     
     .home-student-container{
-        padding: 10px 0px 10px 0px;
+        padding-top: 3px;
         width: 97%;
-        height: 100%;
         margin: 5px 5px 5px 5px;
     }
     
@@ -87,31 +76,29 @@
     }
     
     .home-student-row{
+        background-color: #FFFF;
         width: 100%;
 		font-size: 100%;
+        padding: 3px 15px !important;
+        display: inherit;
     }
     .home-student-col{
-        margin-top: 20px;
-        font-size: 100%;
+        margin: 10px 0px;
+        font-size: 90%;
+        padding: 1px;
     }
     
     .home-student-btn1{
-        margin: 1px; 
-        font-size: medium;
-        height: 40px;
+        margin-left: 90px;
+        font-size: small;
+        height: 100%;
         padding: 0.3em;
     }
     
     .home-student-btn2{
-        margin: 10px 10px 10px 10px; 
-        font-size: medium;  
+        margin: 10px 0px 10px 10px;
+        font-size: small;
+        padding: 0.3em;
+        width: 30%; 
     }
-    
-    .home-student-container{
-        padding: 10px 0px 10px 0px;
-        width: 97%;
-        height: 100%;
-        margin: 0px 5px 0px 5px;  
-    }
-    
 }
