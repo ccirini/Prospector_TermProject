@@ -12,7 +12,7 @@ const Home = () => {
 		<div>
 			<HomeNavbar />
 			<div className="home">
-				<div style={{ width: "60%" }}>
+				<div className="home-div">
 					<h2 className="home-h2">Get Matched with Your Ideal Candidate!</h2>
 					<p className="home-p">ProSpector serves as the central hub for all SFSU students employment
 					in the Tech industry. Create a profile and let our algorithm match you
@@ -21,11 +21,11 @@ const Home = () => {
 				</div>
 				<Container className="home-container">
 					<Row className="home-row">
-						<div className="button-container">
-							<Button href="/signup-student" className="btn-primary">Start Applying</Button>
+						<div className="home-button-container">
+							<Button href="/signup-student" className="home-btn-primary">Start Applying</Button>
 						</div>
-						<div className="button-container">
-							<Button href="/signup-recruiter" className="btn-outline-light">Start Hiring</Button>
+						<div className="home-button-container">
+							<Button href="/signup-recruiter" className="home-btn-outline-light">Start Hiring</Button>
 						</div>
 					</Row>
 				</Container>
