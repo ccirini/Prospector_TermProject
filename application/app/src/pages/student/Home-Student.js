@@ -12,7 +12,6 @@ const HomeStudent = () => {
 			<h1 className="home-student-h1">Matches</h1>
 			<Container className="home-student-container">
 				<h2 className="home-student-h2">Example Company Name</h2>
-				<p className="home-student-p">Learn more about this Role</p>
 
 				<Row className="home-student-row">
 					<Col className="home-student-col">Role Position Title - Location</Col>
@@ -23,8 +22,7 @@ const HomeStudent = () => {
 
 			<Container className="home-student-container">
 				<h2 className="home-student-h2">Example Company Name</h2>
-				<p className="home-student-p">Learn more about this Role</p>
-
+				
 				<Row className="home-student-row">
 					<Col className="home-student-col">Role Position Title - Location</Col>
 					<Button href="#" variant="outline-dark" className="home-student-btn1">Not Interested</Button>
@@ -34,8 +32,7 @@ const HomeStudent = () => {
 
 			<Container className="home-student-container">
 				<h2 className="home-student-h2">Example Company Name</h2>
-				<p className="home-student-p">Learn more about this Role</p>
-
+				
 				<Row className="home-student-row">
 					<Col className="home-student-col">Role Position Title - Location</Col>
 					<Button href="#" variant="outline-dark" className="home-student-btn1">Not Interested</Button>

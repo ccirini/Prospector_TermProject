@@ -8,7 +8,7 @@
     border-radius: 15px;
     padding: 10px 0px 0px 0px;
     width: 800px;
-    height: 200px;
+    height: 100px;
     margin: 10px 0px 15px 60px; 
     text-align: left;  
 }
@@ -19,10 +19,6 @@
     font-weight: bold;
 }
 
-.home-student-p{
-    color: red;
-    margin-left: 40px;
-}
 
 .home-student-row{
     border-top: 2px solid #FFDE59;
@@ -64,4 +60,58 @@
     height: 200px;
     margin: 10px 0px 15px 60px; 
     text-align: left;  
+}
+
+@media only screen and (max-width: 600px) {
+    .home-student{
+        width: 100%;
+    }
+    
+    .home-student-h1{
+        width: 100%;
+        font-size: 130%;
+        margin: 10px;
+        text-align: left;
+    }
+    
+    .home-student-container{
+        padding: 10px 0px 10px 0px;
+        width: 97%;
+        height: 100%;
+        margin: 5px 5px 5px 5px;
+    }
+    
+    .home-student-h2{
+        width: 100%;
+		font-size: 100%;
+    }
+    
+    .home-student-row{
+        width: 100%;
+		font-size: 100%;
+    }
+    .home-student-col{
+        margin-top: 20px;
+        font-size: 100%;
+    }
+    
+    .home-student-btn1{
+        margin: 1px; 
+        font-size: medium;
+        height: 40px;
+        padding: 0.3em;
+    }
+    
+    .home-student-btn2{
+        margin: 10px 10px 10px 10px; 
+        font-size: medium;  
+    }
+    
+    .home-student-container{
+        padding: 10px 0px 10px 0px;
+        width: 97%;
+        height: 100%;
+        margin: 0px 5px 0px 5px;  
+    }
+    
 }
