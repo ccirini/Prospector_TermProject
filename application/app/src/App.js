@@ -39,7 +39,7 @@ import ReactGA from 'react-ga';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
 
-ReactGA.initialize('G-XE855YGNH9'); // add your tracking id here.
+ReactGA.initialize('UA-195435223-1'); // add your tracking id here.
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
