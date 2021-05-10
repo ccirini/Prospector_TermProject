@@ -58,6 +58,25 @@ module.exports = app => {
                             }
                         })
         } 
+        
+        //options for gender contain similar substrings, and must be handled  
+        else if(search_param =='gender'){
+            sql.query(`SELECT * FROM student WHERE ${search_param} LIKE "${search_text}%"`, (err, data) => {
+                if(err) {
+                    console.log("error: ", err);
+                    res.status(500).send({
+                        message: 
+                            err.message || "Some error occured while signin in."
+                    })
+                }
+                else {
+                    console.log(data);
+                    res.status(200).send(data); 
+                }
+            })
+                
+        }
+
         else {
             sql.query(`SELECT * FROM student WHERE ${search_param} LIKE "%${search_text}%"`, (err, data) => {
                 if(err) {
