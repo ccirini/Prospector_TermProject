@@ -100,7 +100,7 @@ const HomeRecruiter = () => {
 					<Container key={student.userId} className="home-recruiter-outter-result-container">
 						<Container className="home-recruiter-result-container">
 							<div className="home-recruiter-row1">
-								<p className="home-recruiter-student-name"><b>{student.firstName} {student.lastName}</b> {student.aggregateRating} </p>
+								<p className="home-recruiter-student-name"><b>{student.firstName} {student.lastName} - </b> {student.aggregateRating} / 5 </p>
 							</div>
 							<div className="home-recruiter-row2">
 								<p className="home-recruiter-student-info"><b>Major -</b> {student.major} <b>Gender -</b> {student.gender} <b>Ethnicity -</b> {student.ethnicity}</p>
