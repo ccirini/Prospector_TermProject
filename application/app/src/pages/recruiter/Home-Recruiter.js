@@ -100,7 +100,7 @@ const HomeRecruiter = () => {
 								<p clasName="student-name"><b>{student.firstName} {student.lastName} </b></p>
 							</div>
 							<div className="row-2">
-								<p className="student-major"><b>Major -</b> {student.major}</p>
+								<p className="student-info"><b>Major -</b> {student.major} <b>Gender -</b> {student.gender} <b>Ethnicity -</b> {student.ethnicity}</p>
 								<Button href={`${API_BASE}/resume?userId=${student.userId}`}>Download Resume</Button>
 							</div>
 						</Container>
