@@ -81,29 +81,29 @@ const SignupStudent = () => {
 
 		setValidated(true);
 
-		axios.post(`${API_BASE}/signup/student`, {
-			email: { email },
-			password: { password },
-			studentSFSUId: { studentId },
-			firstName: { firstName },
-			lastName: { lastName },
-			addressId: null,
-			ethnicity: { ethnicity },
-			major: { major },
-			gender: { gender },
-			veteranStatus: { veteranValue },
-			lgbtqStatus: { lgbtqValue },
-			financialAidStatus: { fasfaValue },
-			disabilityStatus: { disabilityValue },
-			firstGeneration: { firstgenValue }
-		})
-			.then(response => {
-				console.log(response)
-				window.location = '/login'
-			})
-			.catch(error => {
-				console.log(error)
-			});
+		// axios.post(`${API_BASE}/signup/student`, {
+		// 	email: { email },
+		// 	password: { password },
+		// 	studentSFSUId: { studentId },
+		// 	firstName: { firstName },
+		// 	lastName: { lastName },
+		// 	addressId: null,
+		// 	ethnicity: { ethnicity },
+		// 	major: { major },
+		// 	gender: { gender },
+		// 	veteranStatus: { veteranValue },
+		// 	lgbtqStatus: { lgbtqValue },
+		// 	financialAidStatus: { fasfaValue },
+		// 	disabilityStatus: { disabilityValue },
+		// 	firstGeneration: { firstgenValue }
+		// })
+		// 	.then(response => {
+		// 		console.log(response)
+		// 		window.location = '/login'
+		// 	})
+		// 	.catch(error => {
+		// 		console.log(error)
+		// 	});
 };
 
 	return (
@@ -111,7 +111,8 @@ const SignupStudent = () => {
 			<HomeNavbar />
 
 			<div className="signup-student">
-				<Form noValidate validated={validated} onSubmit={handleSubmit} className="signup-student-form">
+				<Form noValidate validated={validated} onSubmit={handleSubmit} className="signup-student-form"
+					action={`${API_BASE}`} method="POST">
 					<h1 className="signup-student-h1"><b>Sign Up As Student</b></h1>
 
 					<Form.Row>

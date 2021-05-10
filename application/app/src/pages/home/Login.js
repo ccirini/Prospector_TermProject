@@ -11,12 +11,14 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 const Login = () => {
-	// Get login and check if it's in db
+
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [member, setMember] = useState('');
-	const [url, setUrl] = useState('');
-	const [user, setUser] = React.useState([]);
+
+	function checkUser(userType){
+		return setMember(userType);
+	}
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -29,11 +31,24 @@ const Login = () => {
 			password: password,
 		})
 			.then(response => 
-				console.log(response)
-				// console.log("hello from then")
+				checkUser(response.data.accountType)
 			)
 			.catch(error => console.log(error))
 	}
+
+	switch (member){
+		case 'student':
+			window.location = '/home-student'
+			break;
+		case 'professor':
+			window.location = '/home-professor'
+			break;
+		case 'recruiter':
+			window.location = '/home-recruiter'
+			break;
+	}
+
+	console.log(member);
 
 	return (
 		<div className="login">

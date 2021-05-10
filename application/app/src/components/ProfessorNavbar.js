@@ -22,7 +22,7 @@ const ProfessorNavbar = (props) => {
 				<Navbar.Brand href="/">ProSpector</Navbar.Brand>
 				<Nav className="ml-auto">
 					<Nav.Link href="/home-professor">Home</Nav.Link>
-					{/* <Nav.Link href="/aboutme">About Us</Nav.Link> */}
+					<Nav.Link href="/team">About Us</Nav.Link>
 				</Nav>
 
 				<div className="nav-button-container">

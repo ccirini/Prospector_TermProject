@@ -11,12 +11,15 @@ import API_BASE from "../config/config"
 
 const SignUpRecruiter = () => {
 
-	const [firstName, setFirstName] = useState('');
-	const [lastName, setLastName] = useState('');
-	const [company, setCompany] = useState('');
+	// const [firstName, setFirstName] = useState('');
+	// const [lastName, setLastName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [Vpassword, setVPassword] = useState('');
+	const [company, setCompany] = useState('');
+	const [description, setDescription] = useState('');
+	const [addressId, setAddressId] = useState(1);
+	const [websiteLink, setWebsiteLink] = useState('');
 
 	const [passwordText, setPasswordText] = useState('');
 	const [validated, setValidated] = useState(false);
@@ -41,9 +44,10 @@ const SignUpRecruiter = () => {
 		axios.post(`${API_BASE}/signup/recruiter`, {
 			email: email,
 			password: password,
-			company: company,
-			firstName: firstName,
-			lastName: lastName
+			companyName: company,
+			description: description,
+			addressId: addressId,
+			websiteLink: websiteLink
 		})
 			.then(response => {
 				console.log(response)
@@ -52,7 +56,7 @@ const SignUpRecruiter = () => {
 			.catch(error => {
 				console.log(error)
 			});
-};
+	};
 
 	return (
 		<div className="signup-recruiter-container">
@@ -62,7 +66,7 @@ const SignUpRecruiter = () => {
 				<Form noValidate validated={validated} onSubmit={handleSubmit}>
 					<h1 className="signup-recruiter-h1"><b>Sign Up As A Recruiter</b></h1>
 
-					<Form.Row>
+					{/* <Form.Row>
 						<Form.Group as={Col} md="6" controlId="validationCustom01">
 							<Form.Control
 								required
@@ -82,10 +86,10 @@ const SignUpRecruiter = () => {
 								className="signup-recruiter-row"
 							/>
 						</Form.Group>
-					</Form.Row>
+					</Form.Row> */}
 
 					<Form.Row>
-						<Form.Group as={Col} md="12" controlId="validationCustom03">
+						<Form.Group as={Col} md="12" controlId="validationCustom01">
 							<Form.Control
 								required
 								type="text"
@@ -95,6 +99,36 @@ const SignUpRecruiter = () => {
 							/>
 							<Form.Control.Feedback type="invalid">
 								Please enter company name.
+          		</Form.Control.Feedback>
+						</Form.Group>
+					</Form.Row>
+
+					<Form.Row>
+						<Form.Group as={Col} md="12" controlId="validationCustom02">
+							<Form.Control
+								required
+								type="text"
+								placeholder="Website Link"
+								onChange={e => setWebsiteLink(e.target.value)}
+								className="signup-recruiter-row"
+							/>
+							<Form.Control.Feedback type="invalid">
+								Please enter website link.
+          		</Form.Control.Feedback>
+						</Form.Group>
+					</Form.Row>
+
+					<Form.Row>
+						<Form.Group as={Col} md="12" controlId="validationCustom03">
+							<Form.Control
+								required
+								type="text"
+								placeholder="Description"
+								onChange={e => setDescription(e.target.value)}
+								className="signup-recruiter-row"
+							/>
+							<Form.Control.Feedback type="invalid">
+								Please enter description.
           		</Form.Control.Feedback>
 						</Form.Group>
 					</Form.Row>

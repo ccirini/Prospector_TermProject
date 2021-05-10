@@ -17,35 +17,24 @@ import API_BASE from '../config/config'
 
 const HomeProfessor = () => {
 
-	const [selectedValue, setSelectedValue] = useState('default');
 	const [searchValue, setSearchValue] = useState('default');
 	const [active, setActive] = useState(false);
 	const [students, setStudents] = React.useState([]);
-	const [stuId, setStuId] = useState(912345670);
-	const [pdfLink, setPdfLink] = useState('./john-doe.pdf');
-
 
 	const handleClick = (e) => {
 		e.preventDefault();
 		console.log('The button was clicked.');
 		setActive(true); // results will now be visible
 
-		if (selectedValue != "default" && searchValue == "default") {
-			// if dropdown is selected and search is empty
-			alert("Search bar is empty!");
-		} else {
-			axios.get(`${API_BASE}/search/${selectedValue}/text/${searchValue}`)
-				.then(response => {
-					setStudents(response.data)
-					console.log(response)
-				})
-				.catch(error => {
-					console.log(error)
-				});
-
-			console.log(students);
-		}
+		axios.post(`${API_BASE}/searchstudent`, {
+			studentSFSUId: searchValue,
+		})
+			.then(response => 
+				setStudents(response.data)
+			)
+			.catch(error => console.log(error))
 	}
+
 
 	return (
 		<div className="home-professor">
