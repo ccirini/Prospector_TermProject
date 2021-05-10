@@ -20,13 +20,18 @@
     font-weight: bold;
 }
 
+.home-student-p{
+    margin: 0rem 1rem;
+}
+
 .home-student-row{
     border-top: 2px solid #FFDE59;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: lightgray;
+    background-color: #FFFF;
     padding-bottom: 9px;
 }
+
 .home-student-col{
     margin-top: 20px;
     font-size: 20px;
@@ -43,9 +48,9 @@
 }
 
 .home-student-btn2{
-    color:#ffff;
-    background-color:#463077;
-    border-color:#463077;
+    color:#ffff !important;
+    background-color:#463077 !important;
+    border-color:#463077 !important;
     margin: 10px 10px 10px 10px; 
     font-size: large;
     font-weight: bolder;
@@ -82,6 +87,7 @@
         padding: 3px 15px !important;
         display: inherit;
     }
+    
     .home-student-col{
         margin: 10px 0px;
         font-size: 90%;

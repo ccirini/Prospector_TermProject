@@ -7,52 +7,52 @@ import Button from 'react-bootstrap/Button'
 
 const MatchesRecruiter = () => {
 	return (
-		<div className="home-student">
+		<div className="matches-recruiter">
 			<RecruiterNavbar />
 
-			<h1 className="home-student-h1">Matches</h1>
-			<Container className="home-student-container">
-				<h2 className="home-student-h2">Student Name</h2>
-				<p className="home-student-p">Learn more about this Student</p>
+			<h1 className="matches-recruiter-h1">Matches</h1>
+			<Container className="matches-recruiter-container1">
+				<p className="matches-recruiter-p">You are matched with </p>
+				<h2 className="matches-recruiter-h2">Student Name</h2>
 
-				<Row className="home-student-row">
-					<Button href="#" variant="outline-dark" className="home-student-btn1">Not Interested</Button>
-					<Button href="#" variant="outline-dark" className="home-student-btn2">Connect</Button>
+				<Row className="matches-recruiter-row1">
+					<Button href="#" variant="outline-dark" className="matches-recruiter-btn1">Not Interested</Button>
+					<Button href="#" variant="outline-dark" className="matches-recruiter-btn2">Connect</Button>
 				</Row>
 			</Container>
 
-			<Container className="home-student-container">
-				<h2 className="home-student-h2">Student Name</h2>
-				<p className="home-student-p">Learn more about this Student</p>
+			<Container className="matches-recruiter-container1">
+				<p className="matches-recruiter-p">You are matched with</p>
+				<h2 className="matches-recruiter-h2">Student Name</h2>
 
-				<Row className="home-student-row">
-					<Button href="#" variant="outline-dark" className="home-student-btn1">Not Interested</Button>
-					<Button href="#" variant="outline-dark" className="home-student-btn2">Connect</Button>
+				<Row className="matches-recruiter-row1">
+					<Button href="#" variant="outline-dark" className="matches-recruiter-btn1">Not Interested</Button>
+					<Button href="#" variant="outline-dark" className="matches-recruiter-btn2">Connect</Button>
 				</Row>
 			</Container>
 
-			<Container className="home-student-container">
-				<h2 className="home-student-h2">Student Name</h2>
-				<p className="home-student-p">Learn more about this Student</p>
+			<Container className="matches-recruiter-container1">
+				<p className="matches-recruiter-p">You are matched with</p>
+				<h2 className="matches-recruiter-h2">Student Name</h2>
 
-				<Row className="home-student-row">
-					<Button href="#" variant="outline-dark" className="home-student-btn1">Not Interested</Button>
-					<Button href="#" variant="outline-dark" className="home-student-btn2">Connect</Button>
+				<Row className="matches-recruiter-row1">
+					<Button href="#" variant="outline-dark" className="matches-recruiter-btn1">Not Interested</Button>
+					<Button href="#" variant="outline-dark" className="matches-recruiter-btn2">Connect</Button>
 				</Row>
 			</Container>
 
 
-			<h1 className="viewRecommends-h1">Saved Searches</h1>
-			<Container className="home-student-container">
-				<Col className="viewRecommends-col">
-					<h3 className="viewRecommends-col">Major: Null</h3>
-					<h3 className="viewRecommends-col">Gender: Null </h3>
-					<h3 className="viewRecommends-col">Ethnicity: Null</h3>
+			<h1 className="matches-recruiter-h1">Saved Searches</h1>
+			<Container className="matches-recruiter-container2">
+				<Col>
+					<h3 className="matches-recruiter-p">Major: Null</h3>
+					<h3 className="matches-recruiter-p">Gender: Null </h3>
+					<h3 className="matches-recruiter-p">Ethnicity: Null</h3>
 				</Col>
 
-				<Row className="home-student-row">
-					<Button href="#" variant="outline-dark" className="account-student-btn">Edit</Button>
-					<Button href="#" variant="outline-dark" className="account-professor-btn">Remove</Button>
+				<Row className="matches-recruiter-row2">
+					<Button href="#" variant="outline-dark" className="matches-recruiter-btn3">Edit</Button>
+					<Button href="#" variant="outline-dark" className="matches-recruiter-btn2">Remove</Button>
 				</Row>
 			</Container>
 		</div>
