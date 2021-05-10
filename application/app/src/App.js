@@ -34,8 +34,13 @@ import George from "./pages/team/George";
 import Tony from "./pages/team/Tony";
 import Team from "./pages/team/Team";
 
+import ReactGA from 'react-ga';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
+
+ReactGA.initialize('G-XE855YGNH9'); // add your tracking id here.
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
   return (

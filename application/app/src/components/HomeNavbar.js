@@ -19,7 +19,7 @@ const HomeNavbar = () => {
 
 			<Navbar className="navbar">
 				<Navbar.Brand href="/">ProSpector</Navbar.Brand>
-				<Nav className="ml-auto">
+				<Nav className="home-ml-auto">
 					<Nav.Link href="/">Home</Nav.Link>
 					<Nav.Link href="/team">About Us</Nav.Link>
 				</Nav>

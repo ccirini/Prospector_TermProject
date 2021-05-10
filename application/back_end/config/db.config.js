@@ -1,4 +1,4 @@
-// // SERVER DB CREDENTIALS 
+// SERVER DB CREDENTIALS 
 module.exports = {
     dbHOST: "localhost",
     dbNAME: "csc648Team2",
@@ -29,16 +29,16 @@ module.exports = {
 // }
 
 // BACK_END DB CREDENTIALS 
-// module.exports = {
-//     dbHOST: "localhost",
-//     dbNAME: "csc648Team2",
-//     dbUSER: "root", 
-//     dbPASS: "bdl4life",
-//     dialect: "mysql",
-//     pool: {
-//       max: 5,
-//       min: 0,
-//       acquire: 30000,
-//       idle: 10000
-//     }
-// }
+//module.exports = {
+//   dbHOST: "localhost",
+//   dbNAME: "csc648Team2",
+//   dbUSER: "root", 
+//   dbPASS: "bdl4life",
+//   dialect: "mysql",
+//   pool: {
+//     max: 5,
+//     min: 0,
+//     acquire: 30000,
+//     idle: 10000
+//   }
+//}

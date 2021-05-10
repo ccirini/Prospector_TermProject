@@ -1,3 +1,7 @@
+.viewRecommends{
+    width: 100%;
+}
+
 .viewRecommends-h1 {
     text-align: left;
     margin-left: 25px;
@@ -7,7 +11,7 @@
     color: #463077;
     background-color:#FFDE59;
     border-color:#463077;
-    margin: 0px 00px 0px 900px;
+    margin-left:980px;
     font-weight: bolder;
 }
 
@@ -25,4 +29,45 @@
 }
 .viewRecommends-edit-btn{
     color: red;
+}
+
+@media only screen and (max-width: 600px) {
+    .viewRecommends{
+        width: 100%;
+    }
+    
+    .viewRecommends-h1 {
+        font-size: 130%;
+        margin: 10px;
+        text-align: left;
+    }
+    
+    .viewRecommends-btn {
+        margin: 0px 0px 0px 200px;
+        font-weight: bolder;
+        font-size: x-small;
+    }
+    
+    .viewRecommends-form {
+        text-align: left;
+        margin: 10px;
+        border-bottom: 2px solid lightgray;
+    
+    }
+    
+    .viewRecommends-row{
+        padding: 3px 15px !important;
+        display: block;
+    }
+
+    .viewRecommends-col {
+        margin-top: 10px;
+        font-size: 60%;
+        padding: 1px;
+    
+    }
+    .viewRecommends-edit-btn{
+        color: red;
+        font-size: 80%;
+    }  
 }

@@ -41,3 +41,23 @@ recommendation      -> POST /addrec
                         -   DATA TO SEND BACK 
                             type: JSON { studentSFSUId, professorId, rating, recommendationText }
 
+save searches       -> /savesearch/option/{dropdown category}/text/{text}
+                        -   DATA TO SEND BACK 
+                            type: JSON { recruiterId }
+
+recruiter           -> (update) POST /update/recruiter
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId, email, password, companyName, description, addressId, websiteLink }
+
+                    -> (delete) POST /delete/recruiter
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId }
+
+professor           -> (update) POST /update/professor
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId, email, password, firstName, lastName, university }
+
+                    -> (delete) POST /delete/professor
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId }
+
