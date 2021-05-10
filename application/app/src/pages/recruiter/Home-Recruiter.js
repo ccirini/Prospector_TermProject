@@ -53,12 +53,12 @@ const HomeRecruiter = () => {
 	}
 
 	return (
-		<div className="search">
+		<div className="home-recruiter-search">
 			<RecruiterNavbar />
 			<Container>
-				<h1 className="page-title">Search</h1>
-				<Row>
-					<Col>
+				<h1 className="home-recruiter-page-title">Search</h1>
+				<Row className="home-recruiter-search-row">
+					<Col className="home-recruiter-search-col">
 						<Select
 							placeholder="Select Option"
 							options={data} // set list of the data
@@ -67,22 +67,25 @@ const HomeRecruiter = () => {
 							as={InputGroup.Prepend}
 							variant="outline-secondary"
 							id="input-group-dropdown1"
-							className="dropdown"
+							className="home-recruiter-dropdown"
 						/>
 					</Col>
 
-					<Col>
+					<Col className="home-recruiter-search-col">
 						{/* Search bar */}
 						<FormControl aria-describedby="basic-addon1" placeholder="Search..."
-							className="search-bar" onChange={e => setSearchValue(e.target.value)} />
+							className="home-recruiter-search-bar" onChange={e => setSearchValue(e.target.value)} />
 					</Col>
 
-					<div className="button-container">
-						<Button type="submit" onClick={console.log('save')}>Get Notified</Button>
+					<div className="home-recruiter-button-container">
+						<Button type="submit"
+						className="home-recruiter-btn3" 
+						onClick={console.log('save')}
+						>Get Notified</Button>
 					</div>
 
-					<div className="button-container">
-						<Button type="submit" className="btn-outline-light" onClick={handleClick}>Search</Button>
+					<div className="home-recruiter-button-container">
+						<Button type="submit" className="home-recruiter-btn1" onClick={handleClick}>Search</Button>
 					</div>
 				</Row>
 			</Container>
@@ -94,14 +97,17 @@ const HomeRecruiter = () => {
 
 			{active && <div style={{ marginTop: 20, lineHeight: '25px' }}>
 				{students.map(student =>
-					<Container key={student.userId} className="outter-result-container">
-						<Container className="result-container">
-							<div className="row-1">
-								<p clasName="student-name"><b>{student.firstName} {student.lastName} </b></p>
+					<Container key={student.userId} className="home-recruiter-outter-result-container">
+						<Container className="home-recruiter-result-container">
+							<div className="home-recruiter-row1">
+								<p className="home-recruiter-student-name"><b>{student.firstName} {student.lastName} </b></p>
 							</div>
-							<div className="row-2">
-								<p className="student-info"><b>Major -</b> {student.major} <b>Gender -</b> {student.gender} <b>Ethnicity -</b> {student.ethnicity}</p>
-								<Button href={`${API_BASE}/resume?userId=${student.userId}`}>Download Resume</Button>
+							<div className="home-recruiter-row2">
+								<p className="home-recruiter-student-info"><b>Major -</b> {student.major} <b>Gender -</b> {student.gender} <b>Ethnicity -</b> {student.ethnicity}</p>
+								<Button 
+								href={`${API_BASE}/resume?userId=${student.userId}`}
+								className="home-recruiter-btn2"
+								>Download Resume</Button>
 							</div>
 						</Container>
 					</Container>)}
