@@ -98,7 +98,8 @@ const HomeRecruiter = () => {
 						<Container className="result-container">
 							<div className="row-1">
 								<p clasName="student-name"><b>{student.firstName} {student.lastName} </b></p>
-								<p className="learn-text"><a href="/home-student">Learn more about this student</a></p>
+								//To be re-added after user profile pages are implemented 	
+								//<p className="learn-text"><a href="/home-student">Learn more about this student</a></p>
 							</div>
 							<div className="row-2">
 								<p className="student-major"><b>Major -</b> {student.major}</p>
