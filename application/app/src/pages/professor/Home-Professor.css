@@ -38,35 +38,55 @@
     border-color:#463077;
     margin: 10px 10px 10px 10px; 
     font-size: large;
-    font-weight: bolder;
-
-    
+    font-weight: bolder;  
 }
 
-/* .home-professor-container{
-    border: 2px solid #FFDE59;
-    border-radius: 15px;
-    padding: 10px 0px 0px 0px;
-    width: 800px;
-    height: 200px;
-    margin: 10px 0px 15px 100px; 
-    text-align: left;  
+.home-professor-outter-result-container{
+    padding: 20px;
+    width: 75%;
 }
 
-.home-professor-h2{
+.home-professor-result-container{
+    border: 1px solid #C99700; 
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0;
+}
+
+.home-professor-row1{
+    text-align: left;
+    font-size: 38px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.home-professor-student-name{
     color: #463077;
-    margin: 15px 0px 15px 15px;
-    font-weight: bold;
 }
-*/
 
 .home-professor-btn3{
     color:#463077;
     background-color:#FFDE59;
     border-color:#FFDE59;
-    margin: 0px 0px 0px 400px; 
+    margin: 0px 0px 0px 700px; 
     font-size: large;
     font-weight: bolder;
+}
+
+.home-professor-row2{
+    border-top: 2px solid #F1F0F0;
+    margin: 0;
+    left: 0;
+    text-align: left;
+}
+
+.home-professor-student-major{
+    color: #463077;
+    font-size: 130%;
+}
+
+.home-professor-btn4{
+    margin: 0px 0px 0px 700px; 
 }
 
 @media only screen and (max-width: 600px) {
@@ -108,28 +128,54 @@
         font-size: small;
         font-weight: bolder;
         width: 280px;
-        
     }
-    
-    /* .home-professor-container{
-        padding: 10px 0px 10px 0px;
+
+    .home-professor-outter-result-container{
+        margin: 3px;
+        padding: 3px;
         width: 97%;
-        height: 100%;
-        margin: 0px 5px 0px 5px; 
     }
-    
-    .home-professor-h2{
+
+    .home-professor-result-container{ 
+        border-radius: 10px;
+        padding: 15px;
+        margin: 2px;
+    }
+
+    .home-professor-row1{
         width: 100%;
-		font-size: 130%;
+        padding: 7px 7px;
     }
-    */
+
+    .home-professor-student-name{
+        font-size: 60%;
+    }
+
+    .home-professor-row2{
+        border-top: 2px solid #F1F0F0;
+        margin: 0;
+        left: 0;
+        text-align: left;
+    }
+
+    .home-professor-student-major{
+        color: #463077;
+        font-size: 16px;
+    }
+
+    .home-professor-btn4{
+        width: 135px !important;
+        margin: 2px 2px 2px 170px !important; 
+        font-size: small !important;
+        padding: 0.3em !important;
+    }
 
     .home-professor-btn3{
-        margin: 10px 10px 10px 70px; 
-        padding-left: 7px;
+        margin: 2px 2px 2px 200px;
+        padding: .3rem;
         font-size: x-small;
         font-weight: bolder;
-        width: 80px;
+        width: 90px;
         height: 30px;
     }
     

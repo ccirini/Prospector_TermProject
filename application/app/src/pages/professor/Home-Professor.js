@@ -65,15 +65,19 @@ const HomeProfessor = () => {
 
 			{active && <div style={{ marginTop: 20, lineHeight: '25px' }}>
 				{students.map(student =>
-					<Container key={student.userId} className="outter-result-container">
-						<Container className="result-container">
-							<div className="row-1">
-								<p clasName="student-name"><b>{student.firstName} {student.lastName} </b></p>
-								<Button href="/newrecommend" variant="outline-dark" className="home-professor-btn3">Recommend</Button>
+					<Container key={student.userId} className="home-professor-outter-result-container">
+						<Container className="home-professor-result-container">
+							<div className="home-professor-row1">
+								<p clasName="home-professor-student-name"><b>{student.firstName} {student.lastName} </b></p>
+								<Button href="/newrecommend" 
+								variant="outline-dark" 
+								className="home-professor-btn3">Recommend</Button>
 							</div>
-							<div className="row-2">
-								<p className="student-major"><b>Major -</b> {student.major}</p>
-								<Button href={`${API_BASE}/resume?userId=${student.userId}`}>Download Resume</Button>
+							<div className="home-professor-row2">
+								<p className="home-professor-student-major"><b>Major -</b> {student.major}</p>
+								<Button
+								className="home-professor-btn4" 
+								href={`${API_BASE}/resume?userId=${student.userId}`}>Download Resume</Button>
 							</div>
 						</Container>
 					</Container>)}
