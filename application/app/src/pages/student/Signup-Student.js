@@ -100,8 +100,7 @@ const SignupStudent = () => {
 			}
 		})
 			.then(response => {
-				console.log(response)
-				// window.location = '/login'
+				window.location = '/login'
 			})
 			.catch(error => {
 				console.log(error)

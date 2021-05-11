@@ -25,6 +25,8 @@ import NewRecommend from "./pages/professor/Newrecommend";
 import MatchesRecruiter from "./pages/recruiter/Matches-Recruiter";
 import Delete from "./components/Delete";
 
+import DeleteStudent from "./pages/student/Delete-Student";
+
 // import AboutMe from "./pages/team/AboutMe";
 import Cameron from "./pages/team/Cameron";
 // import Fasia from "./pages/team/Fasia";
@@ -70,6 +72,7 @@ function App() {
             <Route path="/edit-professor"><EditProfessor /></Route>
             <Route path="/edit-recruiter"><EditRecruiter /></Route>
             <Route path="/delete"><Delete /></Route>
+            <Route path="/delete-student"><DeleteStudent /></Route>
             
             <Route path="/team/cameron"><Cameron /></Route>
             <Route path="/team/faisa"><Faisa /></Route>
