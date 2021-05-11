@@ -15,6 +15,7 @@ const NewRecommend = () => {
 	// declare variables
 	const [studentSFSUId, setStudentSFSUId] = useState(912345670);
 	const [professorId, setProfessorId] = useState(5);
+	const [students, setAggregateRating] = React.useState([]);
 	const [rating, setRatingValue] = useState(0);
 	const [recommendationText, setRecommendationText] = useState('');
 	
@@ -36,12 +37,15 @@ const NewRecommend = () => {
 		})
 			.then(response => {
 				console.log(response)
+				students.map(rating => setAggregateRating(rating))
 				window.location = '/viewrecommend'
 			})
 			.catch(error => {
 				console.log(error)
 				window.location = '/viewrecommend'
-			});
+			});	
+		
+		console.log(students);
 	};
 
 	return (
