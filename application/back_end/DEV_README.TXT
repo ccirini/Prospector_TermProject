@@ -32,7 +32,7 @@ resume              -> (resume upload) POST /upload
                         - DATA TO SEND BACK
                             type: form-data { resume file, userId }
                     
-                    -> (retrieve resume) POST /resume
+                    -> (retrieve resume) GET /resume
                         -   DATA TO SEND BACK 
                                 type: JSON { userId }
 
