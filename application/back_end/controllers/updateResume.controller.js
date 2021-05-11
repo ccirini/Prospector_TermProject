@@ -5,8 +5,9 @@ const Image = db.images;
 
 const updateFiles = async (req, res) => {
   try {
-    console.log(req.file);
-    console.log(req.body.userId)
+    // console.log(req.file);
+    // console.log(req.body.userId)
+
     if (req.file == undefined) {
       return res.send(`You must select a file.`);
     }
@@ -18,7 +19,7 @@ const updateFiles = async (req, res) => {
     })
     
     let oldFileName = oldFileObj[0].name; 
-    console.log("old from name:", oldFileName);
+    // console.log("old from name:", oldFileName);
 
     Image.update({ 
         type: req.file.mimetype,
@@ -39,7 +40,7 @@ const updateFiles = async (req, res) => {
         return res.send(`File has been updated.`);
     })
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.send(`Error when trying upload images: ${error}`);
   }
 };

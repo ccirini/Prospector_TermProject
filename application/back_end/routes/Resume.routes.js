@@ -5,11 +5,12 @@ module.exports = app => {
     const updateController = require("../controllers/updateResume.controller");
     const upload = require("../middleware/uploads");
 
-    // create a new professor account 
+    // upload resume  
     app.post("/upload", upload.single("resume"), uploadController.uploadFiles);
 
-    app.get("/resume", (req, res) => {
-        const { userId } = req.query;
+    // retrieve resume
+    app.post("/resume", (req, res) => {
+        const { userId } = req.body;
 
         sql.query("SELECT * FROM images", (err, data) => {
             if (err) {
@@ -22,8 +23,9 @@ module.exports = app => {
             else {
                 // /Users/tonycao/Desktop/CSC648/csc648-02-sp21-team02/application/back_end/resources/static/assets/uploads/resumeTest.pdf
                 let resume = data.filter(account => { return account.userId == userId })
+                console.log(resume)
                 let resumePath = __basedir + "/resources/static/assets/uploads/" + resume[0].name;
-                console.log(resumePath)
+                // console.log(resumePath)
                 // console.log(resume[0].name);
                 res.status(200).sendFile(resumePath, { 
                     headers: { 
@@ -40,5 +42,6 @@ module.exports = app => {
         })        
     })
     
+    // update resume 
     app.post("/update/resume", upload.single("resume"), updateController.updateFiles);
 }

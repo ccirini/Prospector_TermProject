@@ -24,15 +24,18 @@ signup              -> POST /signUp/professor
                                 disabilityStatus, firstGeneration
                             }
              
-resume              -> POST /upload (resume upload)
+resume              -> (resume upload) POST /upload 
                         -   DATA TO SEND BACK 
                             type: form-data { resume file, userId }
 
-                    -> POST /update/resume (resume update)
+                    -> (resume update) POST /update/resume 
                         - DATA TO SEND BACK
                             type: form-data { resume file, userId }
                     
-                    -> GET /resume?userId={userId}
+                    -> (retrieve resume) POST /resume
+                        -   DATA TO SEND BACK 
+                                type: JSON { userId }
+
                         - - how to find userId for testing purposes - -
                             - use csc649Team2 server DB
                             - 'SELECT userId FROM images'
@@ -58,6 +61,16 @@ professor           -> (update) POST /update/professor
                             type: JSON { userId, email, password, firstName, lastName, university }
 
                     -> (delete) POST /delete/professor
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId }
+
+student             -> (update) POST /update/student
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId, email, password, studentSFSUId, firstName, lastName, addressId,
+                                        ethnicity, major, gender, veteranStatus, lgbtqStatus, financialAidStatus, 
+                                        disabilityStatus, firstGeneration }
+
+                    -> (delete) POST /delete/student
                         -   DATA TO SEND BACK 
                             type: JSON { userId }
 
