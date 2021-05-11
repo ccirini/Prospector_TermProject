@@ -57,7 +57,7 @@ function checkMatch(student) {
                         let mailList = recruiterEmails.join();
                         
                         let mailOptions = {
-                            from: 'trung2598@yahoo.com',
+                            from: 'caotrung6@gmail.com',
                             to: mailList,
                             subject: 'You\'ve got a match!',
                             text: 'Congratulations! we found a candidate that matches with your saved search!'
@@ -74,7 +74,7 @@ function checkMatch(student) {
                     
                     // send email to student
                     let mailOptions = {
-                        from: 'trung2598@yahoo.com',
+                        from: 'caotrung6@gmail.com',
                         to: student.email,
                         subject: 'You\'ve got a match!',
                         text: 'Congratulations! you have matched with a company!'

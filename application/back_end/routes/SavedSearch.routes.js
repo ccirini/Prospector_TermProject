@@ -37,7 +37,7 @@ function checkMatch(queryObj) {
                     mailList.join()
 
                     let mailOptions = {
-                        from: 'trung2598@yahoo.com',
+                        from: 'caotrung6@gmail.com',
                         to: mailList,
                         subject: 'You\'ve got a match!',
                         text: 'Congratulations! we found a candidate that matches with your saved search!'
