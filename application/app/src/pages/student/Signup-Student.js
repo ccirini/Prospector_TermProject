@@ -10,6 +10,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import React, { useState } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
+import bsCustomFileInput from "bs-custom-file-input"
 
 import gender from "../../components/categories/gender.json";
 import lgbtq from "../../components/categories/lgbtq.json";
@@ -42,6 +43,8 @@ const SignupStudent = () => {
 	const [validated, setValidated] = useState(false);
 	const [passwordText, setPasswordText] = useState('');
 
+	const [fileName, setFileName] = useState("Upload Resume");
+
 	const handleChangeGender = e => { setGenderValue(e.value); }
 	const handleChangeLgbtq = e => { setLgbtqValue(e.value); }
 	const handleChangeEthnicity = e => { setEthnicityValue(e.value); }
@@ -49,6 +52,19 @@ const SignupStudent = () => {
 	const handleChangeDisability = e => { setDisabilityValue(e.value); }
 	const handleChangeFirstgen = e => { setFirstgenValue(e.value); }
 	const handleChangeFasfa = e => { setFasfaValue(e.value); }
+
+	const submitForm = () => {
+		const formData = new FormData();
+		formData.append("resume", fileName);
+		formData.append("userId", studentId)
+
+		axios.post(`${API_BASE}/upload`, formData)
+			.then((res) => {
+				alert("File Upload success");
+				window.location = '/login'
+			})
+			.catch((err) => alert("File Upload Error"));
+	};
 
 	const handleSubmit = (event) => {
 		const form = event.currentTarget;
@@ -90,21 +106,7 @@ const SignupStudent = () => {
 				console.log(error)
 			});
 
-		let formData = new FormData();
-		var resumefile = document.querySelector('#file');
-		formData.append("resume", resumefile.files[0]);
-		formData.append("userId", studentId)
-		axios.post(`${API_BASE}/upload`, formData, {
-			headers: {
-				'Content-Type': 'multipart/form-data'
-			}
-		})
-			.then(response => {
-				window.location = '/login'
-			})
-			.catch(error => {
-				console.log(error)
-			});
+		submitForm();
 	};
 
 	return (
@@ -307,7 +309,16 @@ const SignupStudent = () => {
 						</Col>
 
 						<Col>
-							<input type="file" id="file" />
+							<Form.Group as={Row}>
+								<Form.File
+									type="file"
+									// className="custom-file-label"
+									id="inputGroupFile01"
+									label={fileName}
+									onChange={(e) => setFileName(e.target.files[0].name)}
+									custom
+								/>
+							</Form.Group>
 						</Col>
 					</Row>
 

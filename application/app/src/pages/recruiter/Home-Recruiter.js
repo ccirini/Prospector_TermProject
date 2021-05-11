@@ -30,19 +30,18 @@ const HomeRecruiter = () => {
 		setSelectedValue(e.value);
 	}
 
-	const getResume = (userId) => {
-		axios.post(`${API_BASE}/resume`, {
-			userId: userId,
-		})
-			.then(response => {
-				console.log(response)
-				const url = `${API_BASE}/resume?userId=${userId}`
-				window.location = url
-			})
-			.catch(error => {
-				console.log(error)
-			});
-	}
+	// const getResume = (userId) => {
+	// 	axios.get(`${API_BASE}/resume`, {
+	// 		userId: userId,
+	// 	})
+	// 		.then(response => {
+	// 			console.log(response)
+	// 			window.location = `${API_BASE}/resume?userId=${userId}`
+	// 		})
+	// 		.catch(error => {
+	// 			console.log(error)
+	// 		});
+	// }
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -119,7 +118,7 @@ const HomeRecruiter = () => {
 							<div className="home-recruiter-row2">
 								<p className="home-recruiter-student-info"><b>Major -</b> {student.major} <b>Gender -</b> {student.gender} <b>Ethnicity -</b> {student.ethnicity}</p>
 								<Button
-									onClick={getResume(student.userId)}
+									href={`${API_BASE}/resume?userId=${student.userId}`}
 									className="home-recruiter-btn2"
 								>Download Resume</Button>
 							</div>

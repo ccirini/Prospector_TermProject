@@ -7,6 +7,10 @@ import { useState } from "react";
 
 const RecruiterNavbar = (props) => {
 
+	const handleClick = () => {
+		localStorage.clear();
+	}
+
 	return (
 		<div>
 			<Marquee
@@ -31,7 +35,7 @@ const RecruiterNavbar = (props) => {
 				</div>
 
 				<div className="nav-button-container">
-					<Button className="btn-primary" href="/">Sign Out</Button>
+					<Button className="btn-primary" href="/" onClick={handleClick}>Sign Out</Button>
 				</div>
 			</Navbar>
 		</div>
