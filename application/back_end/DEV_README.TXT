@@ -1,36 +1,76 @@
 routes
 
-search       -> GET /search/{dropdown category}/text/{search text}
+search              -> GET /search/{dropdown category}/text/{search text}
+                    -> POST /searchstudent
+                        -   DATA TO SEND BACK 
+                            type: JSON { studentSFSUId }
 
-signin       -> GET /signin
-                    -   DATA TO SEND BACK 
-                        type: JSON { email, password }
+signin              -> POST /signin
+                        -   DATA TO SEND BACK 
+                            type: JSON { email, password }
 
-signup       -> POST /signup/professor
-                    -   DATA TO SEND BACK 
-                        type: JSON { email, password, firstName, lastName, university }
+signup              -> POST /signUp/professor
+                        -   DATA TO SEND BACK 
+                            type: JSON { email, password, firstName, lastName, university }
 
-             -> POST /signup/recruiter
-                    -   DATA TO SEND BACK 
-                        type: JSON { email, password, companyName, decription, addressId, websiteLink }
+                    -> POST /signUp/recruiter
+                        -   DATA TO SEND BACK 
+                            type: JSON { email, password, companyName, decription, addressId, websiteLink }
 
-             -> POST /signup/student 
-                    -   DATA TO SEND BACK 
-                        type: JSON { email, password, studentSFSUId, firstName, lastName, addressId,
-                            ethnicity, major, gender, veteranStatus, lgbtqStatus, financialAidStatus, 
-                            disabilityStatus, firstGeneration
-                        }
+                    -> POST /signUp/student 
+                        -   DATA TO SEND BACK 
+                            type: JSON { email, password, studentSFSUId, firstName, lastName, addressId,
+                                ethnicity, major, gender, veteranStatus, lgbtqStatus, financialAidStatus, 
+                                disabilityStatus, firstGeneration
+                            }
              
-resume       -> POST /upload (resume upload)
-                    -   DATA TO SEND BACK 
-                        type: form-data { resume file, userId }
+resume              -> (resume upload) POST /upload 
+                        -   DATA TO SEND BACK 
+                            type: form-data { resume file, userId }
 
-             -> POST /update/resume (resume update)
-                    - DATA TO SEND BACK
-                        type: form-data { resume file, userId }
-                        
-             -> GET /resume?userId={userId}
-                    - - how to find userId for testing purposes - -
-                        - use csc649Team2 server DB
-                        - 'SELECT userId FROM images'
+                    -> (resume update) POST /update/resume 
+                        - DATA TO SEND BACK
+                            type: form-data { resume file, userId }
+                    
+                    -> (retrieve resume) POST /resume
+                        -   DATA TO SEND BACK 
+                                type: JSON { userId }
+
+                        - - how to find userId for testing purposes - -
+                            - use csc649Team2 server DB
+                            - 'SELECT userId FROM images'
+
+recommendation      -> POST /addrec
+                        -   DATA TO SEND BACK 
+                            type: JSON { studentSFSUId, professorId, rating, recommendationText }
+
+save searches       -> /savesearch/option/{dropdown category}/text/{text}
+                        -   DATA TO SEND BACK 
+                            type: JSON { recruiterId }
+
+recruiter           -> (update) POST /update/recruiter
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId, email, password, companyName, description, addressId, websiteLink }
+
+                    -> (delete) POST /delete/recruiter
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId }
+
+professor           -> (update) POST /update/professor
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId, email, password, firstName, lastName, university }
+
+                    -> (delete) POST /delete/professor
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId }
+
+student             -> (update) POST /update/student
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId, email, password, studentSFSUId, firstName, lastName, addressId,
+                                        ethnicity, major, gender, veteranStatus, lgbtqStatus, financialAidStatus, 
+                                        disabilityStatus, firstGeneration }
+
+                    -> (delete) POST /delete/student
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId }
 

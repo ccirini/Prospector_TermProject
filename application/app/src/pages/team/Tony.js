@@ -2,8 +2,10 @@ import bgimage from "../../images/background-mountains.jpeg";
 import profilePicture from "../../images/profile_pic_Tony.jpg";
 import "./member-page.css";
 import Footer from "../../components/Footer";
+import HomeNavbar from "../../components/HomeNavbar";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
@@ -18,6 +20,16 @@ const major = "Computer Science";
 const Tony = () => {
   return (
     <div>
+      <HomeNavbar />
+
+      <Breadcrumb>
+        <Breadcrumb.Item href="/team/cameron">Cameron</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/faisa">Faisa</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/franklin">Franklin</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/george">George</Breadcrumb.Item>
+        <Breadcrumb.Item href="/team/tony">Tony</Breadcrumb.Item>
+      </Breadcrumb>
+
       <Jumbotron
         className="background"
         style={{ backgroundImage: `url(${bgimage})`, backgroundSize: "cover" }}
@@ -54,7 +66,6 @@ const Tony = () => {
           Playing basketball was my first favorite hobby however due to the ongoing pandemic, I found  
           myself playing less basketball and tuning in to more NBA and NCAA games. 
         </p>
-        <Footer footer="footer-member"/>
       </Container>
     </div>
   );

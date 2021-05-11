@@ -1,9 +1,8 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Home from "./pages/home/Home";
+import Login from "./pages/home/Login";
+import Signup from "./pages/home/Signup";
 
 import SignupStudent from "./pages/student/Signup-Student";
 import SignUpProfessor from "./pages/professor/Signup-Professor";
@@ -26,21 +25,28 @@ import NewRecommend from "./pages/professor/Newrecommend";
 import MatchesRecruiter from "./pages/recruiter/Matches-Recruiter";
 import Delete from "./components/Delete";
 
-import AboutMe from "./pages/AboutMe";
+// import AboutMe from "./pages/team/AboutMe";
 import Cameron from "./pages/team/Cameron";
-import Fasia from "./pages/team/Fasia";
+// import Fasia from "./pages/team/Fasia";
+import Faisa from "./pages/team/Faisa";
 import Franklin from "./pages/team/Franklin";
 import George from "./pages/team/George";
 import Tony from "./pages/team/Tony";
+import Team from "./pages/team/Team";
+
+import ReactGA from 'react-ga';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from 'react';
+
+ReactGA.initialize('UA-195435223-1'); // add your tracking id here.
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
   return (
     <Router >
       <div className="App">
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="Content">
           <Switch>
             <Route exact path="/"><Home /></Route>
@@ -65,12 +71,12 @@ function App() {
             <Route path="/edit-recruiter"><EditRecruiter /></Route>
             <Route path="/delete"><Delete /></Route>
             
-            <Route exact path="/aboutme"><AboutMe /></Route>
-            <Route path="/aboutme/cameron"><Cameron /></Route>
-            <Route path="/aboutme/fasia"><Fasia /></Route>
-            <Route path="/aboutme/franklin"><Franklin /></Route>
-            <Route path="/aboutme/george"><George /></Route>
-            <Route path="/aboutme/tony"><Tony /></Route>
+            <Route path="/team/cameron"><Cameron /></Route>
+            <Route path="/team/faisa"><Faisa /></Route>
+            <Route path="/team/franklin"><Franklin /></Route>
+            <Route path="/team/george"><George /></Route>
+            <Route path="/team/tony"><Tony /></Route>
+            <Route exact path="/team"><Team /></Route>
           </Switch>
         </div>
     </div>

@@ -1,78 +1,148 @@
 import "./Signup-Professor.css"
+import { Redirect } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
+import HomeNavbar from "../../components/HomeNavbar";
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import API_BASE from "../config/config"
 
-const API_BASE = 'http://54.70.249.83:5000'
-// const API_BASE = 'http://localhost:5000'
+const SignUpProfessor = () => {
 
-const SignUpProfessor = () =>{
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
+	const [university, setUniversity] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [Vpassword, setVPassword] = useState('');
 
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [university, setUniversity] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [Vpassword, setVPassword] = useState('');
+	const [passwordText, setPasswordText] = useState('');
+	const [validated, setValidated] = useState(false);
 
-    function handleClick(e) {
-        // e.preventDefault();
-        console.log('The button was clicked.');
+	const handleSubmit = (event) => {
+		const form = event.currentTarget;
+		event.preventDefault();
 
-        axios.post(`${API_BASE}/signup/professor`, {
-            email: {email}, 
-            password: {password}, 
-            firstName: {firstName}, 
-            lastName: {lastName}, 
-            university: {university},
-        })
-        .then(function (response) {
-            console.log(response);
-        })
-    }
+		if (form.checkValidity() === false) {
+			event.stopPropagation();
+		}
 
-    return(
-        <div className="signup-professor">
-            <Form className="signup-professor-form">
-                <h1 className="signup-professor-h1"><b>Sign Up As An Instructor</b></h1>
-                <Row>
-                    <Col>
-                        <Form.Control type="text" placeholder="First Name" className="signup-professor-row"
-                        onChange={e => setFirstName(e.target.value)}/>
-                    </Col>
-                    <Col>
-                        <Form.Control type="text" placeholder="Last Name" className="signup-professor-row"
-                        onChange={e => setLastName(e.target.value)}/>
-                    </Col>
-                </Row>
+		if (password != Vpassword) {
+			event.stopPropagation();
+			setPasswordText("Passwords do not match");
+		} else {
+			setPasswordText('');
+		}
 
-                <Row>
-                    <Form.Control type="text" placeholder="University Name" className="signup-professor-row"
-                    onChange={e => setUniversity(e.target.value)}/>
-                </Row>
-                
-                <Row>
-                  <Form.Control type="email" placeholder="Email" className="signup-professor-row"
-                  onChange={e => setEmail(e.target.value)}/>
-                </Row>
+		setValidated(true);
 
-                <Row>
-                    <Form.Control type="password" placeholder="Password" className="signup-professor-row"
-                    onChange={e => setPassword(e.target.value)}/>
-                </Row>
-                
-                <Row>
-                    <Form.Control type="password" placeholder="Verify-Password" className="signup-professor-row"
-                    onChange={e => setVPassword(e.target.value)}/>
-                </Row>
-                <Button href="/home-professor" className="signup-professor-btn" type="submit" onSubmit={handleClick}>Sign Up</Button>
-            </Form>
-        </div>
-    );
+		axios.post(`${API_BASE}/signup/professor`, {
+			email: email,
+			password: password,
+			firstName: firstName,
+			lastName: lastName,
+			university: university
+		})
+			.then(response => {
+				console.log(response)
+				window.location = '/login'
+			})
+			.catch(error => {
+				console.log(error)
+			});
+};
+
+return (
+	<div className="signup-professor-container">
+		<HomeNavbar />
+
+		<div className="signup-professor">
+			<Form noValidate validated={validated} onSubmit={handleSubmit}>
+				<h1 className="signup-professor-h1"><b>Sign Up As An Instructor</b></h1>
+
+				<Form.Row>
+					<Form.Group as={Col} md="6" controlId="validationCustom01">
+						<Form.Control
+							required
+							type="text"
+							placeholder="First name"
+							onChange={e => setFirstName(e.target.value)}
+							className="signup-professor-row"
+						/>
+					</Form.Group>
+
+					<Form.Group as={Col} md="6" controlId="validationCustom02">
+						<Form.Control
+							required
+							type="text"
+							placeholder="Last name"
+							onChange={e => setLastName(e.target.value)}
+							className="signup-professor-row"
+						/>
+					</Form.Group>
+				</Form.Row>
+
+				<Form.Row>
+					<Form.Group as={Col} md="12" controlId="validationCustom03">
+						<Form.Control
+							required
+							type="text"
+							placeholder="University"
+							onChange={e => setUniversity(e.target.value)}
+							className="signup-professor-row"
+						/>
+						<Form.Control.Feedback type="invalid">
+							Please enter university name.
+          		</Form.Control.Feedback>
+					</Form.Group>
+				</Form.Row>
+
+				<Form.Row>
+					<Form.Group as={Col} md="12" controlId="validationCustom04">
+						<Form.Control
+							required
+							type="email"
+							placeholder="Email"
+							onChange={e => setEmail(e.target.value)}
+							className="signup-professor-row"
+						/>
+						<Form.Control.Feedback type="invalid">
+							Please input a valid email.
+          		</Form.Control.Feedback>
+					</Form.Group>
+				</Form.Row>
+
+				<Form.Row>
+					<Form.Group as={Col} md="6" controlId="validationCustom05">
+						<Form.Control
+							required
+							type="password"
+							placeholder="Password"
+							onChange={e => setPassword(e.target.value)}
+							className="signup-professor-row"
+						/>
+						<p className="passwordText">{passwordText}</p>
+					</Form.Group>
+
+					<Form.Group as={Col} md="6" controlId="validationCustom06">
+						<Form.Control
+							required
+							type="password"
+							placeholder="Confirmation Password"
+							onChange={e => setVPassword(e.target.value)}
+							className="signup-professor-row"
+						/>
+						<p className="passwordText">{passwordText}</p>
+					</Form.Group>
+				</Form.Row>
+
+				<Button className="signup-professor-btn" type="submit">Submit form</Button>
+			</Form>
+		</div>
+	</div>
+);
 }
 
 export default SignUpProfessor;

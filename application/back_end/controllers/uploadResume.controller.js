@@ -19,10 +19,10 @@ const uploadFiles = async (req, res) => {
         __basedir + "/resources/static/assets/uploads/" + req.file.filename
       ),
     })
-    // fs.writeFileSync(
-    //       __basedir + "/resources/static/assets/tmp/" + req.file.filename,
-    //       image.data
-    // )
+
+    fs.writeFileSync(
+          __basedir + "/resources/static/assets/tmp/" + req.file.filename
+    )
 
     await resume.save();
     return res.send(`File has been uploaded.`);
@@ -42,7 +42,7 @@ const uploadFiles = async (req, res) => {
     //   return res.send(`File has been uploaded.`);
     // });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res.send(`Error when trying upload images: ${error}`);
   }
 };

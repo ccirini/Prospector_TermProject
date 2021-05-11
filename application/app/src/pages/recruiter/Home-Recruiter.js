@@ -1,162 +1,119 @@
 import "./Home-Recruiter.css";
-import "../Design.css";
-import React, { useState, useEffect } from 'react'
+import "../styles/Design.css";
+import data from "../../components/categories/dropdownData.json";
+import RecruiterNavbar from "../../components/RecruiterNavbar";
+
+import React, { useState } from 'react'
+import Select from 'react-select'
+import axios from 'axios'
+
 import InputGroup from 'react-bootstrap/InputGroup'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
-import Select from 'react-select'
-import axios from 'axios'
 
+import API_BASE from '../config/config'
 
-const API_BASE = 'http://54.70.249.83:5000'
-// const API_BASE = 'http://localhost:5000'
+const HomeRecruiter = () => {
 
-const HomeRecruiter = () =>{
+	const [selectedValue, setSelectedValue] = useState('default');
+	const [searchValue, setSearchValue] = useState('default');
+	const [active, setActive] = useState(false);
+	const [students, setStudents] = React.useState([]);
+	const [stuId, setStuId] = useState(912345670);
+	const [pdfLink, setPdfLink] = useState('./john-doe.pdf');
 
-    const data = [
-        {
-            value: "default",
-            label: "Select Option"
-        },
-        {
-            value: "major",
-            label: "Major"
-        },
-        {
-            value: "gender",
-            label: "Gender"
-        },
-        {
-            value: "ethnicity",
-            label: "Ethnicity"
-        },
-        {
-            value: "veteranStatus",
-            label: "Veteran"
-        },
-        {
-            value: "disabilityStatus",
-            label: "Disability"
-        },
-        {
-            value: "financialAidStatus",
-            label: "Financial Aid"
-        },
-        {
-            value: "firstGeneration",
-            label: "First Generation"
-        }
-    ];
+	// handle onChange event of the dropdown
+	const handleChange = (e) => {
+		setSelectedValue(e.value);
+	}
 
-    const [selectedValue, setSelectedValue] = useState('default');
-    const [searchValue, setSearchValue] = useState('default');
-    const [active, setActive] = useState(false);
-    const [students, setStudents] = React.useState([]);
-    const [stuId, setStuId] = useState(912345670);
-    const [pdfLink, setPdfLink] = useState('./john-doe.pdf');
+	const handleClick = (e) => {
+		e.preventDefault();
+		console.log('The button was clicked.');
+		setActive(true); // results will now be visible
 
-    // const [resume, setResume] = useState('');
+		if (selectedValue != "default" && searchValue == "default") {
+			// if dropdown is selected and search is empty
+			alert("Search bar is empty!");
+		} else {
+			axios.get(`${API_BASE}/search/${selectedValue}/text/${searchValue}`)
+				.then(response => {
+					setStudents(response.data)
+					console.log(response)
+				})
+				.catch(error => {
+					console.log(error)
+				});
 
-    // handle onChange event of the dropdown
-    const handleChange = e => {
-        setSelectedValue(e.value);
-    }
+			console.log(students);
+		}
+	}
 
-    function handleClick(e) {
-        // if statement to check if dropdown is selcted but search is empty
+	return (
+		<div className="home-recruiter-search">
+			<RecruiterNavbar />
+			<Container>
+				<h1 className="home-recruiter-page-title">Search</h1>
+				<Row className="home-recruiter-search-row">
+					<Col className="home-recruiter-search-col">
+						<Select
+							placeholder="Select Option"
+							options={data} // set list of the data
+							onChange={handleChange} // assign onChange function
+							value={data.find(obj => obj.value === selectedValue)} // set selected value
+							as={InputGroup.Prepend}
+							variant="outline-secondary"
+							id="input-group-dropdown1"
+							className="home-recruiter-dropdown"
+						/>
+					</Col>
 
-        e.preventDefault();
-        console.log('The button was clicked.');
-        setActive(true);
+					<Col className="home-recruiter-search-col">
+						{/* Search bar */}
+						<FormControl aria-describedby="basic-addon1" placeholder="Search..."
+							className="home-recruiter-search-bar" onChange={e => setSearchValue(e.target.value)} />
+					</Col>
 
-        if (selectedValue != "default" && searchValue == "default"){
-            alert("Search bar is empty!");
-        } else {
-            axios.get(`${API_BASE}/search/${selectedValue}/text/${searchValue}`)
-            .then(res => {
-                setStudents(res.data);
-            })
-            .catch(err => {
-                console.log(err);
-            })
-        }
-    }
+					<div className="home-recruiter-button-container">
+						<Button type="submit"
+						className="home-recruiter-btn3" 
+						onClick={console.log('save')}
+						>Get Notified</Button>
+					</div>
 
-    // useEffect(() => {
-    //     axios.get(`${API_BASE}/resume?userId=2`)
-    //     .then(res => {
-    //         const buffer = res.data[0].data;
-    //         const b64 = new Buffer(buffer).toString('base64');
-    //         setResume(b64);
-    //         console.log(resume);
-    //         const mimeType = 'application/pdf';
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //     })
-    // }, []);
+					<div className="home-recruiter-button-container">
+						<Button type="submit" className="home-recruiter-btn1" onClick={handleClick}>Search</Button>
+					</div>
+				</Row>
+			</Container>
 
+			{/* 
+				test values to show print
+				<h1>{selectedValue}</h1>
+				<h1>{searchValue}</h1> */}
 
-    return (
-        <div className="search">
-            <Container>
-                <h1 className="page-title">Search</h1>
-                <Row>
-                    <Col>
-                        <Select
-                            placeholder="Select Option"
-                            options={data} // set list of the data
-                            onChange={handleChange} // assign onChange function
-                            value={data.find(obj => obj.value === selectedValue)} // set selected value
-                            as={InputGroup.Prepend}
-                            variant="outline-secondary"
-                            id="input-group-dropdown1"
-                            className="dropdown"
-                        />
-                    </Col>
-                    
-                    <Col>
-                        {/* Search bar */}
-                        <FormControl aria-describedby="basic-addon1" placeholder="Search..."
-                        className="search-bar" onChange={e => setSearchValue(e.target.value)}/>
-                    </Col>
-
-                    <div className="button-container">
-                    <   Button type="submit" onClick={console.log('save')}>Get Notified</Button>
-                    </div>
-
-                    <div className="button-container">
-                        <Button type="submit" className="btn-outline-light" onClick={handleClick}>Search</Button>
-                    </div>
-                </Row>
-            </Container>
-
-            {/* 
-            test values to show print
-            <h1>{selectedValue}</h1>
-            <h1>{searchValue}</h1> */}
-
-            {active && <div style={{ marginTop: 20, lineHeight: '25px' }}>
-                {students.map(student => 
-                <Container key={student.userId} className="outter-result-container">
-                    <Container className="result-container">
-                        <div className="row-1">
-                            <p clasName="student-name"><b>{student.firstName} {student.lastName} </b></p>
-                            <p className="learn-text"><a href="/home-student">Learn more about this student</a></p>
-                        </div>
-                        <div className="row-2">
-                            <p className="student-major"><b>Major -</b> {student.major}</p>
-                            <Button href={`${API_BASE}/resume?userId=2`}>Download Resume</Button>
-                        </div>
-                    </Container>
-                </Container>)}
-            </div>}
-
-            </div>
-    );
+			{active && <div style={{ marginTop: 20, lineHeight: '25px' }}>
+				{students.map(student =>
+					<Container key={student.userId} className="home-recruiter-outter-result-container">
+						<Container className="home-recruiter-result-container">
+							<div className="home-recruiter-row1">
+								<p className="home-recruiter-student-name"><b>{student.firstName} {student.lastName} - </b> {student.aggregateRating} / 5 </p>
+							</div>
+							<div className="home-recruiter-row2">
+								<p className="home-recruiter-student-info"><b>Major -</b> {student.major} <b>Gender -</b> {student.gender} <b>Ethnicity -</b> {student.ethnicity}</p>
+								<Button 
+								href={`${API_BASE}/resume?userId=${student.userId}`}
+								className="home-recruiter-btn2"
+								>Download Resume</Button>
+							</div>
+						</Container>
+					</Container>)}
+			</div>}
+		</div>
+	);
 }
 
 export default HomeRecruiter;
