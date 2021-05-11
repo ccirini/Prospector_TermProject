@@ -30,7 +30,6 @@ const SignupStudent = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [Vpassword, setVPassword] = useState('');
-	const [resume, setResume] = useState('');
 
 	const [genderValue, setGenderValue] = useState('default');
 	const [lgbtqValue, setLgbtqValue] = useState('default');
@@ -51,19 +50,6 @@ const SignupStudent = () => {
 	const handleChangeFirstgen = e => { setFirstgenValue(e.value); }
 	const handleChangeFasfa = e => { setFasfaValue(e.value); }
 
-	function handleUpload(e) {
-		setResume(e.value);
-
-		axios.post(`${API_BASE}/upload`, {
-			userId: { studentId },
-			data: { resume }
-		})
-			.then(function (response) {
-				console.log(response);
-				console.log("hello from then");
-			})
-	}
-
 	const handleSubmit = (event) => {
 		const form = event.currentTarget;
 		event.preventDefault();
@@ -81,38 +67,53 @@ const SignupStudent = () => {
 
 		setValidated(true);
 
-		// axios.post(`${API_BASE}/signup/student`, {
-		// 	email: { email },
-		// 	password: { password },
-		// 	studentSFSUId: { studentId },
-		// 	firstName: { firstName },
-		// 	lastName: { lastName },
-		// 	addressId: null,
-		// 	ethnicity: { ethnicity },
-		// 	major: { major },
-		// 	gender: { gender },
-		// 	veteranStatus: { veteranValue },
-		// 	lgbtqStatus: { lgbtqValue },
-		// 	financialAidStatus: { fasfaValue },
-		// 	disabilityStatus: { disabilityValue },
-		// 	firstGeneration: { firstgenValue }
-		// })
-		// 	.then(response => {
-		// 		console.log(response)
-		// 		window.location = '/login'
-		// 	})
-		// 	.catch(error => {
-		// 		console.log(error)
-		// 	});
-};
+		axios.post(`${API_BASE}/signUp/student`, {
+			email: email,
+			password: password,
+			studentSFSUId: studentId,
+			firstName: firstName,
+			lastName: lastName,
+			addressId: 1,
+			ethnicity: ethnicity,
+			major: major,
+			gender: gender,
+			veteranStatus: veteranValue,
+			lgbtqStatus: lgbtqValue,
+			financialAidStatus: fasfaValue,
+			disabilityStatus: disabilityValue,
+			firstGeneration: firstgenValue,
+		})
+			.then(response => {
+				console.log(response)
+			})
+			.catch(error => {
+				console.log(error)
+			});
+
+		let formData = new FormData();
+		var resumefile = document.querySelector('#file');
+		formData.append("resume", resumefile.files[0]);
+		formData.append("userId", studentId)
+		axios.post(`${API_BASE}/upload`, formData, {
+			headers: {
+				'Content-Type': 'multipart/form-data'
+			}
+		})
+			.then(response => {
+				console.log(response)
+				// window.location = '/login'
+			})
+			.catch(error => {
+				console.log(error)
+			});
+	};
 
 	return (
 		<div>
 			<HomeNavbar />
 
 			<div className="signup-student">
-				<Form noValidate validated={validated} onSubmit={handleSubmit} className="signup-student-form"
-					action={`${API_BASE}`} method="POST">
+				<Form noValidate validated={validated} onSubmit={handleSubmit} className="signup-student-form">
 					<h1 className="signup-student-h1"><b>Sign Up As Student</b></h1>
 
 					<Form.Row>
@@ -307,14 +308,11 @@ const SignupStudent = () => {
 						</Col>
 
 						<Col>
-							<Form.File id="formcheck-api-regular">
-								<Form.File.Label className="form-label">Upload Resume</Form.File.Label>
-								<Form.File.Input className="form-label" />
-							</Form.File>
+							<input type="file" id="file" />
 						</Col>
 					</Row>
 
-					<Button className="signup-student-btn" type="submit" onClick={handleUpload}>Submit</Button>
+					<Button className="signup-student-btn" type="submit">Submit</Button>
 				</Form>
 			</div >
 		</div >
