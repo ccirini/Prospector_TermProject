@@ -34,11 +34,15 @@ const NewRecommend = () => {
 			rating: {rating},
 			recommendationText: {recommendationText}
 		})
-			.then(response => 
+			.then(response => {
 				console.log(response)
-			)
-			.catch(error => console.log(error))
-	}
+				window.location = '/viewrecommend'
+			})
+			.catch(error => {
+				console.log(error)
+				window.location = '/viewrecommend'
+			});
+	};
 
 	return (
 		<div className="newRecommend">
@@ -72,7 +76,7 @@ const NewRecommend = () => {
 				</div>
 
 				<Form>
-					<Button href="/viewrecommend" className="newRecommend-btn" onClick={handleClick}>Submit</Button>
+					<Button className="newRecommend-btn" onClick={handleClick}>Submit</Button>
 				</Form>
 			</Container>
 		</div>
