@@ -44,4 +44,27 @@ module.exports = app => {
     
     // update resume 
     app.post("/update/resume", upload.single("resume"), updateController.updateFiles);
+
+    // delete resume 
+    app.post("/delete/resume", (req, res) => {
+        if (!req.body) {
+            res.status(400).send({
+                message: "Content can not be empty!"
+            });
+        }
+
+        const { userId } = req.body;
+
+        sql.query(`DELETE FROM images WHERE userId=${userId}`, (err, data) => {
+            if(err) {
+                console.log("error: ", err);
+                res.status(500).send({
+                    message: 
+                        err.message || "Some error occured while delete resume."
+                })
+            }
+            console.log(data); 
+            res.status(200).send(data);
+        })
+    })
 }
