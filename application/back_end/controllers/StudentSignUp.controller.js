@@ -16,6 +16,7 @@ var transporter = nodemailer.createTransport({
 
 function checkMatch(student) { 
     // console.log("from function:", student.email);
+    console.log("BEFORE EMAIL in function"); 
 
     // cross check with recruiter_savedSearch 
     sql.query(`SELECT * 
@@ -87,6 +88,8 @@ function checkMatch(student) {
                           console.log('Email sent to student: ' + info.response);
                         }
                     });
+
+                    console.log("AFTER EMAIL in function"); 
                 })
         
 }
@@ -133,7 +136,9 @@ exports.create = (req, res) => {
                             err.message || "Some error occurred while creating a new account."
                     });
                 else {
+                    console.log("before function called.")
                     checkMatch(student); 
+                    console.log("after function called.")
                     res.send(data);
                 }
             });
