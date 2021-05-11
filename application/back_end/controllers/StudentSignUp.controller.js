@@ -55,7 +55,7 @@ function checkMatch(student) {
                         let recruiterEmails = []; 
                         data2.forEach(e => recruiterEmails.push(e.email)); 
                         let mailList = recruiterEmails.join();
-
+                        
                         let mailOptions = {
                             from: 'trung2598@yahoo.com',
                             to: mailList,
@@ -87,12 +87,6 @@ function checkMatch(student) {
                           console.log('Email sent to student: ' + info.response);
                         }
                     });
-                    
-                    if(mailList.length != 0) {
-                        res.send({
-                            matches: data2
-                        })
-                    }
                 })
         
 }

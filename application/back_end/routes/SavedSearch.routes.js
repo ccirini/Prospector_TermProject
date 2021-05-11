@@ -12,7 +12,7 @@ var transporter = nodemailer.createTransport({
 function checkMatch(queryObj) {
     sql.query(`SELECT * 
             FROM student 
-            WHERE ${queryObj.dropDownOption} LIKE '%${textContent}%'
+            WHERE ${queryObj.dropDownOption} LIKE '%${queryObj.textContent}%'
             `, (err, data) => {
                 if(err) {
                     console.log("error: ", err);
@@ -22,13 +22,13 @@ function checkMatch(queryObj) {
                     })
                 }
 
-                sql.query(`SELECT * FROM recruiter WHERE userId IN (${queryObj.recruiterId})`, (err, data2) => {
+                sql.query(`SELECT * FROM recruiter WHERE userId IN (${queryObj.recruiterUserId})`, (err, data2) => {
                     if(err) {
                         console.log("error: ", err);
-                        res.status(500).send({
-                            message: 
-                                err.message || "Some error occured while trying to find a match."
-                        })
+                        // res.status(500).send({
+                        //     message: 
+                        //         err.message || "Some error occured while trying to find a match."
+                        // })
                     }
 
                     let mailList = [];
@@ -50,12 +50,6 @@ function checkMatch(queryObj) {
                             console.log('Email sent to recruiter and student: ' + info.response);
                         }
                     });
-
-                    if(mailList.length != 0) {
-                        res.send({
-                            matches: data2
-                        })
-                    }
                 })
             }) 
 }

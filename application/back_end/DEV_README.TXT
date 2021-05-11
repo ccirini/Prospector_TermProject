@@ -74,3 +74,7 @@ student             -> (update) POST /update/student
                         -   DATA TO SEND BACK 
                             type: JSON { userId }
 
+get Match           -> POST /getmatches
+                        -   DATA TO SEND BACK 
+                            type: JSON { userId }
+
