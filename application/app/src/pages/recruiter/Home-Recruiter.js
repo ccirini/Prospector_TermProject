@@ -30,6 +30,20 @@ const HomeRecruiter = () => {
 		setSelectedValue(e.value);
 	}
 
+	const getResume = (userId) => {
+		axios.post(`${API_BASE}/resume`, {
+			userId: userId,
+		})
+			.then(response => {
+				console.log(response)
+				const url = `${API_BASE}/resume?userId=${userId}`
+				window.location = url
+			})
+			.catch(error => {
+				console.log(error)
+			});
+	}
+
 	const handleClick = (e) => {
 		e.preventDefault();
 		console.log('The button was clicked.');
@@ -79,8 +93,8 @@ const HomeRecruiter = () => {
 
 					<div className="home-recruiter-button-container">
 						<Button type="submit"
-						className="home-recruiter-btn3" 
-						onClick={console.log('save')}
+							className="home-recruiter-btn3"
+							onClick={console.log('save')}
 						>Get Notified</Button>
 					</div>
 
@@ -104,9 +118,9 @@ const HomeRecruiter = () => {
 							</div>
 							<div className="home-recruiter-row2">
 								<p className="home-recruiter-student-info"><b>Major -</b> {student.major} <b>Gender -</b> {student.gender} <b>Ethnicity -</b> {student.ethnicity}</p>
-								<Button 
-								href={`${API_BASE}/resume?userId=${student.userId}`}
-								className="home-recruiter-btn2"
+								<Button
+									onClick={getResume(student.userId)}
+									className="home-recruiter-btn2"
 								>Download Resume</Button>
 							</div>
 						</Container>
