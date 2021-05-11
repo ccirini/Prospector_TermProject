@@ -42,36 +42,35 @@ function checkMatch(student) {
                     data.forEach(e => recruiterIds.push(e.recruiterUserId)); 
                     // if this student matches any saved searches 
                     // send email notification to recruiter and student
-                    sql.query(`SELECT * FROM recruiter WHERE userId IN (${recruiterIds})`, (err, data) => {
-                                    if(err) {
-                                        console.log("error: ", err);
-                                        res.status(500).send({
-                                            message: 
-                                                err.message || "Some error occured while trying to find a match."
-                                        })
-                                    }
-                                    // console.log(data);
-                                    // get emails of recruiters 
-                                    let recruiterEmails = []; 
-                                    data.forEach(e => recruiterEmails.push(e.email)); 
-                                    let mailList = recruiterEmails.join();
+                    sql.query(`SELECT * FROM recruiter WHERE userId IN (${recruiterIds})`, (err, data2) => {
+                        if(err) {
+                            console.log("error: ", err);
+                            res.status(500).send({
+                                message: 
+                                    err.message || "Some error occured while trying to find a match."
+                            })
+                        }
+                        // console.log(data);
+                        // get emails of recruiters 
+                        let recruiterEmails = []; 
+                        data2.forEach(e => recruiterEmails.push(e.email)); 
+                        let mailList = recruiterEmails.join();
 
-                                    let mailOptions = {
-                                        from: 'trung2598@yahoo.com',
-                                        to: mailList,
-                                        subject: 'You\'ve got a match!',
-                                        text: 'Congratulations! we found a candidate that matches with your saved search!'
-                                    };
+                        let mailOptions = {
+                            from: 'trung2598@yahoo.com',
+                            to: mailList,
+                            subject: 'You\'ve got a match!',
+                            text: 'Congratulations! we found a candidate that matches with your saved search!'
+                        };
 
-                                    transporter.sendMail(mailOptions, (error, info) => {
-                                        if (error) {
-                                          console.log(error);
-                                        } else {
-                                          console.log('Email sent to recruiter: ' + info.response);
-                                        }
-                                    });
-                        
-                                })
+                        transporter.sendMail(mailOptions, (error, info) => {
+                            if (error) {
+                                console.log(error);
+                            } else {
+                                console.log('Email sent to recruiter: ' + info.response);
+                            }
+                        });
+                    })
                     
                     // send email to student
                     let mailOptions = {
@@ -89,6 +88,11 @@ function checkMatch(student) {
                         }
                     });
                     
+                    if(mailList.length != 0) {
+                        res.send({
+                            matches: data2
+                        })
+                    }
                 })
         
 }
