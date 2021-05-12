@@ -10,6 +10,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import React, { useState } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
+import bsCustomFileInput from "bs-custom-file-input"
 
 import gender from "../../components/categories/gender.json";
 import lgbtq from "../../components/categories/lgbtq.json";
@@ -30,7 +31,6 @@ const SignupStudent = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [Vpassword, setVPassword] = useState('');
-	const [resume, setResume] = useState('');
 
 	const [genderValue, setGenderValue] = useState('default');
 	const [lgbtqValue, setLgbtqValue] = useState('default');
@@ -43,6 +43,8 @@ const SignupStudent = () => {
 	const [validated, setValidated] = useState(false);
 	const [passwordText, setPasswordText] = useState('');
 
+	const [fileName, setFileName] = useState("Upload Resume");
+
 	const handleChangeGender = e => { setGenderValue(e.value); }
 	const handleChangeLgbtq = e => { setLgbtqValue(e.value); }
 	const handleChangeEthnicity = e => { setEthnicityValue(e.value); }
@@ -51,18 +53,18 @@ const SignupStudent = () => {
 	const handleChangeFirstgen = e => { setFirstgenValue(e.value); }
 	const handleChangeFasfa = e => { setFasfaValue(e.value); }
 
-	function handleUpload(e) {
-		setResume(e.value);
+	const submitForm = () => {
+		const formData = new FormData();
+		formData.append("resume", fileName);
+		formData.append("userId", studentId)
 
-		axios.post(`${API_BASE}/upload`, {
-			userId: { studentId },
-			data: { resume }
-		})
-			.then(function (response) {
-				console.log(response);
-				console.log("hello from then");
+		axios.post(`${API_BASE}/upload`, formData)
+			.then((res) => {
+				alert("File Upload success");
+				window.location = '/login'
 			})
-	}
+			.catch((err) => alert("File Upload Error"));
+	};
 
 	const handleSubmit = (event) => {
 		const form = event.currentTarget;
@@ -81,38 +83,38 @@ const SignupStudent = () => {
 
 		setValidated(true);
 
-		// axios.post(`${API_BASE}/signup/student`, {
-		// 	email: { email },
-		// 	password: { password },
-		// 	studentSFSUId: { studentId },
-		// 	firstName: { firstName },
-		// 	lastName: { lastName },
-		// 	addressId: null,
-		// 	ethnicity: { ethnicity },
-		// 	major: { major },
-		// 	gender: { gender },
-		// 	veteranStatus: { veteranValue },
-		// 	lgbtqStatus: { lgbtqValue },
-		// 	financialAidStatus: { fasfaValue },
-		// 	disabilityStatus: { disabilityValue },
-		// 	firstGeneration: { firstgenValue }
-		// })
-		// 	.then(response => {
-		// 		console.log(response)
-		// 		window.location = '/login'
-		// 	})
-		// 	.catch(error => {
-		// 		console.log(error)
-		// 	});
-};
+		axios.post(`${API_BASE}/signUp/student`, {
+			email: email,
+			password: password,
+			studentSFSUId: studentId,
+			firstName: firstName,
+			lastName: lastName,
+			addressId: 1,
+			ethnicity: ethnicityValue,
+			major: major,
+			gender: genderValue,
+			veteranStatus: veteranValue,
+			lgbtqStatus: lgbtqValue,
+			financialAidStatus: fasfaValue,
+			disabilityStatus: disabilityValue,
+			firstGeneration: firstgenValue,
+		})
+			.then(response => {
+				console.log(response)
+			})
+			.catch(error => {
+				console.log(error)
+			});
+
+		submitForm();
+	};
 
 	return (
 		<div>
 			<HomeNavbar />
 
 			<div className="signup-student">
-				<Form noValidate validated={validated} onSubmit={handleSubmit} className="signup-student-form"
-					action={`${API_BASE}`} method="POST">
+				<Form noValidate validated={validated} onSubmit={handleSubmit} className="signup-student-form">
 					<h1 className="signup-student-h1"><b>Sign Up As Student</b></h1>
 
 					<Form.Row>
@@ -307,14 +309,20 @@ const SignupStudent = () => {
 						</Col>
 
 						<Col>
-							<Form.File id="formcheck-api-regular">
-								<Form.File.Label className="form-label">Upload Resume</Form.File.Label>
-								<Form.File.Input className="form-label" />
-							</Form.File>
+							<Form.Group as={Row}>
+								<Form.File
+									type="file"
+									// className="custom-file-label"
+									id="inputGroupFile01"
+									label={fileName}
+									onChange={(e) => setFileName(e.target.files[0].name)}
+									custom
+								/>
+							</Form.Group>
 						</Col>
 					</Row>
 
-					<Button className="signup-student-btn" type="submit" onClick={handleUpload}>Submit</Button>
+					<Button className="signup-student-btn" type="submit">Submit</Button>
 				</Form>
 			</div >
 		</div >

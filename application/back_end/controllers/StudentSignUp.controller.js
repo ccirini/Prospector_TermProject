@@ -16,6 +16,7 @@ var transporter = nodemailer.createTransport({
 
 function checkMatch(student) { 
     // console.log("from function:", student.email);
+    console.log("BEFORE EMAIL in function"); 
 
     // cross check with recruiter_savedSearch 
     sql.query(`SELECT * 
@@ -42,40 +43,39 @@ function checkMatch(student) {
                     data.forEach(e => recruiterIds.push(e.recruiterUserId)); 
                     // if this student matches any saved searches 
                     // send email notification to recruiter and student
-                    sql.query(`SELECT * FROM recruiter WHERE userId IN (${recruiterIds})`, (err, data) => {
-                                    if(err) {
-                                        console.log("error: ", err);
-                                        res.status(500).send({
-                                            message: 
-                                                err.message || "Some error occured while trying to find a match."
-                                        })
-                                    }
-                                    // console.log(data);
-                                    // get emails of recruiters 
-                                    let recruiterEmails = []; 
-                                    data.forEach(e => recruiterEmails.push(e.email)); 
-                                    let mailList = recruiterEmails.join();
-
-                                    let mailOptions = {
-                                        from: 'trung2598@yahoo.com',
-                                        to: mailList,
-                                        subject: 'You\'ve got a match!',
-                                        text: 'Congratulations! we found a candidate that matches with your saved search!'
-                                    };
-
-                                    transporter.sendMail(mailOptions, (error, info) => {
-                                        if (error) {
-                                          console.log(error);
-                                        } else {
-                                          console.log('Email sent to recruiter: ' + info.response);
-                                        }
-                                    });
+                    sql.query(`SELECT * FROM recruiter WHERE userId IN (${recruiterIds})`, (err, data2) => {
+                        if(err) {
+                            console.log("error: ", err);
+                            res.status(500).send({
+                                message: 
+                                    err.message || "Some error occured while trying to find a match."
+                            })
+                        }
+                        // console.log(data);
+                        // get emails of recruiters 
+                        let recruiterEmails = []; 
+                        data2.forEach(e => recruiterEmails.push(e.email)); 
+                        let mailList = recruiterEmails.join();
                         
-                                })
+                        let mailOptions = {
+                            from: 'caotrung6@gmail.com',
+                            to: mailList,
+                            subject: 'You\'ve got a match!',
+                            text: 'Congratulations! we found a candidate that matches with your saved search!'
+                        };
+
+                        transporter.sendMail(mailOptions, (error, info) => {
+                            if (error) {
+                                console.log(error);
+                            } else {
+                                console.log('Email sent to recruiter: ' + info.response);
+                            }
+                        });
+                    })
                     
                     // send email to student
                     let mailOptions = {
-                        from: 'trung2598@yahoo.com',
+                        from: 'caotrung6@gmail.com',
                         to: student.email,
                         subject: 'You\'ve got a match!',
                         text: 'Congratulations! you have matched with a company!'
@@ -88,7 +88,8 @@ function checkMatch(student) {
                           console.log('Email sent to student: ' + info.response);
                         }
                     });
-                    
+
+                    console.log("AFTER EMAIL in function"); 
                 })
         
 }
@@ -135,7 +136,9 @@ exports.create = (req, res) => {
                             err.message || "Some error occurred while creating a new account."
                     });
                 else {
+                    console.log("before function called.")
                     checkMatch(student); 
+                    console.log("after function called.")
                     res.send(data);
                 }
             });

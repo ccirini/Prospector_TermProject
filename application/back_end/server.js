@@ -36,5 +36,6 @@ require('./routes/SavedSearch.routes.js')(app);
 require('./routes/Recruiter.routes.js')(app);
 require('./routes/Professor.routes.js')(app);
 require('./routes/Student.routes.js')(app);
+require('./routes/GetMatches.routes.js')(app);
 
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
