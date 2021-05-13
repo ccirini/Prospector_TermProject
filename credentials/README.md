@@ -7,7 +7,7 @@
 
 # Below is a list of items required. Missing items will causes points to be deducted from multiple milestone submissions.
 
-1. Server URL or IP: 54.70.249.83
+1. Server URL or IP: 54.70.249.83 & https://prospectorsf.page/
 2. SSH username: ubuntu
 3. SSH password or key: 648T02Key.pem (key in credentials folder)
 4. Database URL or IP and port used: 3306
